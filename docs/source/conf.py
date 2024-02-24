@@ -3,7 +3,7 @@ from datetime import datetime
 
 # -- Project information
 
-project = 'KookaBlockly Template'
+project = 'Kookaberry Reference Guide'
 now = datetime.now()
 today = f"{now.year}-{now.month:02}-{now.day:02}"
 
