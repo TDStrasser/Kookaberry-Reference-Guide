@@ -1,0 +1,86 @@
+***************************************************************
+:mod:`lsm303` --- control of LSM303C accelerometer/magnetometer
+***************************************************************
+
+.. module:: lsm303
+   :synopsis: control of LSM303C accelerometer/magnetometer
+
+This module provides classes to control an LSM303C combined accelerometer and
+magnetometer.  It is used internally by the Kookaberry to provide access to the
+internal LSM303C, but can also be used to control an external chip.
+
+The LSM303C provides two independent I2C slaves for the accelerometer and
+magnetometer, with default I2C addresses of ``0x1d`` and ``0x1e`` respectively.
+
+Example usage::
+
+    import machine, lsm303
+
+    i2c = machine.I2C('LSM') # internal I2C bus with internal LSM303C
+
+    accel = lsm303.LSM303C_Accel(i2c)
+    mag = lsm303.LSM303C_Mag(i2c)
+
+    print(accel.get_xyz(), mag.get_strength())
+
+Note that the i2c object can be any valid machine.I2C object.  For example, you
+can use the P1 connector via::
+
+    i2c = machine.I2C('P1')
+
+.. _lsm303.LSM303C_Accel:
+
+class LSM303C_Accel
+===================
+
+This class represents a connection to the accelerometer part of the LSM303C.
+
+Constructors
+------------
+
+.. class:: LSM303C_Accel(i2c, addr=0x1d)
+
+    Creates a new instance of this class.  *i2c* should be a :class:`machine.I2C`
+    object that the LSM303C is connected to.  *addr* is the I2C address of the
+    accelerometer, which defaults to 0x1d if not specified.
+
+Methods
+-------
+
+.. method:: LSM303C_Accel.get_xyz()
+
+    Returns the current x/y/z values of the accelerometer as a 3-tuple.
+
+.. _lsm303.LSM303C_Mag:
+
+class LSM303C_Mag
+=================
+
+This class represents a connection to the magnetometer part of the LSM303C.
+
+Constructors
+------------
+
+.. class:: LSM303C_Mag(i2c, addr=0x1e)
+
+    Creates a new instance of this class.  *i2c* should be a machine.I2C object
+    that the LSM303C is connected to.  *addr* is the I2C address of the
+    magnetometer, which defaults to 0x1e if not specified.
+
+Methods
+-------
+
+.. method:: LSM303C_Mag.get_xyz()
+
+    Returns the current x/y/z values of the magnetometer as a 3-tuple.
+    These values are filtered with a moving average of the last 4 samples.
+
+.. method:: LSM303C_Mag.get_heading()
+
+    Returns a simple measure of the compass heading via the formula
+    math.atan2(y, x).
+
+.. method:: LSM303C_Mag.get_strength()
+
+    Returns the magnitude of the 3-vector returned by LSM303C_Mag.get_xyz(),
+    as an integer.

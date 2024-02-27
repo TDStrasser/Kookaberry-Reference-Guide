@@ -1,0 +1,88 @@
+**************************************************
+:mod:`sh1106` --- control of SH1106 based displays
+**************************************************
+
+.. module:: sh1106
+   :synopsis: control of SH1106 based displays
+
+This module provides a class to control SH1106 display drivers, which is used
+by the internal display on the Kookaberry.  The class is derived from the
+:class:`framebuf.FrameBuffer` class so inherits all drawing methods from that
+class.  The display is double-buffered, meaning that any modifications to the
+pixels are only updated on the physical display when the ``show()`` method is
+called.
+
+Example usage::
+
+    import kooka
+
+    # print some text (will display it immediately)
+    kooka.display.print('hello', 1234)
+
+    # turn on a pixel and show it
+    kooka.display.pixel(0, 0, 1)
+    kooka.display.show()
+
+.. _sh1106.SH1106_SPI:
+
+class SH1106_SPI
+================
+
+This class represents a connection to the display.  It is derived from the
+:class:`framebuf.FrameBuffer` class so inherits all drawing methods from that
+class.
+
+Constructors
+------------
+
+.. class:: SH1106_SPI(width, height, spi, cs, dc)
+
+    Creates a new instance of this class with the following parameters:
+
+        - *width* and *height* are the pixel dimensions of the display.
+
+        - *spi* is the :class:`machine.SPI` object connected to the display.
+
+        - *cs* and *dc* are the :class:`machine.Pin` objects corresponding to the
+          chip-select and data-command lines respectively.
+
+    When the object is constructed the display is turned on and the pixels
+    all cleared.
+
+Methods
+-------
+
+.. method:: SH1106_SPI.init_display()
+
+    Initialises and clears the display.
+
+.. method:: SH1106_SPI.poweroff()
+
+    Turns off the display.
+
+.. method:: SH1106_SPI.poweron()
+
+    Turns on the display.
+
+.. method:: SH1106_SPI.contrast(value)
+
+    Sets the contrast of the display to the given *value*, between 0 and 255
+    inclusive.
+
+.. method:: SH1106_SPI.invert(value)
+
+    If *value* is true then the display colours are inverted, otherwise they
+    are normal.
+
+.. method:: SH1106_SPI.show()
+
+    Draw the internal display buffer to the physical display.
+
+.. method:: SH1106_SPI.print(\*args, sep= ' ')
+
+    This method is intedend to be equivalent to the built-in ``print()`` method,
+    but it prints to the display instead of the serial prompt.
+
+    The given arguments are converted to strings and then drawn to the display
+    using the current font (defaults to 8x8 font).  The display is scrolled up
+    when text is drawn to the last line of the display.

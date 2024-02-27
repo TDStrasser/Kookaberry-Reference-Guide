@@ -4,7 +4,8 @@ Kookaberry Software
 The **Kookaberry** is programmed using the **MicroPython** software language.  
 This language is an implementation of the Python 3 language that has been adapted to be suitable for micro-computers.  
 
-More information on **MicroPython** can be found at www.micropython.org.  
+More information on **MicroPython** can be found at docs.micropython.org and in particular the **MicroPython** standard library at 
+https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
 
 A more specific reference to **MicroPython** for the **Kookaberry** can be found at http://docs.micropython.org/en/kookaberry/kookaberry/quickref.html  
 
@@ -56,13 +57,42 @@ to screen-grabbing software for documentation purposes.
 and it is available for download here: 
 https://github.com/kookaberry/kooka-releases/tree/master/KookaSuite 
 
-Module Library
---------------
+Kookaberry Specific Module Library
+----------------------------------
 
-The **Kookaberry** also provides an ever-growing module library to enable on-board devices and a range of external accessories to be used by the software.  
+The **Kookaberry**'s software includes modules for using functions that are unique to the **Kookaberry**. These are descibed below:
+
+.. toctree:: 
+    :caption: Kookaberry Specific Modules
+    
+
+Peripherals Module Library
+--------------------------
+
+The **Kookaberry** provides an ever-growing module library to enable on-board devices and a range of external accessories to be used by the software.  
 Further modules can be added by users for peripherals and accessories of their choosing.  
 
 There are many Internet forums and repositories that provide module software code and help on getting accessories to work with 
 **MicroPython** micro-computers such as the **Kookaberry**. Notable among the repositories is GitHub.
 
+The Kookaberry's built-in software modules are described in the following sections.
+
+.. toctree:: 
+    :caption: Built-in Peripheral Modules
+
+    bme280.rst
+    dht.rst
+    ds18x20.rst
+    ds3231.rst
+    ina219.rst
+    lsm303.rst
+    mcp23008.rst
+    mlx90614.rst
+    neopixel.rst
+    nrf5.rst
+    onewire.rst
+    pcf8574.rst
+    sh1106.rst
+    uart.rst
+    veml7700.rst
 
