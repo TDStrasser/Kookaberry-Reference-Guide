@@ -1,7 +1,7 @@
 Glossary of Terms
 =================
 
-This glossary contains the definitions of terms used throughout this KookaBlockly Reference Guide 
+This glossary contains the definitions of terms used throughout this Kookaberry Reference Guide 
 and is intended to demystify the vocabulary often used in association with computers and software.
 
 
