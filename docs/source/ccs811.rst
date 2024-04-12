@@ -1,4 +1,4 @@
-Module CCS811
+Class CCS811
 =============
 
 This module provides the class and functions to use the CCS811 sensor chip which detects carbon dioxide (CO2) in parts per million (ppm) 
@@ -11,7 +11,7 @@ The module contains a class CCS811.CCS811 which provides four functions as shown
 The principal function is data_ready() which returns a value of True when the sensor data are ready in the variable eCO2 and tVOC. 
 Usage of the module is best achieved by following this example:
 
-.. python:: 
+Example usage::
 
   from CCS811 import CCS811
   def main(): # define the function main()
