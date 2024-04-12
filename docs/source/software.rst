@@ -36,35 +36,41 @@ Distinctively, the **Kookaberry** can also contain many **MicroPython** scripts 
 Scripting Tools
 ---------------
 
-For users who are more advanced and skilled in writing **MicroPython** scripts, the **KookaIDE** Interactive Development Environment (IDE) is provided 
-which runs on Microsoft Windows, Apple’s MacOS, and on RaspberryPi Raspbian OS Personal Computers.  
+**KookaSuite** is a set of script editing software tools for the **Kookberry**.  
+**KookaSuite** is available for Microsoft Windows, Apple’s MacOS, and the RaspberryPi Raspbian OS Personal Computers.
+It comprises the following tools:
 
-**KookaIDE** provides an interactive interface with the **Kookaberry** via the REPL interface (Read-Evaluate-Print-Loop).  
-This enables a live script coding and de-bugging interface for users.
+* For users who are more advanced and skilled in writing **MicroPython** scripts, the **KookaIDE** Interactive Development Environment (IDE) is included. 
+  **KookaIDE** provides an interactive interface with the **Kookaberry** via the REPL interface (Read-Evaluate-Print-Loop), 
+  which enables a live script coding and de-bugging interface for users.
 
-The **Kookaberry** also has a second development environment intended for school students and coding novices called **KookaBlockly**, 
-based on Google's Blockly drag and drop language. **KookaBlockly** automatically generates **MicroPython** code which is run in the usual manner.  
+* A second development environment is included which is intended for school students and coding novices called **KookaBlockly**.
+  It is based on Google's Blockly drag and drop visual programming paradigm. 
+  **KookaBlockly** automatically generates **MicroPython** code which is run in the usual manner.  
 
-**KookaTW** is a utility that mirrors the **Kookaberry** display on a USB-attached PC or Macintosh.  
-The **TW** stands for Twin, or alternatively Teacher's Window.
+* **KookaTW** is a utility that mirrors the **Kookaberry** display on a USB-attached PC or Macintosh.  
+  The **TW** stands for Twin, or alternatively Teacher's Window. 
+  **KookaTW** is also built into the KookaIDE and **KookaBlockly** IDEs.  
+  This facility allows the physically small Kookaberry display to be clearly observed and shared on a computer and makes it available 
+  to screen-grabbing software for documentation purposes.
 
-**KookaTW** is built into the KookaIDE and **KookaBlockly** IDEs.  
 
-This facility allows the physically small Kookaberry display to be clearly observed and shared on a computer and makes it available 
-to screen-grabbing software for documentation purposes.
-
-**KookaIDE**, **KookaBlockly** and **KookaTW** are packaged as **KookaSuite** for Windows and Macintosh Personal Computers 
+**KookaIDE**, **KookaBlockly** and **KookaTW** are all packaged as **KookaSuite** for Windows, Apple Macintosh, and Raspberry Pi Personal Computers 
 and it is available for download here: 
 https://github.com/kookaberry/kooka-releases/tree/master/KookaSuite 
+
+The **KookaBlockly Reference Guide** is available at this link: https://kookablockly-reference-guide.readthedocs.io/en/latest/
 
 Kookaberry Specific Module Library
 ----------------------------------
 
-The **Kookaberry**'s software includes modules for using functions that are unique to the **Kookaberry**. These are descibed below:
+The **Kookaberry**'s software includes modules for using functions that are unique to the **Kookaberry**. These are described below:
 
 .. toctree:: 
     :caption: Kookaberry Specific Modules
-    
+
+    kooka.rst
+
 
 Peripherals Module Library
 --------------------------
@@ -81,6 +87,7 @@ The Kookaberry's built-in software modules are described in the following sectio
     :caption: Built-in Peripheral Modules
 
     bme280.rst
+    ccs811.rst
     dht.rst
     ds18x20.rst
     ds3231.rst
@@ -92,7 +99,5 @@ The Kookaberry's built-in software modules are described in the following sectio
     nrf5.rst
     onewire.rst
     pcf8574.rst
-    sh1106.rst
-    uart.rst
     veml7700.rst
 

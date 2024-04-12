@@ -5,9 +5,9 @@
 .. module:: kooka
    :synopsis: access to Kookaberry specific peripherals
 
-This module provides access to the Kookaberry specific peripherals like the
+This module provides access to the **Kookaberry** specific peripherals like the
 display, buttons and accelerometer.  Objects for these internal peripherals
-are created at start-up and available via the instance names given below.
+are created at start-up and are available via the instance names given below.
 
 Instances
 =========
@@ -17,7 +17,7 @@ Instances
     led_orange
     led_green
 
-    These objects give access to the three LEDs on the board.  They are
+    These objects give access to the three LEDs on the **Kookaberry**.  They are
     instances of :ref:`kooka.LED`.
 
 .. data::
@@ -26,13 +26,13 @@ Instances
     button_c
     button_d
 
-    These objects give access to the four buttons on the board.  They are
+    These objects give access to the four buttons (A, B, C, and D) on the **Kookaberry**.  They are
     instances of :ref:`kooka.Button`.
 
 .. data::
     display
 
-    This gives acces to the display on the board, an instance of
+    This gives acces to the **Kookaberry**'s display, an instance of
     :ref:`sh1106.SH1106_SPI`.
 
 .. data::
@@ -48,20 +48,9 @@ Instances
 .. data::
     radio
 
-    This handles the interface to the 2.4GHz radio (nRF51822), an instance of
+    This handles the interface to the 2.4GHz digital packet radio (nRF51822), an instance of
     :ref:`nrf51.Radio`.
 
-Functions
-=========
-
-.. function:: neopixel_write(pin, timing_ns, buf)
-
-    Write the bytes in *buf* to a NeoPixel-like device on the given *pin*.  Any pin
-    can be used and interrupts will be disabled during the entire write to get accurate
-    timing.  The *timing_ns* argument should be a 4-tuple of integers which specify
-    the 0-high, 0-low, 1-high, 1-low timing values in nanoseconds to use when generating
-    the output bit stream.  Typical timing values are ``(450, 800, 850, 400)`` and should
-    be tuned for the specific LED hardware.  The bytes from *buf* are output big endian.
 
 .. _kooka.LED:
 
@@ -127,7 +116,7 @@ Methods
 
 .. _kooka.Servo:
 
-class Servo -- 3-wire hobby servo driver
+class Servo - 3-wire hobby servo driver
 ========================================
 
 This class allows you to control standard hobby servo motors with 3-wires (ground, power,
@@ -206,3 +195,53 @@ Methods
      - *pulse_centre* is the pulse width corresponding to the centre/zero position.
      - *pulse_angle_90* is the pulse width corresponding to 90 degrees.
      - *pulse_speed_100* is the pulse width corresponding to a speed of 100.
+
+Class NeoPixel - A String of RGB Coloured LEDs
+==============================================
+
+This class enables the control of an arbitrarily long string of RGB coloured LEDs.  
+Each LED in the string can be individually set to any colour by setting values for the R (red), G (green), and B (blue) components of the LED.
+
+NeoPixels (als known as WS2812 LEDs) are available as LED strips, and as 2-dimensional arrays of LEDs which can function as displays.
+
+.. important:
+   NeoPixels can draw up to 20 milliamps each when fully lit, and so it is recommended that no more than 8 NeoPixels be powered directly from the **Kookaberry**.
+   If more NeoPixels are required then an intermediate power injection accessory circuit board should be used.  
+   The **Kookaberry** would otherwise be overloaded and would shut down.
+
+Constructors
+------------
+
+.. class:: kooka.NeoPixel(pin, pixels_in_array)
+
+   Creates a *neopixel* object.  
+   
+   The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :ref:`machine.Pin` object representing the
+   pin on the connector.
+
+   The parameter *pixels_in_array* is an integer specifying how many LEDs are in the NeoPixel string.  
+   This value can be interrogated after the *neopixel* object is created using the object property *NeoPixel.n*.
+
+   The *neopixel* object appears as a buffer of length *pixels_in_array*. 
+   Each element of the *neopixel* buffer can be set by an array *[r,g,b]* representing the intensity of each constituent colour in the range 0 to 255 inclusive.
+   
+   Examples of primary colours are:
+   
+     - *[0,0,0]* represents the colour black (all LEDs off)
+     - *[255,0,0]* is 100% intensity red
+     - *[127,0,0]* is 50% intensity red
+     - *[0,127,0]* is 50% intensity green
+     - *[0,0,127]* is 50% intensity blue 
+     - *[63,63,63]* is 25% intensity white (red + green + blue)
+     - *[63,63,0]* is 25% intensity yellow (red + green)
+     - *[0,63,63]* is 25% intensity cyan (green + blue)
+     - *[63,0,63]* is 25% intensity violet (red + blue)
+
+
+    To set the first LED in the *neopixel* array to 25% white, use *NeoPixel[0] = [63,63,63]*.
+
+.. function:: NeoPixel.write()
+
+    Write the bytes in *neopixel* buffer to a NeoPixel-like device on the given *pin* when the *neopixel* object was created.  
+    Interrupts will be disabled during the entire write to get accurate timing.
+    The physical NeoPixel LED string will then be lit in accordance with the pattern set in the *neopixel* object buffer.

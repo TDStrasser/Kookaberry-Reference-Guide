@@ -1,0 +1,38 @@
+Module CCS811
+=============
+
+This module provides the class and functions to use the CCS811 sensor chip which detects carbon dioxide (CO2) in parts per million (ppm) 
+and total volatile organic compounds (tVOC) in parts per billion (ppb). 
+
+The sensor is a digital metal oxide gas sensor which detects a wide range of volatile organic compounds. 
+The module starts the sensor in constant power mode, giving a new measurement every second.
+
+The module contains a class CCS811.CCS811 which provides four functions as shown.  
+The principal function is data_ready() which returns a value of True when the sensor data are ready in the variable eCO2 and tVOC. 
+Usage of the module is best achieved by following this example:
+
+.. python:: 
+
+  from CCS811 import CCS811
+  def main(): # define the function main()
+    from machine import SoftI2C # import the I2C class from machine
+    import time # import the time module
+    i2c = SoftI2C('P3') # set up an I2C serial interface object using connector ‘P3’
+    sensor = CCS811(i2c) # create a CCS811 object assigned to the variable ‘sensor’ using the I2C interface
+    time.sleep(1) # give the sensor time to initialise
+    while True: # run in this loop forever
+        if sensor.data_ready(): # when new data is ready
+            print('eCO2: %d ppm, TVOC: %d ppb' % (sensor.eCO2, sensor.tVOC)) # print CO2 and tVOC readings
+    main() # run the function
+
+The accuracy of the readings are affected by temperature and humidity, and can be improved by using the 
+put_envdata(humidity, temperature) function in conjunction with another sensor such as the bme280 or dht to provide the compensating data.  
+Humidity is relative humidity in %, and temperature is in degrees Centigrade.
+
+The put_baseline() and get_baseline() functions are used for external calibration of the sensor’s heating element, 
+which is normally automatically internally maintained.  Therefore there is not normally a need to use these functions.
+
+The datasheet for the CCS811 sensor and breakout board can be found here:  
+  - https://dfimg.dfrobot.com/nobody/wiki/7334c560756596ba0cf3f1d2102d19dd.pdf 
+  - https://wiki.dfrobot.com/Gravity:%20CCS811%20Air%20Quality%20Sensor%20SKU:%20SEN0318 
+
