@@ -70,6 +70,7 @@ The **Kookaberry**'s software includes modules for using functions that are uniq
     :caption: Kookaberry Specific Modules
 
     kooka.rst
+    machine.rst
     peripherals.rst
 
 
