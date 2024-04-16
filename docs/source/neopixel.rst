@@ -75,7 +75,10 @@ Constructors
 
     To set the first LED in the *neopixel* array to 25% white, use *NeoPixel[0] = [63,63,63]*.
 
-.. function:: NeoPixel.write()
+Methods
+-------
+
+.. method:: NeoPixel.write()
 
     Write the bytes in *neopixel* buffer to a NeoPixel-like device on the given *pin* when the *neopixel* object was created.  
     Interrupts will be disabled during the entire write to get accurate timing.

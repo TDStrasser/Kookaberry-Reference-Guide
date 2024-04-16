@@ -87,7 +87,6 @@ The Kookaberry's built-in software modules are described in the following sectio
     :caption: Built-in Peripheral Modules
 
     bme280.rst
-    ccs811.rst
     dht.rst
     ds18x20.rst
     ds3231.rst

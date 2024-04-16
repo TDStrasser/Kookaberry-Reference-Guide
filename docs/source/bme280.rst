@@ -1,0 +1,68 @@
+Class BME280
+============
+
+This module provides the interfaces to use the BME280 and BMP280 sensors.  These sensors
+The contents of the bme280 module are:
+ 
+The BME280 class in this module provides the principal functionality, and its contents are:
+
+Example usage::
+
+    from machine import SoftI2C, Pin
+    import BME280
+    i2c = SoftI2C(Pin(‘P3’))
+    sensor = bme280.BME280(i2c=i2c, mode=4, address=0x77)
+
+
+The arguments above are:
+•	I2c is an I2C interface object which has been created using machine.SoftI2C().
+•	mode is the setting for oversampling of the humidity value, and has the default value shown if omitted.
+•	address is the i2c address of the bme280 sensor, usually hexadecimal 0x77 (which is 119 decimal).
+
+
+The module presents the sensor readings as properties.
+
+Properties::
+
+    temperature, pressure, humidity = sensor.values
+
+Where:
+•	temperature: is the temperature in degrees Celsius.
+•	pressure: is the atmospheric pressure in hectoPascals.
+•	humidity: is the relative humidity in percent.
+
+Altitude::
+
+    altitude = sensor.altitude
+    
+The altitude is in metres and is calculated based on the value given to the property bme.sealevel (see below). 
+This value does not have to be the sea-level pressure, but any pressure you may select, for instance to measure altitude difference in general.
+
+Sea level may be both read and set::
+
+    sensor.sealevel = sealevel
+    sealevel = sensor.sealevel
+
+
+The default sealevel pressure is 1013.25 hPa, but you can use your local published pressure in hPa (look up QNH on your meteorological website),
+or set a local pressure to determine altitude difference.
+
+Dew Point::
+
+    dew_point = sensor.dew_point
+
+
+Provides the dew_point temperature (°C) calculated from the actual temperature and humidity.
+
+Sensor Type::
+
+    type = sensor.sensor
+
+
+Provides a sensor type as a string variable being one of ('BMP280','BME280','BME680', or 'unknown') depending on the sensor id
+in the relevant sensor hardware register.
+
+The datasheets for the sensor and breakout board can be found here:
+
+* https://wiki.dfrobot.com/Gravity__I2C_BME280_Environmental_Sensor__Temperature,_Humidity,_Barometer__SKU__SEN0236 
+* https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf 

@@ -25,6 +25,11 @@ Example usage::
             print('eCO2: %d ppm, TVOC: %d ppb' % (sensor.eCO2, sensor.tVOC)) # print CO2 and tVOC readings
     main() # run the function
 
+
+Constructors
+------------
+
+.. class::
 The accuracy of the readings are affected by temperature and humidity, and can be improved by using the 
 put_envdata(humidity, temperature) function in conjunction with another sensor such as the bme280 or dht to provide the compensating data.  
 Humidity is relative humidity in %, and temperature is in degrees Centigrade.
