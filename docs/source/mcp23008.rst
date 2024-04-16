@@ -1,0 +1,35 @@
+Module mcp23008
+The mcp23008 module enables the Kookaberry to use the MCP23008 I2C input/output expander chip.  This chip allows digital inputs and outputs to be used beyond those already provided for on the Kookaberry.  It is particularly useful for providing I2C serial control of external expander boards that have digital inputs and outputs.  Examples are keyboards, and digital sensing and control boards.
+The contents of the module are:
+ 
+To use the mcp23008 module, follow these programming examples:
+import mcp23008 # loads the mcp23008 module
+iomux = mcp23008.MCP23008() # creates an instance of the mcp23008 named iomux
+outbuf = bytearray(1) # creates a single byte buffer
+outbuf[0] = 0xF0 # initialises the buffer for controlling I/O direction
+# When a bit is set, the corresponding pin becomes an input. 
+# When a bit is clear, the corresponding pin becomes an output
+i2cmux.IODIR = outbuf # IODIR sets the input/output configuration of the I/O pins
+# The IPOL register allows the user to configure the polarity on the corresponding GPIO port bits.
+# If a bit is set, the corresponding GPIO register bit will reflect the inverted value on the pin.
+
+
+The datasheet for the MCP23008 I/O multiplexer ca be found at http://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf 
+
+
+Example Usage::
+
+
+
+Constructor
+-----------
+
+.. class:: 
+    
+
+Methods
+-------
+
+.. method:: 
+    
+

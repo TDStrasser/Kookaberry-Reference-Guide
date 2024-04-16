@@ -1,0 +1,20 @@
+Class MLX90614
+==============
+
+
+Example Usage::
+
+
+
+Constructor
+-----------
+
+.. class:: 
+    
+
+Methods
+-------
+
+.. method:: 
+    
+
