@@ -4,41 +4,80 @@
 Class DS18x20
 =============
 
-The DS18B20 sensor is a digital thermometer that communicates over a onewire serial interface.  These sensors have a range of -55 to +125 degrees Celsius with an accuracy of 0.5 degrees C for between -10 to +85 degrees C. Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to function on the same onewire bus. Using the ds18x20 module, it is simple to use the Kookaberry to use multiple DS18B20s to sense the temperatures at different points.  The DS18B20 comes in diverse packaging, including waterproof probes for sensing in liquids.
-The content of the ds18x20 module is:
- 
-To make use of the ds18x20 module, follow this programming example:
-from onewire import OneWire
-from umachine import Pin
-import time
-from ds18x20 import DS18X20
-sensor = DS18X20(OneWire(Pin('P4'))) # define the sensor object
-roms = sensor.scan() # discover all sensors on the onewire bus
-while True: # run in this loop forever
-    sensor.convert_temp() # initiate sensing for all sensors
-    time.sleep(1) # give the sensors time to get ready
-    for probe in roms: # read the sensors one at a time in turn
-        temperature = probe.read_temp(probe)
-        print('Probe: %s Temperature: %0.1f' % (probe,temperature))
+The DS18B20 sensor is a digital thermometer that communicates over a 1-wire serial interface.  
+These sensors have a range of -55 to +125 degrees Celsius with an accuracy of 0.5 degrees C for between -10 to +85 degrees C. 
 
+Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to function on the same 1-wire bus. 
+Using the ds18x20 module, it is simple to use the **Kookaberry** to use multiple DS18B20s to sense the temperatures at different points.  
+
+The DS18B20 comes in diverse packaging, including waterproof probes for sensing in liquids.
+ 
 The functions read_scratch() and write_scratch() are used internally by the module and are not usually used by external programs.
-The sensor datasheet is available here: https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf 
+The sensor data-sheet is available here: https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf 
 
 
 
 Example Usage::
 
+    from onewire import OneWire
+    from machine import Pin
+    import time
+    from ds18x20 import DS18X20
+
+    ow = OneWire(Pin("P4")) # Create the 1-wire interface object on Pin P4
+    # Create further 1-wire interfaces as needed on different Pins
+
+    sensor = DS18X20(ow) # define the first sensor object
+    # Create further DS18X20 objects as needed on the same or other 1-wire interfaces
+
+    roms = sensor.scan() # discover all sensors on the 1-wire bus
+
+    while True: # run in this loop forever
+        sensor.convert_temp() # initiate sensing for all sensors on the same 1-wire bus
+        time.sleep(1) # give the sensors time to get ready
+        for probe in roms: # read the sensors one at a time in turn
+            temperature = probe.read_temp(probe)
+            print('Probe: %s Temperature: %0.1f C' % (probe,temperature))
 
 
-Constructor
------------
+Constructors
+------------
 
-.. class:: 
+.. class:: ds18x20.DS18X20(ow)
+
+    Creates a sensor object.
+
+    *ow* is 1-wire bus created using the :ref:`onewire` object connected to a particular Pin.
     
 
 Methods
 -------
 
-.. method:: 
-    
+.. method:: DS18X20.scan()
 
+    Returns an array of DS18X20 sensors on the 1-wire bus.
+
+.. method:: DS18X20.convert_temp(rom=None)
+
+    Starts the temperature conversion on all sensors on the 1-wire bus, or on the identified sensor. 
+    
+    The parameter rom is one of the members of the array returned by *DS18X20.scan()*.
+    If rom is supplied, only this device will start conversion. Otherwise, all devices on the bus will be started.
+
+.. method:: DS18X20.read_temp(rom)
+
+    Returns the temperature in degrees Celsius from the specified sensor.
+
+    The parameter rom is one of the members of the array returned by *DS18X20.scan()*.
+
+
+    
+.. important:: 
+    
+    After power up and before a conversion cycle has been performed, the DS18x20 sensors will return the value 85°C. 
+    Since this is also a valid return value, the calling app must decide, whether it is a reasonable value in the given context.
+
+
+
+'scan', 'convert_temp', 'read_scratch', 'write_scratch', 
+'read_temp'
