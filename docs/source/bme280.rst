@@ -28,7 +28,9 @@ Example usage::
 Constructors
 ------------
 
-.. class::  bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
+.. class::  
+    
+    bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
 
     Creates a *BME280* sensor object.
 

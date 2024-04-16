@@ -47,7 +47,9 @@ Example usage::
 Constructors
 ------------
 
-.. class:: kooka.NeoPixel(pin, pixels_in_array)
+.. class:: 
+    
+   kooka.NeoPixel(pin, pixels_in_array)
 
    Creates a *neopixel* object.  
    
