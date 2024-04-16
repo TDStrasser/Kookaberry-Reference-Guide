@@ -5,3 +5,39 @@ Doomsday function
 =================
 
 The doomsday function is a utility function that converts a date to the day of the week.
+
+It is an implementation of John Conway's Doomsday algorithm.  See https://en.wikipedia.org/wiki/Doomsday_rule
+
+Example Code::
+    # To obtain and print the day of the week
+    from kooka import RTC
+    import doomsday
+
+    rtc = RTC() # Create a Kookaberry clock object
+
+    current_time = rtc.datetime() # Retrives the current datetime tuple (YYYY,MM,DD,WD,HH,MM,SS,SUBS)
+    day_of_week = doomsday.calc_dow(current_time[2], current_time[1], current_time[0]) # Returns a day string e.g. "Monday"
+    print("Today is ", day_of_week)
+
+
+Functions
+---------
+
+ .. method:: doomsday.calc_dow(day,  month,  year)
+
+    Returns a character string representing the day of the week given a date. 
+    One of (``Sunday``,``Monday``, ``Tuesday``, ``Wednesday``, ``Thursday``, ``Friday``, ``Saturday``)
+
+    - *day* is an integer representing the day of the month
+    - *month* is an integer (1 to 12 inclusive) representing the calendar month
+    - *year* is an integer representing the calendar year
+
+.. method:: doomsday.dow_index(day,  month,  year)
+
+    Returns an integer representing the day of the week given a date. 
+    One of ``0`` to ``7`` inclusive corresponding to (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)
+
+    - *day* is an integer representing the day of the month
+    - *month* is an integer (1 to 12 inclusive) representing the calendar month
+    - *year* is an integer representing the calendar year
+
