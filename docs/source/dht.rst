@@ -50,6 +50,8 @@ Constructor
 
 .. class:: dht.DHT22(pin)
 
+    Creates the DHT11/22 sensor object.
+    
     The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :ref:`machine.I2C` object representing the pin on the connector.    
 
 Methods
