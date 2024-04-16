@@ -20,12 +20,12 @@ Contents
 .. toctree::
   :caption: Contents
 
-   kookaberry.rst
-   safety.rst
-   using.rst
-   software.rst
-   peripherals.rst
-   glossary.rst
+  kookaberry.rst
+  safety.rst
+  using.rst
+  software.rst
+  peripherals.rst
+  glossary.rst
 
    
 
