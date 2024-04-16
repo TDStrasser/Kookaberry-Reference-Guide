@@ -9,6 +9,7 @@ Power-up
 The simplest way to power-up the **Kookaberry** is to connect its USB connector to a charged USB battery.
 
 .. _powerup:
+
 .. figure:: images/power-connect-usb.png
    :scale: 40%
    :align: center
@@ -37,6 +38,7 @@ The **Kookaberry** has an in-built menu for running scripts that are stored in t
 Follow the procedure in the infographic below.
 
 .. _startup:
+
 .. figure:: images/startup-infographic.png
    :scale: 40%
    :align: center
@@ -58,7 +60,8 @@ Launch **KookaBlockly** or **KookaIDE** and write your script, or load a script 
 
 Click on the Run button in the **KookaSuite** tool to transfer the program to the Kookaberry and run it.
 
-.. coding:
+.. _coding:
+
 .. figure:: images/coding-infographic.png
    :scale: 40%
    :align: center

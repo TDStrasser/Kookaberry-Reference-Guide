@@ -26,6 +26,7 @@ Physical Arrangement
 The physical arrangement of the Kookaberry is shown below.
 
 .. _kberrylayout:
+
 .. figure:: images/kberry-layout.png
    :scale: 40%
    :align: center
