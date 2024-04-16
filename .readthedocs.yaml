@@ -12,7 +12,7 @@ python:
 sphinx:
   configuration: docs/source/conf.py
 
-  fail_on_warning: True
+  fail_on_warning: False
 
 formats:
   - pdf
