@@ -34,8 +34,8 @@ and is intended to demystify the vocabulary often used in association with compu
       See also: https://en.wikipedia.org/wiki/Light-emitting_diode
 
     GPIO
-      General Purpose Input and Output - the electrical signals to and from a microcomputer are connected by these, 
-      and are referred to as :doc:`pins` by **KookaBlockly**. See also https://en.wikipedia.org/wiki/General-purpose_input/output
+      General Purpose Input and Output - the electrical signals to and from a microcomputer are connected by these. 
+      See also https://en.wikipedia.org/wiki/General-purpose_input/output
  
     USB
       Universal Serial Bus - a communications and power connection used by the **Kookaberry** to communicate with the programming personal computer,

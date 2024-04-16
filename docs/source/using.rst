@@ -6,7 +6,7 @@ Using the **Kookaberry** is relatively simple and as described below.
 Power-up
 --------
 
-The simplest way to power-up the **Kookaberry** is to connect its USB connector to a charged USB battery, as in ::numref:`powerup`.
+The simplest way to power-up the **Kookaberry** is to connect its USB connector to a charged USB battery.
 
 .. _powerup:
 .. figure:: images/power-connect-usb.png

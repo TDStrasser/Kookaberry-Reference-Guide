@@ -23,7 +23,7 @@ On-board sensors and buttons allow the development of simple educational games a
 Physical Arrangement
 --------------------
 
-The physical arrangement of the Kookaberry is shown in :numref:`kberrylayout`.
+The physical arrangement of the Kookaberry is shown below.
 
 .. _kberrylayout:
 .. figure:: images/kberry-layout.png

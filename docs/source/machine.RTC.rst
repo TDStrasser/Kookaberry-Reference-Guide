@@ -1,15 +1,14 @@
-.. currentmodule:: pyb
-.. _pyb.RTC:
+.. currentmodule:: machine
+.. _machine.RTC:
 
 class RTC -- real time clock
 ============================
 
-The RTC is and independent clock that keeps track of the date
-and time.
+The RTC is an independent clock that keeps track of the date and time.
 
 Example usage::
 
-    rtc = pyb.RTC()
+    rtc = machine.RTC()
     rtc.datetime((2014, 5, 1, 4, 13, 0, 0, 0))
     print(rtc.datetime())
 
@@ -17,7 +16,7 @@ Example usage::
 Constructors
 ------------
 
-.. class:: pyb.RTC()
+.. class:: machine.RTC()
 
    Create an RTC object.
 
