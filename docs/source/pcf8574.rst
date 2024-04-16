@@ -1,4 +1,7 @@
-Class pcf8574
+.. currentmodule:: pcf8574
+.. _pcf8574:
+
+Class PCF8574
 =============
 
 

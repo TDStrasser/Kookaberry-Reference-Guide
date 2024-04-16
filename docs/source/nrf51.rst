@@ -1,6 +1,7 @@
 *******************************************************
 :mod:`nrf51` --- interface to the nRF51 BLE coprocessor
 *******************************************************
+.. _nrf51:
 
 .. module:: nrf51
    :synopsis: interface to the nRF51 BLE coprocessor

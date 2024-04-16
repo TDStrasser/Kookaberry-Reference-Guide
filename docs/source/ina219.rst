@@ -1,3 +1,6 @@
+.. currentmodule:: ina219
+.. _ina219:
+
 Class INA219
 ============
 

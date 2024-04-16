@@ -1,3 +1,6 @@
+.. currentmodule:: neopixel
+.. _neopixel:
+
 Class NeoPixel
 ==============
 

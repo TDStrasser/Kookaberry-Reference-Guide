@@ -1,4 +1,7 @@
-Class veml7700
+.. currentmodule:: veml7700
+.. _veml7700:
+
+Class VEML7700
 ==============
 
 

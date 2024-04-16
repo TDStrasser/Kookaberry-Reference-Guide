@@ -1,4 +1,9 @@
-Module mcp23008
+.. currentmodule:: mcp23008
+.. _mcp23008:
+
+Class MCP23008
+==============
+
 The mcp23008 module enables the Kookaberry to use the MCP23008 I2C input/output expander chip.  This chip allows digital inputs and outputs to be used beyond those already provided for on the Kookaberry.  It is particularly useful for providing I2C serial control of external expander boards that have digital inputs and outputs.  Examples are keyboards, and digital sensing and control boards.
 The contents of the module are:
  

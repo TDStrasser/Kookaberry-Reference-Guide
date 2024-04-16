@@ -1,5 +1,5 @@
-.. currentmodule:: pyb
-.. _pyb.ADC:
+.. currentmodule:: machine
+.. _machine.ADC:
 
 class ADC -- analog to digital conversion
 =========================================

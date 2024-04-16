@@ -1,5 +1,5 @@
-.. currentmodule:: pyb
-.. _pyb.DAC:
+.. currentmodule:: machine
+.. _machine.DAC:
 
 class DAC -- digital to analog conversion
 =========================================

@@ -1,3 +1,7 @@
+.. currentmodule:: bme280
+.. _bme280:
+
+
 Class BME280
 ============
 

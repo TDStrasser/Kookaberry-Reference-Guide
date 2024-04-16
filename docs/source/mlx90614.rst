@@ -1,3 +1,6 @@
+.. currentmodule:: mlx90614
+.. _mlx90614:
+
 Class MLX90614
 ==============
 

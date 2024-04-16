@@ -1,3 +1,6 @@
+.. currentmodule:: onewire
+.. _onewire:
+
 Class onewire
 =============
 

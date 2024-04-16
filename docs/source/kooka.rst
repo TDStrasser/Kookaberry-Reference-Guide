@@ -1,6 +1,7 @@
 **********************************************************
 :mod:`kooka` --- access to Kookaberry specific peripherals
 **********************************************************
+.. _kooka:
 
 .. module:: kooka
    :synopsis: access to Kookaberry specific peripherals

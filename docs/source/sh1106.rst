@@ -1,6 +1,7 @@
 **************************************************
 :mod:`sh1106` --- control of SH1106 based displays
 **************************************************
+.. _sh1106:
 
 .. module:: sh1106
    :synopsis: control of SH1106 based displays

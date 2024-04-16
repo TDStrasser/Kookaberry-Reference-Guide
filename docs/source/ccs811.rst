@@ -1,3 +1,7 @@
+.. currentmodule:: ccs811
+.. _ccs811:
+
+
 Class CCS811
 =============
 

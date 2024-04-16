@@ -1,4 +1,9 @@
-Module ds18x20
+.. currentmodule:: ds18x20
+.. _ds18x20:
+
+Class DS18x20
+=============
+
 The DS18B20 sensor is a digital thermometer that communicates over a onewire serial interface.  These sensors have a range of -55 to +125 degrees Celsius with an accuracy of 0.5 degrees C for between -10 to +85 degrees C. Each DS18B20 has a unique 64-bit serial code, which allows multiple DS18B20s to function on the same onewire bus. Using the ds18x20 module, it is simple to use the Kookaberry to use multiple DS18B20s to sense the temperatures at different points.  The DS18B20 comes in diverse packaging, including waterproof probes for sensing in liquids.
 The content of the ds18x20 module is:
  

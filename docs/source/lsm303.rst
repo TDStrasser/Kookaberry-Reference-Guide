@@ -1,6 +1,7 @@
 ***************************************************************
 :mod:`lsm303` --- control of LSM303C accelerometer/magnetometer
 ***************************************************************
+.. _lsm303:
 
 .. module:: lsm303
    :synopsis: control of LSM303C accelerometer/magnetometer
