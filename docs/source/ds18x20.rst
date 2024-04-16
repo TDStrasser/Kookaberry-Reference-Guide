@@ -12,7 +12,6 @@ Using the ds18x20 module, it is simple to use the **Kookaberry** to use multiple
 
 The DS18B20 comes in diverse packaging, including waterproof probes for sensing in liquids.
  
-The functions read_scratch() and write_scratch() are used internally by the module and are not usually used by external programs.
 The sensor data-sheet is available here: https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf 
 
 
@@ -78,6 +77,18 @@ Methods
     Since this is also a valid return value, the calling app must decide, whether it is a reasonable value in the given context.
 
 
+.. method:: read_scratch(rom)
 
-'scan', 'convert_temp', 'read_scratch', 'write_scratch', 
-'read_temp'
+    Reads the scratchpad memory of the addressed device. 9 bytes of data will be returned.  See the DS18B20 data-sheet to interpret the results.
+    This method is useful for diagnosis of sensors but is not usually used otherwise.
+
+    The parameter rom is one of the members of the array returned by *DS18X20.scan()*.
+
+.. method:: write_scratch(rom, data)
+
+    Writes to the scratchpad of the addressed device. 
+
+    The parameter rom is one of the members of the array returned by *DS18X20.scan()*.
+    
+    Data shall be three bytes. The first two bytes are the high and low alarm temperatures. 
+    The third by is the configuration. See the DS18B20 data-sheet for details.
