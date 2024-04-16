@@ -8,7 +8,8 @@ The doomsday function is a utility function that converts a date to the day of t
 
 It is an implementation of John Conway's Doomsday algorithm.  See https://en.wikipedia.org/wiki/Doomsday_rule
 
-Example Code::
+Example Usage::
+    
     # To obtain and print the day of the week
     from kooka import RTC
     import doomsday
