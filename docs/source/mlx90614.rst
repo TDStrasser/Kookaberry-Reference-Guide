@@ -12,12 +12,12 @@ Example Usage::
 Constructor
 -----------
 
-.. class:: 
+.. class:: mlx90614.MLX90614()
     
 
 Methods
 -------
 
-.. method:: 
+.. method:: MLX90614.method()
     
 

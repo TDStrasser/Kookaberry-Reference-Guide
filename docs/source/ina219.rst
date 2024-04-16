@@ -12,12 +12,12 @@ Example Usage::
 Constructor
 -----------
 
-.. class:: 
+.. class:: ina219.INA219()
     
 
 Methods
 -------
 
-.. method:: 
+.. method:: INA219.method()
     
 

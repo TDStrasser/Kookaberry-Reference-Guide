@@ -41,8 +41,7 @@ User Interface
 --------------
 
 The following features provide information and control for the user of the Kookaberry:
-1.	Display – located on the front, the display is monochrome with cyan (light-blue) pixels. 
-    It is capable of displaying text and simple line and dot graphics.  The dimensions of the display are 128 pixels wide by 64 pixels high.
+1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  The dimensions of the display are 128 pixels wide by 64 pixels high.
 2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
 3.	LEDs – there are three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
 4.	Reset Button – is located on the rear-top of the Kookaberry.  It is used to reset the Kookaberry back to its initial start-up conditions, 

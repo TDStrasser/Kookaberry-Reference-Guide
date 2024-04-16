@@ -13,12 +13,12 @@ Example Usage::
 Constructor
 -----------
 
-.. class:: 
+.. class:: pcf8574.PCF8574()
     
 
 Methods
 -------
 
-.. method:: 
+.. method:: PCF8574.method()
     
 

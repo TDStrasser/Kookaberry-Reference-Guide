@@ -12,12 +12,12 @@ Example Usage::
 Constructor
 -----------
 
-.. class:: 
+.. class:: veml7700.VEML7700(i2c)
     
 
 Methods
 -------
 
-.. method:: 
+.. method:: VEML7700.method()
     
 

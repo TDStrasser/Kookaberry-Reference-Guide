@@ -12,12 +12,12 @@ Example Usage::
 Constructor
 -----------
 
-.. class:: 
+.. class:: onewire.OneWire(pin)
     
 
 Methods
 -------
 
-.. method:: 
+.. method:: OneWire.method()
     
 
