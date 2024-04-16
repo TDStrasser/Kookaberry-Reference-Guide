@@ -1,98 +1,212 @@
-Module ds3231
-The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated temperature-compensated crystal oscillator (TCXO) and crystal. The device incorporates a battery input and maintains accurate timekeeping when main power to the device is interrupted. 
-The RTC maintains seconds, minutes, hours, day, date, month, and year information. The date at the end of the month is automatically adjusted for months with fewer than 31 days, including corrections for leap year. The clock operates in either the 24-hour or 12-hour format with an AM/PM indicator. Two programmable time-of-day alarms and a programmable square-wave output are provided. Address and data are transferred serially through an I2C bidirectional bus.
-The ds3231 module allows the Kookaberry to use this RTC as a stable time source.
-The module contents are:
+.. currentmodule:: ds3231
+.. _ds3231:
+
+Class DS3231
+============
+
+The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated temperature-compensated crystal oscillator (TCXO) and crystal. 
+
+The device incorporates a battery input and maintains accurate timekeeping when main power to the device is interrupted. 
+
+The RTC maintains seconds, minutes, hours, day, date, month, and year information. 
+The date at the end of the month is automatically adjusted for months with fewer than 31 days, including corrections for leap year. 
+
+The clock operates in either the 24-hour or 12-hour format with an AM/PM indicator. 
+
+Two programmable time-of-day alarms and a programmable square-wave output are provided. 
+
+Address and data are transferred serially through an I2C bidirectional bus.
+
+The DS3231 class allows the Kookaberry to use this RTC as a stable time source.
  
 The ds3231.DS3231 class, above, provides basic functionality for setting and retrieving the RTC date and time.
 To use the ds3231 module, follow these programming examples:
-# Read and print the DS3231 date and time
-from ds3231 import DS3231
-from umachine import I2C
-i2c = I2C('P3')
-rtc = DS3231(i2c)
-print(‘The RTC time is’, rtc.datetime())
 
-# Transfer the time to/from the DS3231 to the Kookaberry’s RTC
-from ds3231 import DS3231
-from umachine import I2C, RTC
-i2c = I2C('P3')
-kooka_rtc = RTC()
-rtc = DS3231(i2c)
-kooka_rtc.datetime(rtc.datetime()) # adjust the Kookaberry’s RTC
-# or
-rtc.datetime(kooka_rtc.datetime()) # set the DS3231 from the Kookaberry’s RTC
+Example Code::
 
-In the default module configuration, the function datetime() returns or can be set as an integer time tuple  of the format [YYYY,MM,DD,WD,HH,MM,SS,SUBS] where:
-•	YYYY is the integer year, e.g. 2022.
-•	MM is the integer month,  01 to 12 inclusive
-•	DD is the day of the month, 01 to 31 inclusive, depending on the days in the month
-•	WD is the integer day of the week from 0 to 6 inclusive, but will only be correct if it has previously been correctly set.  The DS3231 does not set WD automatically.  Use the doomsday module to correctly compute the day from the date, e.g. WD = doomsday.dow_index(DD,MM,YYYY)
-•	HH is the hour from 0 to 23 inclusive
-•	MM is the minute from 00 to 59 inclusive
-•	SS is the second from 00 to 59 inclusive
-Both the DS3231 and the Kookaberry’s internal RTC share the same datetime() tuple format, making setting of one by the other very simple.
-To judge whether the DS3231’s time is invalid, check the Oscillator Stop Flag (OSF) by using the OSF() function. If the battery power has been recently removed from the DS3231, the OSF will be set and the OSF() function will return True.
-if rtc.OSF():
-    rtc.datetime(kooka_rtc.datetime()) # set the DS3231 dae and time
+    # Read and print the DS3231 date and time
+    from ds3231 import DS3231
+    from machine import SoftI2C, Pin
 
-Setting the DS3231 time automatically clears the OSF using the OSF_reset() function.
-The extended DS3231_EXT class provides functions for handling the DS3231s square wave output, and for setting hardware-driven alarms:
- 
-To set the square wave (SQW) output from the DS3231 hardware module, use the square_wave(freq=None) function.  The argument freq, which defaults to None if not specified, can be set to:
-•	None, False or 0 = disable the SQW output,
-•	1 = 1 Hz,
-•	2 = 1.024 kHz,
-•	3 = 4.096 kHz,
-•	4 = 8.192 kHz
-To set up the SQW output, use the following program example:
-# Generates a 1Hz square wave on the DS3231 SQW output pin
-from ds3231 import DS3231_EXT
-from umachine import I2C
-i2c = I2C('P3')
-rtc = DS3231_EXT(i2c)
-rtc.square_wave(freq=1)
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B'))  # Creates the I2C bus on P3
 
-Note: in the examples, the rtc. prefix indicates the name given to the DS3231_EXT object by the calling program.
-The DS3231 chip also has a separate 32kHz square wave output pin that can be enabled or disabled:
-rtc.output_32kHz(enable=True) or rtc.output_32kHz(True) enables the output.
-rtc.output_32kHz(enable=False) or rtc.output_32kHz(False) disables the output.
-The DS3231 has two hardware alarms which may be controlled using the relevant functions in the DS3231_EXT class.
-To set alarm 1: 
-rtc.alarm1(time=None, match=AL1_MATCH_DHMS, int_en=True, weekday=False)
-Where:
-•	time: is an integer tuple, (second,[ minute[, hour[, day]]])
-•	weekday: is a Boolean indicating the meaning of day, select day of month (False) or weekday (True)
-•	match: is an integer, being:
-o	rtc.AL1_EVERY_S    	= const(15) - Alarm every second
-o	rtc.AL1_MATCH_S     	= const(14) - Alarm when seconds match (every minute)
-o	rtc.AL1_MATCH_MS    	= const(12) - Alarm when minutes, seconds match (every hour)
-o	rtc.AL1_MATCH_HMS   	= const(8) - Alarm when hours, minutes, seconds match (every day)
-o	rtc.AL1_MATCH_DHMS	= const(0) - Alarm when month-day|weekday, hour, min, sec match (specific weekday / month-day) (once per month/week)
-•	int_en: is a Boolean, if True enables the  interrupt on alarm match on the SQW/INT pin (and disables the SQW output)
-•	returns: the contents of the alarm control register
-To set alarm 2: 
-rtc.alarm2(time=None, match=AL2_MATCH_DHM, int_en=True, weekday=False)
-Where:
-•	time: is an integer tuple, (minute[, hour[, day]]])
-•	weekday: is a Boolean indicating the meaning of day, select day of month (False) or weekday (True)
-•	match: is an integer, being:
-o	rtc.AL2_EVERY_M     	= const(7) - Alarm every minute on 00 seconds
-o	rtc.AL2_MATCH_M     	= const(6) - Alarm when minutes match (every hour)
-o	rtc.AL2_MATCH_HM    	= const(4) - Alarm when hours and minutes match (every day)
-o	rtc.AL2_MATCH_DHM   	= const(0) - Alarm when month-day|weekday match (once per month/week)
-•	int_en: is a Boolean, if True enables the  interrupt on alarm match on the SQW/INT pin (and disables the SQW output)
-•	returns: the contents of the alarm control register
-To separately set the alarm interrupt for one or both alarms:
-rtc.alarm_int(enable=True, alarm=0)
-Where:
-•	Enabling the interrupts disables the SQW output
-•	enable: boolean, enables/disables interrupts
-•	alarm: integer, alarm number (1, 2, or 0 to set both interrupts)
-•	returns: the contents of the alarm control register
-To check whether an alarm has expired or not and reset the alarm flag:
-rtc.check_alarm(alarm)
-Where alarm is an integer being the alarm number 1 or 2
-To check whether the DS3231 chip is busy executing TCXO (temperature controlled crystal oscillator) functions. This will return True when the conversion signal to the temperature sensor is asserted and then is cleared when the device is in the 1-minute idle state.
-rtc._is_busy()
-The ds3231 datasheet describes the chip in detail and is at this link: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf 
+    rtc = DS3231(i2c) # Creates a DS3231 RTC object
+
+    print(‘The RTC time is’, rtc.datetime()) # Prints the DS3231 date and time
+
+Example Code::
+
+    # Transfer the time to/from the DS3231 to the Kookaberry’s RTC
+    from ds3231 import DS3231
+    from machine import SoftI2C, RTC
+
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B'))  # Creates the I2C bus on P3
+
+    kooka_rtc = RTC() # Creates an object for the Kookaberry's internal Real Time Clock
+    rtc = DS3231(i2c) # Creates a DS3231 RTC object
+
+    kooka_rtc.datetime(rtc.datetime()) # transfer the DS3231 time to the Kookaberry’s RTC
+    # or
+    rtc.datetime(kooka_rtc.datetime()) # set the DS3231 from the Kookaberry’s RTC
+
+
+Constructors
+------------
+
+.. class:: ds3231.DS3231(i2c=i2c)
+
+    Creates a *DS3231* real-time-clock (RTC) object.
+
+    i2c is an I2C interface object which has been created using machine.SoftI2C().
+
+
+Methods
+-------
+
+.. method:: DS3231.datetime(datetime_tuple)
+
+    Both the DS3231 and the Kookaberry’s internal RTC share the same datetime() tuple format, making setting of one by the other very simple.
+
+    In the default module configuration, the function datetime() returns or can be set as an integer time tuple 
+    of the format [YYYY,MM,DD,WD,HH,MM,SS,SUBS] where:
+
+    - YYYY is the integer year, e.g. 2022
+    - MM is the integer month,  01 to 12 inclusive
+    - DD is the day of the month, 01 to 31 inclusive, depending on the days in the month
+    - WD is the integer day of the week from 0 to 6 inclusive, but will only be correct if it has previously been correctly set.  
+    - HH is the hour from 0 to 23 inclusive
+    - MM is the minute from 00 to 59 inclusive
+    - SS is the second from 00 to 59 inclusive
+
+    If datetime_tuple is not given, the DS3231's datetime_tuple is returned.
+
+    If datetime_tuple is given, the DS3231's clock will be set according to the given datetime_tuple.
+
+.. important:: 
+
+    The DS3231 does not set WD automatically.  
+    Use the :ref:'doomsday' to correctly compute the day from the date, e.g. WD = doomsday.dow_index(DD,MM,YYYY)
+
+.. method:: DS3231.OSF()
+
+    Returns the state ``True`` or ``False`` of the DS3231's Oscillator Stop Flag.
+    If the battery power has been recently removed from the DS3231, the OSF will be set and the OSF() function will return True.
+
+    Use this to judge whether the battery power has been recently removed from the DS3231 and consequently that its time is not accurate.
+
+    
+.. method:: DS3231.OSF_reset()
+
+    Clears the DS3231's Oscillator Stop Flag.
+    
+    Setting the DS3231 time automatically clears the OSF using the OSF_reset() function.
+
+Class DS3231_EXT
+================
+
+The extended DS3231_EXT class provides functions for handling the DS3231s square wave output, and for setting hardware-driven alarms.
+
+Example Code::
+
+    # Generates a 1Hz square wave on the DS3231 SQW output pin
+    from ds3231 import DS3231_EXT
+    from machine import SoftI2C
+
+    i2c = i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B'))  # Creates the I2C bus on P3
+
+    rtc = DS3231_EXT(i2c) # Creates the extended DS3231 object
+
+    rtc.square_wave(freq=1) # Generate a 1 Hz square wave on the DS3231 output pin
+
+
+ Constructors
+ ------------
+
+.. class:: ds3231.DS3231_EXT(i2c=i2c)
+
+    Creates a *DS3231_EXT* extended real-time-clock (RTC) object.
+
+    i2c is an I2C interface object which has been created using machine.SoftI2C().
+
+
+Methods
+-------
+
+.. method:: DS3231_EXT.square_wave(freq=None)
+
+    Sets a square wave (SQW) output from the DS3231 hardware module.  
+    
+    The argument freq, which defaults to None if not specified, can be set to:
+
+    - ``None``, ``False`` or ``0`` to disable the SQW output
+    - ``1`` = 1 Hz
+    - ``2`` = 1.024 kHz
+    - ``3`` = 4.096 kHz
+    - ``4`` = 8.192 kHz
+
+
+.. method:: DS3231_EXT.output_32kHz(enable)
+    
+    The DS3231 chip also has a separate 32kHz square wave output pin that can be enabled or disabled by setting the enable value 
+    to ``True`` or ``False`` respectively.
+
+    
+.. method:: DS3231_EXT.alarm1(time=None, match=AL1_MATCH_DHMS, int_en=True, weekday=False)
+
+    The DS3231 has two hardware alarms which may be controlled. This method is for Alarm 1.
+
+    - time: is an integer tuple, (second,[ minute[, hour[, day]]])
+    - weekday: is a Boolean indicating the meaning of day, select day of month (``False``) or weekday (``True``)
+    - match: is an integer, being:
+        
+        * rtc.AL1_EVERY_S = const(15) - Alarm every second
+        * rtc.AL1_MATCH_S = const(14) - Alarm when seconds match (every minute)
+        * rtc.AL1_MATCH_MS = const(12) - Alarm when minutes, seconds match (every hour)
+        * rtc.AL1_MATCH_HMS = const(8) - Alarm when hours, minutes, seconds match (every day)
+        * rtc.AL1_MATCH_DHMS	= const(0) - Alarm when month-day|weekday, hour, min, sec match (specific weekday / month-day) (once per month/week)
+
+    - int_en: is a Boolean, if ``True`` enables the  interrupt on alarm match on the SQW/INT pin (and disables the SQW output)
+
+    The method returns the contents of the alarm control register
+
+.. method:: DS3231_EXT.alarm2(time=None, match=AL2_MATCH_DHM, int_en=True, weekday=False)
+
+    The DS3231 has two hardware alarms which may be controlled. This method is for Alarm 2.
+
+    - time: is an integer tuple, (minute[, hour[, day]]])
+    - weekday: is a Boolean indicating the meaning of day, select day of month (``False``) or weekday (``True``)
+    - match: is an integer, being:
+        * rtc.AL2_EVERY_M     	= const(7) - Alarm every minute on 00 seconds
+        * rtc.AL2_MATCH_M     	= const(6) - Alarm when minutes match (every hour)
+        * rtc.AL2_MATCH_HM    	= const(4) - Alarm when hours and minutes match (every day)
+        * rtc.AL2_MATCH_DHM   	= const(0) - Alarm when month-day|weekday match (once per month/week)
+
+    - int_en: is a Boolean, if True enables the  interrupt on alarm match on the SQW/INT pin (and disables the SQW output)
+
+    The method returns the contents of the alarm control register.
+
+.. method:: DS3231_EXT.alarm_int(enable=True, alarm=0)
+
+    Separately sets the alarm interrupt for one or both alarms.
+
+    - Enabling the interrupts disables the SQW output
+    - enable: a boolean which enables (``True``) or disables (``False``) the interrupts
+    - alarm: an integer, alarm number (``1``, ``2``, or ``0`` to set both interrupts)
+
+    The method returns the contents of the alarm control register
+
+.. method:: DS3231_EXT.check_alarm(alarm)
+
+    Checks whether an alarm has expired or not and resets the alarm flag.
+
+    - alarm is an integer being the alarm number ``1`` or ``2``
+
+
+.. method:: DS3231_EXT._is_busy()
+
+    Checks whether the DS3231 chip is busy executing TCXO (temperature controlled crystal oscillator) functions. 
+    
+    The method returns ``True`` when the conversion signal to the temperature sensor is asserted and then will be cleared 
+    when the device is in the 1-minute idle state.
+
+The ds3231 data-sheet describes the chip in detail and is at this link: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf 
