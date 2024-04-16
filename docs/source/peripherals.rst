@@ -16,6 +16,7 @@ The Kookaberry's built-in software modules are described in the following sectio
     dht.rst
     ds18x20.rst
     ds3231.rst
+    doomsday.rst
     ina219.rst
     lsm303.rst
     mcp23008.rst

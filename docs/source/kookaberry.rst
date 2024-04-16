@@ -45,25 +45,25 @@ The following features provide information and control for the user of the Kooka
 2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
 3.	LEDs – there are three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
 4.	Reset Button – is located on the rear-top of the Kookaberry.  It is used to reset the Kookaberry back to its initial start-up conditions, 
-    and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
-    The power must be switched off and switched on again to accomplish a full hardware and software reset.
+and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
+The power must be switched off and switched on again to accomplish a full hardware and software reset.
 
 Connectors
 ----------
 
 The Kookaberry has eight connectors:
 1.	Battery Connector – the battery box plugs in here.  
-    Battery boxes usually have a power switch and take three or four 1.5-volt AAA or AA batteries.  
-    As an alternative a USB power pack can be used with the appropriate USB to JST cable.  
-    It is also possible to connect a 9 Volt battery with an appropriate connecting lead.
+Battery boxes usually have a power switch and take three or four 1.5-volt AAA or AA batteries. 
+As an alternative a USB power pack can be used with the appropriate USB to JST cable.  
+It is also possible to connect a 9 Volt battery with an appropriate connecting lead.
 
 .. important:: 
     The total battery supply voltage should not exceed 12.00 Volts into the Battery Connector or damage to the Kookaberry may result.
 
 
 2.	Micro USB Connector – this plug accepts USB leads that plug into a computer.  
-    The USB connector provides access by the computer to the Kookaberry’s program memory, and it appears to the computer as a USB memory stick.  
-    The Kookaberry will also accept power from this connector. 
+The USB connector provides access by the computer to the Kookaberry’s program memory, and it appears to the computer as a USB memory stick.  
+The Kookaberry will also accept power from this connector. 
 
 .. important:: 
     Always dismount the Kookaberry from the computer’s drives or else corruption of the Kookaberry’s program storage memory could result 
@@ -73,10 +73,10 @@ The Kookaberry has eight connectors:
     Also, operation of the Kookaberry may be adversely affected if the USB supplied voltage is less than 4.7 volts.
 
 
-3.	Connectors P1 to P5 – these connectors are used for accessories such as sensors and for outputs.  
-    The function of each connector is controlled by Kookaberry scripts.
+3.	Connectors P1 to P5 – these connectors are used for accessories such as sensors and for outputs. 
+The function of each connector is controlled by Kookaberry scripts.
 4.	Edge Connector – located at the bottom of the Kookaberry board, it plugs into a mating connector on an expansion board 
-    and makes all of the Kookaberry’s connections available depending on the capabilities of the expansion board.
+and makes all of the Kookaberry’s connections available depending on the capabilities of the expansion board.
 
 
 On-board Facilities

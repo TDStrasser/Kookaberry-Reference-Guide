@@ -29,11 +29,15 @@ Example Usage::
 Constructor
 -----------
 
+
+
 .. class:: mcp23008.MCP23008()
     
 
 Methods
 -------
+
+
 
 .. method:: MCP23008.method()
     
