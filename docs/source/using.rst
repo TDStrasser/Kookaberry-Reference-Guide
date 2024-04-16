@@ -11,7 +11,7 @@ The simplest way to power-up the **Kookaberry** is to connect its USB connector 
 .. _powerup:
 
 .. figure:: images/power-connect-usb.png
-   :scale: 40%
+   :width: 80%
    :align: center
 
    Connecting a USB battery
@@ -40,7 +40,7 @@ Follow the procedure in the infographic below.
 .. _startup:
 
 .. figure:: images/startup-infographic.png
-   :scale: 40%
+   :width: 80%
    :align: center
 
    Starting the Kookaberry's inbuilt menu
@@ -63,7 +63,7 @@ Click on the Run button in the **KookaSuite** tool to transfer the program to th
 .. _coding:
 
 .. figure:: images/coding-infographic.png
-   :scale: 40%
+   :width: 80%
    :align: center
 
    Coding the Kookaberry
