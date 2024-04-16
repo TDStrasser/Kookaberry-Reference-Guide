@@ -28,9 +28,7 @@ Example usage::
 Constructors
 ------------
 
-.. class::  
-    
-    bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
+.. class:: bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
 
     Creates a *BME280* sensor object.
 
@@ -58,9 +56,10 @@ Values::
     temperature, pressure, humidity = sensor.values
 
 Where:
-•	temperature: is the temperature in degrees Celsius.
-•	pressure: is the atmospheric pressure in hectoPascals.
-•	humidity: is the relative humidity in percent.
+
+  -	temperature: is the temperature in degrees Celsius.
+  -	pressure: is the atmospheric pressure in hectoPascals.
+  -	humidity: is the relative humidity in percent.
 
 Altitude::
 
