@@ -41,7 +41,7 @@ Example Usage::
       dht.humidity() # returns the relative humidity as a percentage
       
       # Then add code to do something with the measurements, e.g.
-      print(temperature, humidity)
+      print(temperature, "C", humidity, "%")
       # Then sleep for 1 second to allow the DHT to tae the next reading
       time.sleep(1)
 

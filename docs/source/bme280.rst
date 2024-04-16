@@ -25,9 +25,13 @@ Example usage::
         temperature = sensor.values[0] # obtain the sensor readings
         pressure = sensor.values[1]
         humidity = sensor.values[2]
-        time.sleep(2) # wait for the sensor to take another reading
 
-        # add code to do something with the readings
+        # add code to do something with the readings, e.g.
+        print(temperature, "C ", pressure, "hPa ", humidity, "%")
+
+        # Then sleep for 1 second to allow the DHT to tae the next reading
+        time.sleep(2)
+
 
 Constructors
 ------------
