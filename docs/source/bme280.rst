@@ -1,28 +1,57 @@
 Class BME280
 ============
 
-This module provides the interfaces to use the BME280 and BMP280 sensors.  These sensors
-The contents of the bme280 module are:
- 
-The BME280 class in this module provides the principal functionality, and its contents are:
+This module provides the interfaces to use the BME280 and BMP280 sensors.  These sensors provide a range of atmospheric measurements, being:
+
+* atmospheric temperature
+* atmospheric pressure
+* relative humidity (not the BMP280)
+
+The BME280 class in this module provides the principal functionality.
 
 Example usage::
 
     from machine import SoftI2C, Pin
-    import BME280
-    i2c = SoftI2C(Pin(‘P3’))
-    sensor = bme280.BME280(i2c=i2c, mode=4, address=0x77)
+    from bme280 import BME280
+    import time
+    i2c = SoftI2C(scl=Pin(‘P3A’), sda=Pin('P3B')) # set up the I2C interface
+    sensor = BME280(i2c=i2c) # set up a BME280 sensor using the I2C bus
+
+    while True: # loop runs forever
+        temperature = sensor.values[0] # obtain the sensor readings
+        pressure = sensor.values[1]
+        humidity = sensor.values[2]
+        time.sleep(2) # wait for the sensor to take another reading
+
+        # add code to do something with the readings
+
+Constructors
+------------
+
+.. class::  bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
+
+    Creates a *BME280* sensor object.
+
+    i2c is an I2C interface object which has been created using machine.SoftI2C().
+
+    mode is the setting for oversampling of the humidity value, and has the default value shown if omitted.
+    The valid operating modes (see the sensor data-sheet) are: 
+
+    - BME280_OSAMPLE_1 = 1
+    - BME280_OSAMPLE_2 = 2
+    - BME280_OSAMPLE_4 = 3
+    - BME280_OSAMPLE_8 = 4 (default)
+    - BME280_OSAMPLE_16 = 5
+
+	address is the I2C address of the bme280 sensor, which is usually hexadecimal 0x77 (which is 119 decimal).
 
 
-The arguments above are:
-•	I2c is an I2C interface object which has been created using machine.SoftI2C().
-•	mode is the setting for oversampling of the humidity value, and has the default value shown if omitted.
-•	address is the i2c address of the bme280 sensor, usually hexadecimal 0x77 (which is 119 decimal).
-
+Properties
+----------
 
 The module presents the sensor readings as properties.
 
-Properties::
+Values::
 
     temperature, pressure, humidity = sensor.values
 
@@ -36,7 +65,8 @@ Altitude::
     altitude = sensor.altitude
     
 The altitude is in metres and is calculated based on the value given to the property bme.sealevel (see below). 
-This value does not have to be the sea-level pressure, but any pressure you may select, for instance to measure altitude difference in general.
+The value for sea-level pressure does not have to be the actual sea-level pressure, but any pressure you may select, 
+for instance to measure altitude difference in general.
 
 Sea level may be both read and set::
 
@@ -44,8 +74,9 @@ Sea level may be both read and set::
     sealevel = sensor.sealevel
 
 
-The default sealevel pressure is 1013.25 hPa, but you can use your local published pressure in hPa (look up QNH on your meteorological website),
+The default sea-level pressure is 1013.25 hPa, but you can use your local published pressure in hPa (look up QNH on your meteorological website),
 or set a local pressure to determine altitude difference.
+See also https://en.wikipedia.org/wiki/Altimeter_setting
 
 Dew Point::
 
@@ -53,6 +84,7 @@ Dew Point::
 
 
 Provides the dew_point temperature (°C) calculated from the actual temperature and humidity.
+See also https://en.wikipedia.org/wiki/Dew_point
 
 Sensor Type::
 
@@ -62,7 +94,7 @@ Sensor Type::
 Provides a sensor type as a string variable being one of ('BMP280','BME280','BME680', or 'unknown') depending on the sensor id
 in the relevant sensor hardware register.
 
-The datasheets for the sensor and breakout board can be found here:
+The data-sheets for the sensor and breakout board can be found here:
 
 * https://wiki.dfrobot.com/Gravity__I2C_BME280_Environmental_Sensor__Temperature,_Humidity,_Barometer__SKU__SEN0236 
 * https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf 
