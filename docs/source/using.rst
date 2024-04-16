@@ -10,7 +10,7 @@ The simplest way to power-up the **Kookaberry** is to connect its USB connector 
 
 .. _powerup:
 .. figure:: images/power-connect-usb.png
-   :scale: 70%
+   :scale: 40%
    :align: center
 
    Connecting a USB battery
@@ -23,10 +23,10 @@ Charge or replace the battery and try again.
 If no LED lights then the battery is not connected, or not switched on, or is completely flat. 
 Check that 
 
-* the battery cable is completely plugged in, that
-* the cabling and plugs are not damaged, that
-* any battery pack switch is on, and 
-* that the battery packs are charged.
+* the battery cable is completely plugged in
+* the cabling and plugs are not damaged
+* any battery pack switch is on
+* that the battery packs are charged
 
 
 Menu Start-up
@@ -38,7 +38,7 @@ Follow the procedure in the infographic below.
 
 .. _startup:
 .. figure:: images/startup-infographic.png
-   :scale: 70%
+   :scale: 40%
    :align: center
 
    Starting the Kookaberry's inbuilt menu
@@ -60,7 +60,7 @@ Click on the Run button in the **KookaSuite** tool to transfer the program to th
 
 .. coding:
 .. figure:: images/coding-infographic.png
-   :scale: 70%
+   :scale: 40%
    :align: center
 
    Coding the Kookaberry
