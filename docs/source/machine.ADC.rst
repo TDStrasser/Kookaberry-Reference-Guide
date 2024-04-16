@@ -6,13 +6,13 @@ class ADC -- analog to digital conversion
 
 Usage::
 
-    import pyb
+    import machine
 
-    adc = pyb.ADC(pin)                  # create an analog object from a pin
+    adc = machine.ADC(pin)                  # create an analog object from a pin
     val = adc.read()                    # read an analog value
 
-    adc = pyb.ADCAll(resolution)        # create an ADCAll object
-    adc = pyb.ADCAll(resolution, mask)  # create an ADCAll object for selected analog channels
+    adc = machine.ADCAll(resolution)        # create an ADCAll object
+    adc = machine.ADCAll(resolution, mask)  # create an ADCAll object for selected analog channels
     val = adc.read_channel(channel)     # read the given channel
     val = adc.read_core_temp()          # read MCU temperature
     val = adc.read_core_vbat()          # read MCU VBAT
@@ -20,16 +20,16 @@ Usage::
     val = adc.read_vref()               # read MCU supply voltage
 
 
-Constructors
-------------
+ADC Constructors
+----------------
 
-.. class:: pyb.ADC(pin)
+.. class:: machine.ADC(pin)
 
    Create an ADC object associated with the given pin.
    This allows you to then read analog values on that pin.
 
-Methods
--------
+ADC Methods
+-----------
 
 .. method:: ADC.read()
 
@@ -55,14 +55,14 @@ Methods
 
    Example using a Timer object (preferred way)::
 
-       adc = pyb.ADC(pyb.Pin.board.X19)    # create an ADC on pin X19
-       tim = pyb.Timer(6, freq=10)         # create a timer running at 10Hz
+       adc = machine.ADC(machine.Pin('P1'))    # create an ADC on pin P1
+       tim = machine.Timer(6, freq=10)         # create a timer running at 10Hz
        buf = bytearray(100)                # creat a buffer to store the samples
        adc.read_timed(buf, tim)            # sample 100 values, taking 10s
 
    Example using an integer for the frequency::
 
-       adc = pyb.ADC(pyb.Pin.board.X19)    # create an ADC on pin X19
+       adc = machine.ADC(machine.Pin('P1'))    # create an ADC on pin P1
        buf = bytearray(100)                # create a buffer of 100 bytes
        adc.read_timed(buf, 10)             # read analog values into buf at 10Hz
                                            #   this will take 10 seconds to finish
@@ -95,15 +95,15 @@ Methods
 
    Example reading 3 ADC's::
 
-       adc0 = pyb.ADC(pyb.Pin.board.X1)    # Create ADC's
-       adc1 = pyb.ADC(pyb.Pin.board.X2)
-       adc2 = pyb.ADC(pyb.Pin.board.X3)
-       tim = pyb.Timer(8, freq=100)        # Create timer
+       adc0 = machine.ADC(machine.Pin('P1'))    # Create ADC's
+       adc1 = machine.ADC(machine.Pin('P2'))
+       adc2 = machine.ADC(machine.Pin('P4'))
+       tim = machine.Timer(1, freq=100)        # Create timer
        rx0 = array.array('H', (0 for i in range(100))) # ADC buffers of
        rx1 = array.array('H', (0 for i in range(100))) # 100 16-bit words
        rx2 = array.array('H', (0 for i in range(100)))
        # read analog values into buffers at 100Hz (takes one second)
-       pyb.ADC.read_timed_multi((adc0, adc1, adc2), (rx0, rx1, rx2), tim)
+       machine.ADC.read_timed_multi((adc0, adc1, adc2), (rx0, rx1, rx2), tim)
        for n in range(len(rx0)):
            print(rx0[n], rx1[n], rx2[n])
 

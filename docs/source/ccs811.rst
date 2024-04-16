@@ -30,8 +30,8 @@ Example usage::
     main() # run the function
 
 
-Constructors
-------------
+CCS811 Constructors
+-------------------
 
 .. class:: CCS811.CCS811(i2c)
 

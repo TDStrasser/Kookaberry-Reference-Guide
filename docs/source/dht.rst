@@ -46,8 +46,8 @@ Example Usage::
       time.sleep(1)
 
 
-Constructor
------------
+DHT Constructors
+----------------
 
 .. class:: dht.DHT11(pin)
 
@@ -57,8 +57,8 @@ Constructor
 
     The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :ref:`machine.I2C` object representing the pin on the connector.    
 
-Methods
--------
+DHT Methods
+-----------
 
 The generic term *dht* is used to represent either *DHT11* or *DHT22* as appropriate.
 

@@ -33,8 +33,8 @@ This class represents a connection to the display.  It is derived from the
 :class:`framebuf.FrameBuffer` class so inherits all drawing methods from that
 class.
 
-Constructors
-------------
+SH1106_SPI Constructors
+-----------------------
 
 .. class:: SH1106_SPI(width, height, spi, cs, dc)
 
@@ -50,8 +50,8 @@ Constructors
     When the object is constructed the display is turned on and the pixels
     all cleared.
 
-Methods
--------
+SH1106_SPI Methods
+------------------
 
 .. method:: SH1106_SPI.init_display()
 

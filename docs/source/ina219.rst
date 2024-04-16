@@ -9,14 +9,17 @@ Example Usage::
 
 
 
-Constructor
------------
+INA219 Constructor
+------------------
+
+
 
 .. class:: ina219.INA219()
     
 
-Methods
--------
+INA219 Methods
+--------------
+
 
 .. method:: INA219.method()
     

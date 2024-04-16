@@ -4,6 +4,11 @@
 class Timer -- control internal timers
 ======================================
 
+.. warning::
+  
+  This section is largely obsolete and needs revision.
+
+
 Timers can be used for a great variety of tasks.  At the moment, only
 the simplest case is implemented: that of calling a function periodically.
 
@@ -50,8 +55,8 @@ exceptions raised within a callback don't give much information.  See
 limitation.
 
 
-Constructors
-------------
+Timer Constructors
+------------------
 
 .. class:: pyb.Timer(id, ...)
 
@@ -59,8 +64,8 @@ Constructors
    arguments are given, then the timer is initialised by ``init(...)``.
    ``id`` can be 1 to 14.
 
-Methods
--------
+Timer Methods
+-------------
 
 .. method:: Timer.init(\*, freq, prescaler, period)
 
@@ -225,8 +230,8 @@ Timer channels are used to generate/capture a signal using a timer.
 
 TimerChannel objects are created using the Timer.channel() method.
 
-Methods
--------
+TimerChannel Methods
+--------------------
 
 .. method:: timerchannel.callback(fun)
 

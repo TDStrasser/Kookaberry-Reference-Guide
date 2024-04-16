@@ -33,8 +33,8 @@ Example usage::
         time.sleep(2)
 
 
-Constructors
-------------
+BME280 Constructors
+-------------------
 
 .. class:: bme280.BME280(i2c=i2c, mode=BME280_OSAMPLE_8, address=BME280_I2CADDR, **kwargs)
 
@@ -54,8 +54,8 @@ Constructors
 	address is the I2C address of the bme280 sensor, which is usually hexadecimal 0x77 (which is 119 decimal).
 
 
-Properties
-----------
+BME280 Properties
+-----------------
 
 The module presents the sensor readings as properties.
 

@@ -39,8 +39,8 @@ Usage Model::
     # configure an irq callback
     p0.irq(lambda p:print(p))
 
-Constructors
-------------
+Pin Constructors
+----------------
 
 .. class:: Pin(id, mode=-1, pull=-1, \*, value, drive, alt)
 
@@ -103,8 +103,8 @@ Constructors
    alternate-function mode is re-initialised with ``Pin.IN``, ``Pin.OUT``, or
    ``Pin.OPEN_DRAIN``, the alternate function will be removed from the pin.
 
-Methods
--------
+Pin Methods
+-----------
 
 .. method:: Pin.init(mode=-1, pull=-1, \*, value, drive, alt)
 
@@ -219,8 +219,8 @@ Methods
 
    This method returns a callback object.
 
-Constants
----------
+Pin Constants
+-------------
 
 The following constants are used to configure the pin objects.  Note that
 not all constants are available on all ports.

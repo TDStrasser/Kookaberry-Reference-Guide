@@ -46,8 +46,8 @@ To output a continuous sine-wave at 12-bit resolution::
     dac = DAC(1, bits=12)
     dac.write_timed(buf, 400 * len(buf), mode=DAC.CIRCULAR)
 
-Constructors
-------------
+DAC Constructors
+----------------
 
 .. class:: pyb.DAC(port, bits=8, \*, buffering=None)
 
@@ -73,8 +73,8 @@ Constructors
    to be less than 1.5MΩ.  Using the buffer incurs a penalty in accuracy,
    especially near the extremes of range.
 
-Methods
--------
+DAC Methods
+-----------
 
 .. method:: DAC.init(bits=8, \*, buffering=None)
 

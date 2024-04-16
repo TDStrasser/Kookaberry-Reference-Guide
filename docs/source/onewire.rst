@@ -1,7 +1,7 @@
 .. currentmodule:: onewire
 .. _onewire:
 
-Class onewire
+Class OneWire
 =============
 
 
@@ -9,14 +9,14 @@ Example Usage::
 
 
 
-Constructor
------------
+OneWire Constructor
+-------------------
 
 .. class:: onewire.OneWire(pin)
     
 
-Methods
--------
+OneWire Methods
+---------------
 
 .. method:: OneWire.method()
     

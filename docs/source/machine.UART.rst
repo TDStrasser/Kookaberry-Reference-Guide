@@ -33,15 +33,15 @@ using the standard stream methods::
     uart.readinto(buf)  # read and store into the given buffer
     uart.write('abc')   # write the 3 characters
 
-Constructors
-------------
+UART Constructors
+-----------------
 
 .. class:: UART(id, ...)
 
    Construct a UART object of the given id.
 
-Methods
--------
+UART Methods
+------------
 
 .. method:: UART.init(baudrate=9600, bits=8, parity=None, stop=1, \*, ...)
 
@@ -148,8 +148,8 @@ Methods
 
    Availability: WiPy.
 
-Constants
----------
+UART Constants
+--------------
 
 .. data:: UART.RX_ANY
 

@@ -28,8 +28,8 @@ class Radio
 
 This class represents a connection to the nRF51 coprocessor.
 
-Methods
--------
+Radio Methods
+-------------
 
 .. method:: Radio.enable()
 

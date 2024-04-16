@@ -83,9 +83,10 @@ On-board Facilities
 -------------------
 
 The Kookaberry has the following facilities on-board:
-1.	Three ARM*-based Microcontrollers (* Advanced RISC Machine) (** Reduced Instruction Set Computer)
+
+1.	Three ARM-based Microcontrollers (Advanced Reduced Instruction Set Computer Machine)
 2.	4 MBytes serial memory (USB accessible)
-3.	Monochrome OLED*** Display 128 x 64 pixels (*** Organic Light Emitting Diode)
+3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
 4.	22 GPIOs (General Purpose Input-Output)
 5.	11 ADC (Analogue to Digital Converters)
 6.	2 DAC (Digital to Analogue Converters)

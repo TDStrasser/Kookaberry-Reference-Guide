@@ -9,14 +9,14 @@ Example Usage::
 
 
 
-Constructor
------------
+VEML7700 Constructor
+--------------------
 
 .. class:: veml7700.VEML7700(i2c)
     
 
-Methods
--------
+VEML7700 Methods
+----------------
 
 .. method:: VEML7700.method()
     

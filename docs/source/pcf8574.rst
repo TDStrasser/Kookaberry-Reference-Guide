@@ -10,14 +10,14 @@ Example Usage::
 
 
 
-Constructor
------------
+PCF8574 Constructor
+-------------------
 
 .. class:: pcf8574.PCF8574()
     
 
-Methods
--------
+PCF8574 Methods
+---------------
 
 .. method:: PCF8574.method()
     

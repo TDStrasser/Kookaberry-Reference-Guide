@@ -13,16 +13,16 @@ Example usage::
     print(rtc.datetime())
 
 
-Constructors
-------------
+RTC Constructors
+----------------
 
 .. class:: machine.RTC()
 
    Create an RTC object.
 
 
-Methods
--------
+RTC Methods
+-----------
 
 .. method:: RTC.datetime([datetimetuple])
 

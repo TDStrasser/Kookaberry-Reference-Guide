@@ -4,6 +4,11 @@
 class I2C -- a two-wire serial protocol
 =======================================
 
+.. warning::
+
+   This section is no longer correct and needs to be revised.
+
+
 I2C is a two-wire protocol for communicating between devices.  At the physical
 level it consists of 2 wires: SCL and SDA, the clock and data lines respectively.
 
@@ -30,8 +35,8 @@ Example usage::
     i2c.writeto_mem(42, 2, b'\x10') # write 1 byte to memory of slave 42
                                     #   starting at address 2 in the slave
 
-Constructors
-------------
+I2C Constructors
+----------------
 
 .. class:: I2C(id=-1, \*, scl, sda, freq=400000)
 
@@ -49,8 +54,8 @@ Constructors
       - *freq* should be an integer which sets the maximum frequency
         for SCL.
 
-General Methods
----------------
+I2C General Methods
+-------------------
 
 .. method:: I2C.init(scl, sda, \*, freq=400000)
 

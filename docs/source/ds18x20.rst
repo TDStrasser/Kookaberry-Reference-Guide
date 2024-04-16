@@ -39,8 +39,8 @@ Example Usage::
             print('Probe: %s Temperature: %0.1f C' % (probe,temperature))
 
 
-Constructors
-------------
+DS18X20 Constructors
+--------------------
 
 .. class:: ds18x20.DS18X20(ow)
 
@@ -49,8 +49,8 @@ Constructors
     *ow* is 1-wire bus created using the :ref:`onewire` object connected to a particular Pin.
     
 
-Methods
--------
+DS18X20 Methods
+---------------
 
 .. method:: DS18X20.scan()
 

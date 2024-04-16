@@ -60,8 +60,8 @@ class LED
 
 This class allows you to turn the built-in LEDs on and off.
 
-Methods
--------
+LED Methods
+-----------
 
 .. method:: on()
 
@@ -83,8 +83,8 @@ class Button
 This class allows you to read the state of one of the built-in buttons and
 includes automatic debouncing.
 
-Methods
--------
+Button Methods
+--------------
 
 .. method:: value()
 
@@ -137,8 +137,8 @@ Example usage::
     s1.angle(-60, 1500)
     s2.angle(30, 1500)
 
-Constructors
-------------
+Servo Constructors
+------------------
 
 .. class:: kooka.Servo(id)
 
@@ -146,8 +146,8 @@ Constructors
    connector, like ``"P2"``, or a :ref:`machine.Pin` object representing the
    pin on the connector.
 
-Methods
--------
+Servo Methods
+-------------
 
 .. method:: Servo.freq([freq])
 

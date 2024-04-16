@@ -9,14 +9,16 @@ Example Usage::
 
 
 
-Constructor
------------
+MLX90614 Constructor
+--------------------
+
+
 
 .. class:: mlx90614.MLX90614()
     
 
-Methods
--------
+MLX90614 Methods
+----------------
 
 .. method:: MLX90614.method()
     

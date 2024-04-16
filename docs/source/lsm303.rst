@@ -31,13 +31,13 @@ can use the P1 connector via::
 
 .. _lsm303.LSM303C_Accel:
 
-class LSM303C_Accel
+Class LSM303C_Accel
 ===================
 
 This class represents a connection to the accelerometer part of the LSM303C.
 
-Constructors
-------------
+LSM303 Constructors
+-------------------
 
 .. class:: LSM303C_Accel(i2c, addr=0x1d)
 
@@ -45,8 +45,8 @@ Constructors
     object that the LSM303C is connected to.  *addr* is the I2C address of the
     accelerometer, which defaults to 0x1d if not specified.
 
-Methods
--------
+LSM303 Methods
+--------------
 
 .. method:: LSM303C_Accel.get_xyz()
 
@@ -59,8 +59,8 @@ class LSM303C_Mag
 
 This class represents a connection to the magnetometer part of the LSM303C.
 
-Constructors
-------------
+LSM303C_Mag Constructors
+------------------------
 
 .. class:: LSM303C_Mag(i2c, addr=0x1e)
 
@@ -68,8 +68,8 @@ Constructors
     that the LSM303C is connected to.  *addr* is the I2C address of the
     magnetometer, which defaults to 0x1e if not specified.
 
-Methods
--------
+LSM303C_Mag Methods
+-------------------
 
 .. method:: LSM303C_Mag.get_xyz()
 

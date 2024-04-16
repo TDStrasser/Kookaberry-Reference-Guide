@@ -7,7 +7,7 @@
 This module provides a general frame buffer which can be used to create
 bitmap images, which can then be sent to a display.
 
-class FrameBuffer
+Class FrameBuffer
 -----------------
 
 The FrameBuffer class provides a pixel buffer which can be drawn upon with
@@ -25,8 +25,8 @@ For example::
     fbuf.text('MicroPython!', 0, 0, 0xffff)
     fbuf.hline(0, 10, 96, 0xffff)
 
-Constructors
-------------
+Framebuffer Constructors
+------------------------
 
 .. class:: FrameBuffer(buffer, width, height, format, stride=width, /)
 

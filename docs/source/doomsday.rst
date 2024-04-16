@@ -1,10 +1,10 @@
 .. currentmodule:: doomsday
 .. _doomsday:
 
-Doomsday function
-=================
+Doomsday Module
+===============
 
-The doomsday function is a utility function that converts a date to the day of the week.
+The doomsday module contains utility functions that convert a date to the day of the week.
 
 It is an implementation of John Conway's Doomsday algorithm.  See https://en.wikipedia.org/wiki/Doomsday_rule
 
@@ -21,8 +21,8 @@ Example Usage::
     print("Today is ", day_of_week)
 
 
-Functions
----------
+Doomsday Functions
+------------------
 
  .. method:: doomsday.calc_dow(day,  month,  year)
 

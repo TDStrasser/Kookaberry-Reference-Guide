@@ -50,8 +50,8 @@ Example Code::
     rtc.datetime(kooka_rtc.datetime()) # set the DS3231 from the Kookaberry’s RTC
 
 
-Constructors
-------------
+DS2321 Constructors
+-------------------
 
 .. class:: ds3231.DS3231(i2c=i2c)
 
@@ -60,8 +60,8 @@ Constructors
     i2c is an I2C interface object which has been created using machine.SoftI2C().
 
 
-Methods
--------
+DS2321 Methods
+--------------
 
 .. method:: DS3231.datetime(datetime_tuple)
 
@@ -119,8 +119,8 @@ Example Code::
     rtc.square_wave(freq=1) # Generate a 1 Hz square wave on the DS3231 output pin
 
 
- Constructors
- ------------
+ DS3231_EXT Constructors
+ -----------------------
 
 .. class:: ds3231.DS3231_EXT(i2c=i2c)
 
@@ -129,8 +129,8 @@ Example Code::
     i2c is an I2C interface object which has been created using machine.SoftI2C().
 
 
-Methods
--------
+DS3231_EXT Methods
+------------------
 
 .. method:: DS3231_EXT.square_wave(freq=None)
 

@@ -26,16 +26,16 @@ Example Usage::
 
 
 
-Constructor
------------
+MCP23008 Constructor
+--------------------
 
 
 
 .. class:: mcp23008.MCP23008()
     
 
-Methods
--------
+MCP23008 Methods
+----------------
 
 
 

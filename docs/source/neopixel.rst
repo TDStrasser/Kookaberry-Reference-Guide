@@ -47,8 +47,8 @@ Example usage::
     demo(np)
 
 
-Constructors
-------------
+NeoPixel Constructors
+---------------------
 
 .. class:: kooka.NeoPixel(pin, pixels_in_array)
 
@@ -78,8 +78,8 @@ Constructors
 
     To set the first LED in the *neopixel* array to 25% white, use *NeoPixel[0] = [63,63,63]*.
 
-Methods
--------
+NeoPixel Methods
+----------------
 
 .. method:: NeoPixel.write()
 
