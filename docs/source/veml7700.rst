@@ -7,6 +7,8 @@ Class VEML7700
 
 Example Usage::
 
+    # Some code here
+
 
 
 VEML7700 Constructor

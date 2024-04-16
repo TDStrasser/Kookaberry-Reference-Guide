@@ -24,12 +24,12 @@ The datasheet for the MCP23008 I/O multiplexer ca be found at http://ww1.microch
 
 Example Usage::
 
+    # Some code here
+
 
 
 MCP23008 Constructor
 --------------------
-
-
 
 .. class:: mcp23008.MCP23008()
     

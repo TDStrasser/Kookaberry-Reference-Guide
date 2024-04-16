@@ -7,12 +7,12 @@ Class MLX90614
 
 Example Usage::
 
+    # Some code here
+
 
 
 MLX90614 Constructor
 --------------------
-
-
 
 .. class:: mlx90614.MLX90614()
     
