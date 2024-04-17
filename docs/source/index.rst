@@ -14,8 +14,7 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
 
    This document is under active development
 
-Contents
---------
+
 
 .. toctree::
   :caption: Contents

@@ -42,6 +42,7 @@ User Interface
 --------------
 
 The following features provide information and control for the user of the Kookaberry:
+
 1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  The dimensions of the display are 128 pixels wide by 64 pixels high.
 2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
 3.	LEDs – there are three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
@@ -53,6 +54,7 @@ Connectors
 ----------
 
 The Kookaberry has eight connectors:
+
 1.	Battery Connector – the battery box plugs in here.  
 Battery boxes usually have a power switch and take three or four 1.5-volt AAA or AA batteries. 
 As an alternative a USB power pack can be used with the appropriate USB to JST cable.  
@@ -85,12 +87,12 @@ On-board Facilities
 
 The Kookaberry has the following facilities on-board:
 
-1.	Three ARM-based Microcontrollers (Advanced Reduced Instruction Set Computer Machine)
+1.	Microcomputer, either ARM-based Microcontrollers (Advanced Reduced Instruction Set Computer Machine) or a Raspberry Pi Pico
 2.	4 MBytes serial memory (USB accessible)
 3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
 4.	22 GPIOs (General Purpose Input-Output)
-5.	11 ADC (Analogue to Digital Converters)
-6.	2 DAC (Digital to Analogue Converters)
+5.	Up to 11 ADC (Analogue to Digital Converters) depending on microcomputer type
+6.	2 DAC (Digital to Analogue Converters) on ARM-based microcomputers only
 7.	Timers and Real Time Clock
 8.	Magnetic Compass and Accelerometer
 9.	2.4GHz Digital Packet Radio

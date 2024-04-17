@@ -71,6 +71,5 @@ The **Kookaberry**'s software includes modules for using functions that are uniq
 
     kooka.rst
     machine.rst
-    peripherals.rst
 
 
