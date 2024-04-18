@@ -1,15 +1,29 @@
-.. currentmodule:: bme280
+******************************************
+:mod:`bme280` --- Atmospheric multi-sensor
+******************************************
+.. module:: bme280
+   :synopsis: Digital atmospheric multi-sensor
+
+
 .. _bme280:
 
 
-Class BME280
-============
 
-This module provides the interfaces to use the BME280 and BMP280 sensors.  These sensors provide a range of atmospheric measurements, being:
+The BME280 and BMP280 sensors provide a range of atmospheric measurements, being:
 
 * atmospheric temperature
 * atmospheric pressure
 * relative humidity (not the BMP280)
+
+
+The data-sheets for the sensor and breakout board can be found here:
+
+* https://wiki.dfrobot.com/Gravity__I2C_BME280_Environmental_Sensor__Temperature,_Humidity,_Barometer__SKU__SEN0236 
+* https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf 
+
+
+Class BME280
+============
 
 The BME280 class in this module provides the principal functionality.
 
@@ -103,7 +117,3 @@ Sensor Type::
 Provides a sensor type as a string variable being one of ('BMP280','BME280','BME680', or 'unknown') depending on the sensor id
 in the relevant sensor hardware register.
 
-The data-sheets for the sensor and breakout board can be found here:
-
-* https://wiki.dfrobot.com/Gravity__I2C_BME280_Environmental_Sensor__Temperature,_Humidity,_Barometer__SKU__SEN0236 
-* https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf 

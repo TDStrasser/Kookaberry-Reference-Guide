@@ -1,8 +1,12 @@
-.. currentmodule:: dht
+******************************************
+:mod:`dht` --- Atmospheric multi-sensor
+******************************************
+.. module:: dht
+   :synopsis: Digital atmospheric multi-sensor
+
+
 .. _dht:
 
-Class DHT
-=========
 
 The digital humidity and temperature (dht) module provides the interfaces to use the DHT11 (white) and the DHT22 (blue) temperature and humidity sensors. 
 
@@ -24,6 +28,9 @@ The data-sheets for the sensors are available here:
 - DHT11: https://components101.com/sites/default/files/component_datasheet/DHT11-Temperature-Sensor.pdf 
 - DHT22: https://components101.com/sites/default/files/component_datasheet/DHT22%20Sensor%20Datasheet.pdf 
 
+
+Class DHT
+=========
 
 Example Usage::
 
