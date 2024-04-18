@@ -1,8 +1,12 @@
-.. currentmodule:: doomsday
+*************************************************
+:mod:`doomsday` --- RTC datetime helper functions
+*************************************************
+.. module:: doomsday
+   :synopsis: Real Time Clock datetime helper
+
+
 .. _doomsday:
 
-Doomsday Module
-===============
 
 The doomsday module contains utility functions that convert a date to the day of the week.
 

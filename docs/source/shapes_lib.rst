@@ -1,8 +1,11 @@
-.. currentmodule:: shapes_lib
+***********************************************
+:mod:`shapes_lib` --- Graphics helper functions
+***********************************************
+.. module:: shapes_lib
+   :synopsis: Graphics helper functions
+
 .. _shapes_lib:
 
-Shapes Library Module
-=====================
 
 The Shapes Library (shapes_lib) Module provides some extended graphics for the Kookaberry display 
 and for any display device using the :ref:'framebuf' functionality.
