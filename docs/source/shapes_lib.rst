@@ -31,10 +31,20 @@ Available functions are:
     Any arbitrary shape can be constructed using the foregoing functions.
 
 
+Example Usage::
+
+    # Draw a filled circle
+    from kooka import display as disp # Create the display object
+    from shapes_lib import fill_circle
+    disp.fill(0) # Clear the display framebuffer of lit pixels
+    fill_circle(disp, 63, 31, 16, 1) # draws a filled circle about origin (63,13) with radius 16 and colour of 1 (pixels on)
+    disp.show() # Transfer the framebuffer to the physical OLED display
+
+
 Shapes Library Functions
 ------------------------
 
-.. module:: shapes_lib.line(dev, x0, y0, radius, lin_angle, *args, **kwargs)
+.. method:: shapes_lib.line(dev, x0, y0, radius, lin_angle, *args, **kwargs)
 
     Draws a radial line at a given angle and radius from the origin (x0,y0) and returns the coordinates of the rotating end of the line.
 
@@ -50,7 +60,7 @@ Shapes Library Functions
 
 
 
-.. module:: shapes_lib.draw_poly(dev, x0, y0, vert_radius, sides, vert_angle, fill=False, *args, **kwargs)
+.. method:: shapes_lib.draw_poly(dev, x0, y0, vert_radius, sides, vert_angle, fill=False, *args, **kwargs)
 
     Draws or fills a regular polygon at origin(x0,y0) with vertex radius and vertex angle. 
 
@@ -70,7 +80,7 @@ Shapes Library Functions
 
 
 
-.. module:: shapes_lib.polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
+.. method:: shapes_lib.polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
 
     Draws an outline polygon at origin(x0,y0) with vertex radius and vertex angle. This is a more convenient form of shapes_lib.draw_poly().
 
@@ -87,7 +97,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.fill_polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
+.. method:: shapes_lib.fill_polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
 
     Draws a filled polygon at origin(x0,y0) with vertex radius and vertex angle. This is a more convenient form of shapes_lib.draw_poly().
 
@@ -104,7 +114,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.draw_arc(dev, x0, y0, arc_radius, arcstart, arcstop, fill=False, *args, **kwargs)
+.. method:: shapes_lib.draw_arc(dev, x0, y0, arc_radius, arcstart, arcstop, fill=False, *args, **kwargs)
 
     Draws or fills pie slice around origin (x0,y0) with radius between specified degrees. 
 
@@ -121,7 +131,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
+.. method:: shapes_lib.arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
 
     Draws an outline pie slice around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -136,7 +146,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.fill_arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
+.. method:: shapes_lib.fill_arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
 
     Draws a filled pie slice around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -151,7 +161,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.circle(dev, x0, y0, radius, *args, **kwargs)
+.. method:: shapes_lib.circle(dev, x0, y0, radius, *args, **kwargs)
 
     Draws an outline circle around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -164,7 +174,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.fill_circle(dev, x0, y0, radius, *args, **kwargs)
+.. method:: shapes_lib.fill_circle(dev, x0, y0, radius, *args, **kwargs)
 
     Draws a filled circle around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -176,7 +186,7 @@ Shapes Library Functions
 
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
-.. module:: shapes_lib.triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+.. method:: shapes_lib.triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
     Draws an outline triangle with the vertex coordinates (x0,y0), (x1,y1), (x2,y2)
 
@@ -185,7 +195,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. module:: shapes_lib.fill_triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+.. method:: shapes_lib.fill_triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
     Draws a filled triangle with the vertex coordinates (x0,y0), (x1,y1), (x2,y2)
 
