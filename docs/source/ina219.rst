@@ -1,11 +1,19 @@
-.. currentmodule:: ina219
+***********************************
+:mod:`ina219` --- Digital wattmeter
+***********************************
+.. module:: ina219
+   :synopsis: Digital wattmeter
+
 .. _ina219:
 
-Class INA219
-============
 
 The INA219 is a digital wattmeter
 
+.. note::
+    This section is under development and is not complete nor accurate
+
+Class INA219
+============
 
 Example Usage::
 

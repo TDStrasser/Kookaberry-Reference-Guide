@@ -1,8 +1,11 @@
-.. currentmodule:: ds3231
+*************************************************
+:mod:`ds3231` --- Battery-powered Real Time Clock
+*************************************************
+.. module:: ds3231
+   :synopsis: Battery-powered Real Time Clock
+
 .. _ds3231:
 
-Class DS3231
-============
 
 The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated temperature-compensated crystal oscillator (TCXO) and crystal. 
 
@@ -16,6 +19,11 @@ The clock operates in either the 24-hour or 12-hour format with an AM/PM indicat
 Two programmable time-of-day alarms and a programmable square-wave output are provided. 
 
 Address and data are transferred serially through an I2C bidirectional bus.
+
+The ds3231 data-sheet describes the chip in detail and is at this link: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf 
+
+Class DS3231
+============
 
 The DS3231 class allows the Kookaberry to use this RTC as a stable time source.
  
@@ -209,4 +217,3 @@ DS3231_EXT Methods
     The method returns ``True`` when the conversion signal to the temperature sensor is asserted and then will be cleared 
     when the device is in the 1-minute idle state.
 
-The ds3231 data-sheet describes the chip in detail and is at this link: https://datasheets.maximintegrated.com/en/ds/DS3231.pdf 

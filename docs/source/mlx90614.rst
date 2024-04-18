@@ -1,4 +1,10 @@
-.. currentmodule:: mlx90614
+********************************************************
+:mod:`mlx90614` --- Infra-red digital temperature sensor
+********************************************************
+.. module:: mlx90614
+   :synopsis: Infra-red digital temperature sensor
+
+
 .. _mlx90614:
 
 Class MLX90614

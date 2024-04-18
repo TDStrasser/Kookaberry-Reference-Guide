@@ -1,3 +1,10 @@
+*****************************************************************
+:mod:`pcf8574` --- 8-bit I2C Input/Output Expander with Interrupt
+*****************************************************************
+.. module:: pcf8574
+   :synopsis: Digital wattmeter
+
+
 .. currentmodule:: pcf8574
 .. _pcf8574:
 

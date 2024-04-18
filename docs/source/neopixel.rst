@@ -1,8 +1,11 @@
-.. currentmodule:: neopixel
+****************************************
+:mod:`neopixel` --- RGB colour LED array
+****************************************
+.. module:: neopixel
+   :synopsis: RGB colour LED array
+
 .. _neopixel:
 
-Class NeoPixel
-==============
 
 This class enables the control of an arbitrarily long string of RGB coloured LEDs.  
 Each LED in the string can be individually set to any colour by setting values for the R (red), G (green), and B (blue) components of the LED.
@@ -13,6 +16,10 @@ NeoPixels (als known as WS2812 LEDs) are available as LED strips, and as 2-dimen
    NeoPixels can draw up to 20 milliamps each when fully lit, and so it is recommended that no more than 8 NeoPixels be powered directly from the **Kookaberry**.
    If more NeoPixels are required then an intermediate power injection accessory circuit board should be used.  
    The **Kookaberry** would otherwise be overloaded and would shut down.
+
+
+Class NeoPixel
+==============
 
 Example usage::
 

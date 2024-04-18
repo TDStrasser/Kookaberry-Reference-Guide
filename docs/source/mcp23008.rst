@@ -1,5 +1,16 @@
-.. currentmodule:: mcp23008
+*********************************************
+:mod:`mcp23008` --- I2C input/output expander
+*********************************************
+.. module:: ina219
+   :synopsis: Digital wattmeter
+
 .. _mcp23008:
+
+
+.. note::
+
+    This section is under development, incomplete and not accurate.
+
 
 Class MCP23008
 ==============

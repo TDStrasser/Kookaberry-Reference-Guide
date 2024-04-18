@@ -1,8 +1,12 @@
-.. currentmodule:: ds18x20
+*********************************************
+:mod:`ds18x20` --- Digital temperature sensor
+*********************************************
+.. module:: ds18x20
+   :synopsis: Digital temperature sensor
+
+
 .. _ds18x20:
 
-Class DS18x20
-=============
 
 The DS18B20 sensor is a digital thermometer that communicates over a 1-wire serial interface.  
 These sensors have a range of -55 to +125 degrees Celsius with an accuracy of 0.5 degrees C for between -10 to +85 degrees C. 
@@ -14,6 +18,8 @@ The DS18B20 comes in diverse packaging, including waterproof probes for sensing 
  
 The sensor data-sheet is available here: https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf 
 
+Class DS18x20
+=============
 
 
 Example Usage::

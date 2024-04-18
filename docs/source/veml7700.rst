@@ -1,4 +1,10 @@
-.. currentmodule:: veml7700
+*************************************
+:mod:`veml7700` --- Digital lux meter
+*************************************
+.. module:: veml7700
+   :synopsis: Digital lux meter
+
+
 .. _veml7700:
 
 Class VEML7700
