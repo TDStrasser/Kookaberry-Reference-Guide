@@ -4,7 +4,7 @@ The Kookaberry
 The Kookaberry is an easy-to-use micro-computer which was designed in Australia to engage both students and teachers at the basic level of our digital world.
 
 .. image:: images/kberry-front-photo.png
-   :width: 80%
+   :width: 50%
    :align: center
 
 Its primary purpose is to enrich lessons across many Key Learning Areas of the primary curriculum such as Geography, 
