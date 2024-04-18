@@ -7,7 +7,6 @@ This language is an implementation of the Python 3 language that has been adapte
 More information on **MicroPython** can be found at docs.micropython.org and in particular the **MicroPython** standard library at 
 https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
 
-A more specific reference to **MicroPython** for the **Kookaberry** can be found at http://docs.micropython.org/en/kookaberry/kookaberry/quickref.html  
 
 MicroPython
 -----------
