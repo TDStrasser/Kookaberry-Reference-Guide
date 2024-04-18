@@ -23,6 +23,7 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
   safety.rst
   using.rst
   software.rst
+  helpers.rst
   peripherals.rst
   glossary.rst
 

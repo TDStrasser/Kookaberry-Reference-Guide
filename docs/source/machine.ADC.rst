@@ -4,6 +4,12 @@
 class ADC -- analog to digital conversion
 =========================================
 
+.. warning::
+
+   This section is no longer correct and needs to be revised.
+
+
+
 Usage::
 
     import machine

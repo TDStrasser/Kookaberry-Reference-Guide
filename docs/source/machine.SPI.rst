@@ -4,6 +4,12 @@
 class SPI -- a Serial Peripheral Interface bus protocol (master side)
 =====================================================================
 
+.. warning::
+
+   This section is no longer correct and needs to be revised.
+
+
+
 SPI is a synchronous serial protocol that is driven by a master. At the
 physical level, a bus consists of 3 lines: SCK, MOSI, MISO. Multiple devices
 can share the same bus. Each device should have a separate, 4th signal,
