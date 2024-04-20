@@ -32,6 +32,8 @@ Doomsday Functions
 
     Returns a character string representing the day of the week given a date. 
     One of (``Sunday``,``Monday``, ``Tuesday``, ``Wednesday``, ``Thursday``, ``Friday``, ``Saturday``)
+    To abbreviate the day of the week to the first 3 letters, use: day_of_week = doomsday.calc_dow(day,  month,  year)[0:3]
+
 
     - *day* is an integer representing the day of the month
     - *month* is an integer (1 to 12 inclusive) representing the calendar month
