@@ -93,7 +93,7 @@ DS2321 Methods
 .. important:: 
 
     The DS3231 does not set WD automatically.  
-    Use the :ref:'doomsday' to correctly compute the day from the date, e.g. WD = doomsday.dow_index(DD,MM,YYYY)
+    Use the :ref:`doomsday` to correctly compute the day from the date, e.g. WD = doomsday.dow_index(DD,MM,YYYY)
 
 .. method:: DS3231.OSF()
 
