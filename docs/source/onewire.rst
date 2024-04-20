@@ -1,6 +1,6 @@
-*******************************************************
-:mod:`onewire` --- interface to the nRF51 BLE coprocessor
-*******************************************************
+***************************************************
+:mod:`onewire` --- interface to a 1-wire serial bus
+***************************************************
 
 .. module:: onewire
    :synopsis: interface to the nRF51 BLE coprocessor
@@ -71,11 +71,11 @@ OneWire Methods
 
     Reads 8 bits from the 1-wire bus using the 1-wire protocol, then returns them as an integer. (Assumes a low-bit-first model.)
 
-.. method:: OneWire.readinto(buffer)
+.. method:: OneWire.readinto(bytearray)
 
-    Reads bytes from the 1-wire bus using the 1-wire protocol, into a predefined buffer, until the buffer is filled.
+    Reads bytes from the 1-wire bus using the 1-wire protocol, into a predefined byte array buffer, until the buffer is filled.
 
-    *buffer* is a byte array of program-defined length.
+    *bytearray* is a byte array of program-defined length.
 
 .. method:: OneWire.writebit(bitvalue)
 
