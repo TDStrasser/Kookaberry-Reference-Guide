@@ -200,7 +200,7 @@ Servo Methods
 class Display - access to the Kookaberry's OLED display and underlying framebuffer
 ==================================================================================
 
-The display class inherits the methods of the :ref:`framebuf` class and the physical :ref:`sh1106_SPI` OLED display.
+The display class inherits the methods of the :ref:`framebuf` class and the physical :ref:`sh1106` OLED display.
 
 - The SH1106 OLED display is monochrome with dimensions 128 pixels wide x 64 pixels high.
 - The top-left corner of the display is coordinate (0,0) and the bottom-right is coordinate (127,63)

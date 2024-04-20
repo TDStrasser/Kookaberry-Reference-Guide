@@ -4,6 +4,8 @@
 .. module:: framebuf
    :synopsis: Frame buffer manipulation
 
+.. _framebuf:
+
 This module provides a general frame buffer which can be used to create
 bitmap images, which can then be sent to a display.
 
