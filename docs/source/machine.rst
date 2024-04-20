@@ -21,6 +21,5 @@ A/D and D/A Converters, serial interfaces, Real Time Clock, and timers.
   machine.SPI.rst
   machine.Timer.rst
   machine.UART.rst
-  sh1106.rst
-  framebuf.rst
+  
 
