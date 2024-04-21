@@ -36,6 +36,8 @@ Instances
     This gives access to the **Kookaberry**'s display, an instance of
     :ref:`sh1106.SH1106_SPI` combined with :ref:`framebuf`.
 
+    See :ref:`kooka.display` for a detailed description.
+
 .. data::
     accel
 
@@ -196,6 +198,9 @@ Servo Methods
      - *pulse_centre* is the pulse width corresponding to the centre/zero position.
      - *pulse_angle_90* is the pulse width corresponding to 90 degrees.
      - *pulse_speed_100* is the pulse width corresponding to a speed of 100.
+
+
+.. _kooka.display:
 
 class Display - access to the Kookaberry's OLED display and underlying framebuffer
 ==================================================================================
