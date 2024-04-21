@@ -100,4 +100,4 @@ NeoPixel Methods
 .. method:: NeoPixel.fill(colour)
 
     Fill the *neopixel* object buffer array with the specified *colour*.  
-    An immediately subsequent NeoPixel.write() will set all the NeoPixels to the specified *colour*.
+    An immediately subsequent *NeoPixel.write()* will set all the NeoPixels to the specified *colour*.
