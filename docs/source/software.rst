@@ -4,23 +4,20 @@ Kookaberry Software
 The **Kookaberry** is programmed using the **MicroPython** software language.  
 This language is an implementation of the Python 3 language that has been adapted to be suitable for micro-computers.  
 
+MicroPython
+-----------
+
 More information on **MicroPython** can be found at docs.micropython.org and in particular the **MicroPython** standard library at 
 https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
 
 
-MicroPython
------------
-
 **Micropython** source code is loaded as Python text files (``name.py``) onto the **Kookaberry’s** serial memory by a simple drag and drop operation 
 when the **Kookaberry** is mounted as a USB drive on a computer.  
 
-**Kookaberry** scripts should be in the "/app" folder on the **Kookaberry** drive.  
-
-Libraries should be in the   "/lib" folder on the **Kookaberry** drive.  
-
-Data and plain text files should be in the base (root) of the **Kookaberry** drive. 
-
-Files created by **Kookaberry** scripts will also be stored in the base of the drive from where they can be retrieved.  
+- **Kookaberry** scripts should be in the "/app" folder on the **Kookaberry** drive. 
+- Libraries should be in the   "/lib" folder on the **Kookaberry** drive.  
+- Data and plain text files should be in the base (root) of the **Kookaberry** drive. 
+- Files created by **Kookaberry** scripts will also be stored in the base of the drive from where they can be retrieved.  
 
 .. important:: 
     Please note that **Kookaberry**-generated files will not appear in the PC’s USB drive file directory until 
@@ -35,7 +32,8 @@ Distinctively, the **Kookaberry** can also contain many **MicroPython** scripts 
 Scripting Tools
 ---------------
 
-**KookaSuite** is a set of script editing software tools for the **Kookberry**.  
+**KookaSuite** is a set of script editing software tools for the **Kookaberry**.  
+
 **KookaSuite** is available for Microsoft Windows, Apple’s MacOS, and the RaspberryPi Raspbian OS Personal Computers.
 It comprises the following tools:
 
@@ -54,37 +52,38 @@ It comprises the following tools:
   to screen-grabbing software for documentation purposes.
 
 
-**KookaIDE**, **KookaBlockly** and **KookaTW** are all packaged as **KookaSuite** for Windows, Apple Macintosh, and Raspberry Pi Personal Computers 
-and it is available for download here: 
-https://github.com/kookaberry/kooka-releases/tree/master/KookaSuite 
+**KookaIDE**, **KookaBlockly** and **KookaTW** are all packaged as **KookaSuite** for Windows, Apple Macintosh, and Raspberry Pi Personal Computers. 
+**KookaSuite** is available for download here: https://github.com/kookaberry/kooka-releases/tree/master/KookaSuite 
 
-The **KookaBlockly Reference Guide** is available at this link: https://kookablockly-reference-guide.readthedocs.io/en/latest/
+.. note::
+  
+  The **KookaBlockly Reference Guide** is available at this link: https://kookablockly-reference-guide.readthedocs.io/en/latest/
 
 Kookaberry Firmware
 -------------------
 
 The Kookaberry contains low-level software that is stored in on-board non-volatile memory. 
-Firmware performs basic low-level tasks to control and monitor the Kookaberry's hardware, 
+Firmware performs basic low-level tasks to control and monitor the **Kookaberry**'s hardware, 
 and to make it accessible to high-level software, such as MicroPython. 
 
 Firmware updates may sometimes be issued that extend the functionality of the Kookaberry, or to remedy bugs or security weaknesses in the firmware. 
-The Kookaberry’s firmware is updated from time to time and the latest version may be downloaded from https://github.com/kookaberry/kooka-releases.
+The **Kookaberry’s** firmware is updated from time to time and the latest version may be downloaded from https://github.com/kookaberry/kooka-releases.
 
 Instructions for firmware updates are provided on the GutHub page.  In general, follow this procedure:
 
 1. Navigate into the Github firmware folder (https://github.com/kookaberry/kooka-releases/tree/master/firmware)
 2. Then navigate into, depending on your model of Kookaberry, either the ``stm32`` folder (Kookaberry rev1-05 and rev1-06), 
    or the ``rp2040`` folder (Kookaberry v2 and later).
-3. With the target Kookaberry connected via USB to your PC, download the various .bin files to the root folder of the Kookaberry's filestore.  
-   The Kookaberry's blue LED will flash during this process.  Wait until the blue LED is fully extinguished.  
-4. Dismount the Kookaberry from your PC and disconnect it.
-5. Reconnect the Kookaberry to your PC.  The blue LED will flash while the firmware is being updated.
-6. The Kookaberry will then mount as a USB device with the new firmware operative.
+3. With the target Kookaberry connected via USB to your PC, download the various .bin files to the root folder of the **Kookaberry**'s filestore.  
+   The **Kookaberry**'s blue LED will flash during this process.  Wait until the blue LED is fully extinguished.  
+4. Dismount the **Kookaberry** from your PC and disconnect it.
+5. Reconnect the **Kookaberry** to your PC.  The blue LED will flash while the firmware is being updated.
+6. The **Kookaberry** will then mount as a USB device with the new firmware operative.
 
 Kookaberry Specific Module Library
 ----------------------------------
 
-The **Kookaberry**'s software includes modules for using functions that are unique to the **Kookaberry**. These are described below:
+Modules for using functions that are unique to the **Kookaberry** are are described below:
 
 .. toctree:: 
     :caption: Kookaberry Specific Modules
