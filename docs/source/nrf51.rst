@@ -31,15 +31,15 @@ This class represents a connection to the nRF51 coprocessor.
 Radio Methods
 -------------
 
-.. method:: Radio.enable()
+.. py:method:: radio.enable()
 
     Enable the radio.  Raises a :class:`RadioError` if it fails.
 
-.. method:: Radio.disable()
+.. py:method:: radio.disable()
 
     Disable the radio.  Raises a :class:`RadioError` if it fails.
 
-.. method:: Radio.config(param=value)
+.. py:method:: radio.config(param=value)
 
     Configure various settings relating to the radio. The parameters are:
 
@@ -80,18 +80,18 @@ Radio Methods
       timestamp entry returned by ``receive_full()``.  Possible values are
       ``radio.TIMESTAMP_MS`` and ``radio.TIMESTAMP_US``.
 
-.. py:method:: send(message)
+.. py:method:: radio.send(message)
 
     Send a string message.  The parameter *message* should be a string object.
     This method is equivalent to ``send_bytes(bytes(message, 'utf8'))`` but with
     ``b'\x01\x00\x01'`` prepended to the front, which makes it compatible with
     code running on a micro:bit.
 
-.. py:method:: send_bytes(message)
+.. py:method:: radio.send_bytes(message)
 
     Send a raw message.  The parameter *message* should be a bytes object.
 
-.. py:method:: receive()
+.. py:method:: radio.receive()
 
     Retrieve and return the next incoming message on the message queue.
     Returns ``None`` if there are no pending messages.
@@ -103,13 +103,13 @@ Radio Methods
     bytes before converting to a string (and raises a ``ValueError`` if the
     prefix is not correct).
 
-.. py:method:: receive_bytes()
+.. py:method:: radio.receive_bytes()
 
     Retrieve and return the next incoming message on the message queue.
     Returns ``None`` if there are no pending messages.
     Messages are returned as bytes objects.
 
-.. py:method:: receive_full()
+.. py:method:: radio.receive_full()
 
     Retrieve and return the next incoming message on the message queue, with
     additional information.
@@ -131,5 +131,5 @@ Radio Methods
 class RadioError
 ================
 
-This class is derived from ``Exception`` and is used to indicate various low-level
+This class is derived from the ``Exception`` class and is used to indicate various low-level
 errors with the radio hardware.
