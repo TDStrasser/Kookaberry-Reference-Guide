@@ -44,9 +44,13 @@ User Interface
 
 The following features provide information and control for the user of the Kookaberry:
 
-1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  The dimensions of the display are 128 pixels wide by 64 pixels high.
+1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  
+The dimensions of the display are 128 pixels wide by 64 pixels high.
+
 2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
+
 3.	Three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
+
 4.	Reset Button located on the rear-top of the Kookaberry.  It is used to reset the Kookaberry back to its initial start-up conditions, 
 and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
 The power must be switched off and switched on again to accomplish a full hardware and software reset.
@@ -79,6 +83,7 @@ The Kookaberry will also accept power from this connector.
 
 3.	Five connectors P1 to P5 – these connectors are used for accessories such as sensors and for outputs. 
 The function of each connector is controlled by Kookaberry scripts.
+
 4.	Edge Connector – located at the bottom of the Kookaberry board, it plugs into a mating connector on an expansion board 
 and makes all of the Kookaberry’s connections available depending on the capabilities of the expansion board.
 
