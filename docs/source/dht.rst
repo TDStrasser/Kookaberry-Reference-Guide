@@ -1,6 +1,6 @@
-******************************************
-:mod:`dht` --- Atmospheric multi-sensor
-******************************************
+**********************************************************
+:mod:`dht` --- Atmospheric temperature and humidity sensor
+**********************************************************
 .. module:: dht
    :synopsis: Digital atmospheric multi-sensor
 
