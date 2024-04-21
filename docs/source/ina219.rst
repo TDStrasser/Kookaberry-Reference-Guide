@@ -7,10 +7,40 @@
 .. _ina219:
 
 
-The INA219 is a digital wattmeter
+The INA219 is a digital wattmeter from Texas Instruments.  
+The INA219 sensor measures direct current, voltage and power from the circuit to which it is connected.
 
-.. note::
-    This section is under development and is not complete nor accurate
+In a direct current circuit, electrical power delivered to an electrical load (measured in watts) 
+is the arithmetic product of the current flowing through the load (measured in amperes) 
+and the voltage across the load’s terminals (measured in volts).
+
+To measure the current, a low value resistor is placed in series with the load, and the voltage across the resistor’s terminal is measured. 
+By applying Ohm’s Law, the current can be derived (current I = voltage V / resistance R).
+
+See also:
+
+- https://en.wikipedia.org/wiki/Voltmeter,
+- https://en.wikipedia.org/wiki/Ammeter and
+- https://en.wikipedia.org/wiki/Ohm%27s_law
+
+
+The INA219 sensor is commonly mounted on a breakout board equipped with terminals to attach the load and a power supply, 
+and a shunt resistor used to measure current flowing through the load.
+
+The interface with the Kookaberry is the I2C serial communications bus. 
+I2C stands for Inter-Integrated-Circuit Communications (IIC or I2C). 
+See https://en.wikipedia.org/wiki/I%C2%B2C for more detail.
+
+There are four wires in the I2C interface, being: 
+
+* Vcc power at +3.3 volts DC 
+* Gnd ground (or negative) for signal and power at 0 volts 
+* SCL being the serial clock signal for communications timing 
+* SDA being the serial data signal which conveys the digital data being communicated
+
+When using a INA219 circuit board it is important that these signals are connected to the correct Pins on the Kookaberry.
+
+The data-sheet for the INA219 may be obtained from this website: https://www.ti.com/product/INA219
 
 Class INA219
 ============
@@ -18,8 +48,11 @@ Class INA219
 Example Usage::
 
     # Find any INA219 sensors and display its data
-    import time
+    import time, fonts
     from machine import SoftI2C, Pin
+    from kooka import display
+
+    display.setfont(fonts.mono6x7)
 
     valid_adx = [0x40, 0x41, 0x44, 0x45] # The range of valid INA219 I2C addresses
     i2c_bus = SoftI2C(scl=Pin('P3A')',sda=Pin('P3B'))
@@ -37,34 +70,133 @@ Example Usage::
 
     # measure and display loop
     while True: # the loop runs forever
-        bus_voltage = ina219.bus_voltage  # voltage on V- (load side)
-        shunt_voltage = ina219.shunt_voltage  # voltage between V+ and V- across the shunt
-
-        # INA219 measure bus voltage on the load side. So PSU voltage = bus_voltage + shunt_voltage
-        print("PSU V:{:6.3f} V".format(bus_voltage + shunt_voltage))
-        print("Shunt V:{:9.6f} V".format(shunt_voltage))
-        print("Load V:{:6.3f} V".format(bus_voltage))
-        print("Current:{:9.6f} mA".format(ina219.current * 1000))
-        print("Power:{:9.6f} mW".format(ina219.power * 1000))
-        print("")
-
+        display.fill(0) # Clear the display
+        display.print("PSU V:{:6.3f} V".format(ina219.supply_voltage))
+        display.print("Shunt V:{:9.6f} V".format(ina219.shunt_voltage))
+        display.print("Load V:{:6.3f} V".format(ina219.bus_voltage))
+        display.print("Current:{:9.6f} mA".format(ina219.current))
+        display.print("Power:{:9.6f} mW".format(ina219.power))
+        display.show()
         time.sleep(5)
-
-
 
 
 INA219 Constructor
 ------------------
 
-.. class:: ina219.INA219(i2c_device, addr=0x40, rshunt = 0.01, maxamps = 1)
+.. class:: ina219.INA219(i2c, addr=0x40, rshunt=0.01, maxamps=None, voltage_range=INA219.RANGE_32V, gain=INA219.GAIN_AUTO, bus_adc=INA219.ADC_12BIT, shunt_adc=INA219.ADC_12BIT)
 
+    Creates an INA219 object on the pre-defined I2C bus with default address 0x40.
 
+    *i2c* is an I@C bus object created with machine.SoftI2C class.
+
+    *addr* is the I2C device address, one of (``0x40``, ``0x41``, ``0x44``, ``0x45``). The address is set with hardware on the I2C sensor.
+
+    *rshunt* is the value of the shunt resistor in the sensor (optional, defaults to 0.01 ohms).
+
+    *maxamps* is the maximum expected current in amps (optional).
+
+    *voltage_range* is the full-scale voltage range. This is either 16V or 32V represented by one of the following constants:
+
+    .. data:: INA219.RANGE_16V
+    .. data:: INA219.RANGE_32V (default)
+
+    *gain* is the gain which controls the maximum range of the shunt voltage represented by one of the following constants:
+
+    .. data:: INA219.GAIN_1_40MV
+    .. data:: INA219.GAIN_2_80MV
+    .. data:: INA219.GAIN_4_160MV
+    .. data:: INA219.GAIN_8_320MV
+    .. data:: INA219.GAIN_AUTO (default)
+
+    *bus_adc* is the bus ADC resolution (9, 10, 11, or 12-bit) or the setting of the number of samples used when averaging results
+    represented by one of the following constants:
     
+    .. data:: INA219.ADC_9BIT
+    .. data:: INA219.ADC_10BIT
+    .. data:: INA219.ADC_11BIT
+    .. data:: INA219.ADC_12BIT (default)
+
+    .. data:: INA219.ADC_2SAMP
+    .. data:: INA219.ADC_4SAMP
+    .. data:: INA219.ADC_8SAMP
+    .. data:: INA219.ADC_16SAMP
+    .. data:: INA219.ADC_32SAMP
+    .. data:: INA219.ADC_64SAMP
+    .. data:: INA219.ADC_128SAMP
+
+    *shunt_adc* is the shunt ADC resolution (9, 10, 11, or 12-bit) or the setting of the number of samples used when averaging results
+    represented by one of the following constants:
+    
+    .. data:: INA219.ADC_9BIT
+    .. data:: INA219.ADC_10BIT
+    .. data:: INA219.ADC_11BIT
+    .. data:: INA219.ADC_12BIT (default)
+
+    .. data:: INA219.ADC_2SAMP
+    .. data:: INA219.ADC_4SAMP
+    .. data:: INA219.ADC_8SAMP
+    .. data:: INA219.ADC_16SAMP
+    .. data:: INA219.ADC_32SAMP
+    .. data:: INA219.ADC_64SAMP
+    .. data:: INA219.ADC_128SAMP
+
+
+INA219 Properties
+-----------------
+
+The INA219 class presents all of its measurements as properties:
+
+
+.. property:: INA219.bus_voltage
+
+    Returns the bus voltage in volts as a floating point number
+
+.. property:: INA219.shunt_voltage
+
+    Returns the shunt voltage in volts as a floating point number.
+
+    A ``DeviceRangeError`` exception is thrown if current overflow occurs.
+
+.. property:: INA219.supply_voltage
+
+    Returns the bus supply voltage in volts as a floating point number.  This is the sum of the bus_voltage + shunt_voltage.
+
+    A ``DeviceRangeError`` exception is thrown if current overflow occurs.
+   
+.. property:: INA219.current
+
+    Returns the bus current in amps as a floating point number.
+
+    A ``DeviceRangeError`` exception is thrown if current overflow occurs.
+
+.. property:: INA219.power
+
+    Returns the bus power in watts as a floating point number.
+
+    A ``DeviceRangeError`` exception is thrown if current overflow occurs.
+
+.. property:: INA219.current_overflow
+
+    Returns a boolean according to whether or not the sensor has detected current overflow.
+    If ``True``, the current and power values will be invalid.
 
 INA219 Methods
 --------------
 
+.. method:: INA219.sleep()
 
-.. method:: INA219.method()
-    
+    Puts the INA219 sensor into power-down mode.
+
+.. method:: INA219.wake()
+
+    Wakes the INA219 from a power-down mode. It incorporates the 40 micro-second delay required for the sensor to wake.
+
+.. method:: INA219.reset()
+
+    Resets the INA219 sensor to its default configuration. That is:
+
+    - *rshunt* 0.01 ohms
+    - *voltage_range* 32 volts
+    - *bus_adc* 12-bit resolution
+    - *shunt_adc* 12-bit resolution
 
