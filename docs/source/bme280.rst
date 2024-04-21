@@ -73,19 +73,15 @@ BME280 Properties
 
 The module presents the sensor readings as properties.
 
-Values::
+.. property:: sensor.values
 
-    temperature, pressure, humidity = sensor.values
-
-Where:
+Returns a tuplet (temperature, pressure, humidity) where:
 
   -	temperature: is the temperature in degrees Celsius.
   -	pressure: is the atmospheric pressure in hectoPascals.
   -	humidity: is the relative humidity in percent.
 
-Altitude::
-
-    altitude = sensor.altitude
+.. property:: sensor.altitude
     
 The altitude is in metres and is calculated based on the value given to the property bme.sealevel (see below). 
 The value for sea-level pressure does not have to be the actual sea-level pressure, but any pressure you may select, 
@@ -101,17 +97,13 @@ The default sea-level pressure is 1013.25 hPa, but you can use your local publis
 or set a local pressure to determine altitude difference.
 See also https://en.wikipedia.org/wiki/Altimeter_setting
 
-Dew Point::
-
-    dew_point = sensor.dew_point
+.. property:: sensor.dew_point
 
 
 Provides the dew_point temperature (°C) calculated from the actual temperature and humidity.
 See also https://en.wikipedia.org/wiki/Dew_point
 
-Sensor Type::
-
-    type = sensor.sensor
+.. property:: sensor.sensor
 
 
 Provides a sensor type as a string variable being one of ('BMP280','BME280','BME680', or 'unknown') depending on the sensor id
