@@ -8,3 +8,4 @@ These modules extend the functionality of the **Kookaberry** software in useful 
 
   doomsday.rst
   shapes_lib.rst
+  music.rst
