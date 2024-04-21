@@ -82,8 +82,11 @@ LED Methods
 class Button
 ============
 
-This class allows you to read the state of one of the built-in buttons and
-includes automatic debouncing.
+This class allows you to read the state of one of the built-in buttons and includes automatic debouncing.
+
+This class exists only for the pre-defined instances (``button_a``, ``button_b``, ``button_c``, and ``button_d``) 
+and cannot be used on GPIO pins.
+This is because the buttons are connected to one of the Kokkaberry co-processors and not the programmable microcomputer.
 
 Button Methods
 --------------
@@ -93,16 +96,9 @@ Button Methods
     Return the current state of the debounced button: 0 for released and 1 for
     pressed (debouncing has been performed on the return value).
 
-.. method:: Pin.__call__()
-
-    Button objects are callable, providing a fast shortcut to get the value of
-    the button.  It is equivalent to ``Button.value()``.
-
 .. method:: is_pressed()
 
     Returns ``True`` if the debounced button is held down, ``False`` otherwise.
-
-    This method is mainly provided for compatibility with the micro:bit.
 
 .. method:: was_pressed()
 
