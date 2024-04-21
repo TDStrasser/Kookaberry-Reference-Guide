@@ -25,9 +25,15 @@ Example usage::
 
     # NeoPixel Demo - Cycle Colours Along The NeoPixel String
     pixels_in_array = 8 # Change this number to suit the number of NeoPixels
-    import kooka, neopixel, machine, time
-    np = neopixel.NeoPixel(machine.Pin('P1'), pixels_in_array)
     
+    import neopixel, machine, time
+
+    from kooka import display # Construct the Display object
+    display.fill(0)
+
+    np = neopixel.NeoPixel(machine.Pin('P1'), pixels_in_array) # Construct the NeoPixel object
+    
+    # Define RGB colours
     red = (63,0,0)
     green = (0,63,0)
     blue = (0,0,63)
@@ -38,26 +44,23 @@ Example usage::
     black = (0,0,0)
     colours =[red,green,blue,yellow,cyan,violet,white]
 
-    def demo(np):
-        n = np.n
-        print("No of pixels = ",n)
-        print("Cycle individual pixels")
-        # cycle
-        for colour in colours:
-            for i in range(n):
-                for j in range(n):
-                    np[j] = black
-                np[i % n] = colour
-                np.write()
-                time.sleep_ms(100)
-
-    demo(np)
+    n = np.n # Read back the number of pixels
+    display.print("No of pixels = ",n)
+    display.print("Cycle individual pixels")
+    # cycle
+    for colour in colours:
+        for i in range(n):
+            np.fill(black) # Set all pixels to black
+            np[i % n] = colour # Change the current neopixel's data from black
+            np.write()  # Transfer all neopixel data
+            time.sleep_ms(100) # Pause sufficient for observation
+    display.print('Finished')
 
 
 NeoPixel Constructors
 ---------------------
 
-.. class:: kooka.NeoPixel(pin, pixels_in_array)
+.. class:: neopixel.NeoPixel(pin, pixels_in_array)
 
    Creates a *neopixel* object.  
    
@@ -93,3 +96,8 @@ NeoPixel Methods
     Write the bytes in *neopixel* buffer to a NeoPixel-like device on the given *pin* when the *neopixel* object was created.  
     Interrupts will be disabled during the entire write to get accurate timing.
     The physical NeoPixel LED string will then be lit in accordance with the pattern set in the *neopixel* object buffer.
+
+.. method:: NeoPixel.fill(colour)
+
+    Fill the *neopixel* object buffer array with the specified *colour*.  
+    An immediately subsequent NeoPixel.write() will set all the NeoPixels to the specified *colour*.
