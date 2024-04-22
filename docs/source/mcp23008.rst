@@ -22,18 +22,22 @@ Example Usage::
 
     # Sets the MCP23008 pins as outputs and then (with LEDs connected to all outputs) lights them in binary number patterns
 
-    import mcp23008             # loads the mcp23008 module
+    import mcp23008                 # loads the mcp23008 module
 
-    iomux = mcp23008.MCP23008() # creates an instance of the mcp23008 named iomux
-    outbuf = bytearray(1)       # creates a single byte buffer
-    outbuf[0] = 0x00            # initialises the buffer for output
-    i2cmux.IODIR = outbuf       # IODIR sets the input/output configuration of the I/O pins
+    # Set up the I2C bus
+    from machine import SoftI2C, Pin
+    i2c = SoftI2C(sda=Pin('P3A'), scl=Pin('P3B'))
+
+    i2cmux = mcp23008.MCP23008(i2c) # creates an instance of the mcp23008 named iomux
+    outbuf = bytearray(1)           # creates a single byte buffer
+    outbuf[0] = 0x00                # initialises the buffer for output
+    i2cmux.IODIR = outbuf           # IODIR sets the input/output configuration of the I/O pins
 
     for i in range(0, 256): 
         outbuf[0] = i
-        i2cmux.OLAT = outbuf    # Transfer the binary pattern for i to the outputs
-        time.sleep(0.1)         # Delay for visual observation of LEDs
-    outbuf[0] = 0               # Reset the outputs on completion
+        i2cmux.OLAT = outbuf        # Transfer the binary pattern for i to the outputs
+        time.sleep(0.1)             # Delay for visual observation of LEDs
+    outbuf[0] = 0                   # Reset the outputs on completion
     i2cmux.OLAT = outbuf
 
 
