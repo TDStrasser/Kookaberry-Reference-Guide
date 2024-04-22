@@ -109,6 +109,9 @@ DS2321 Methods
     
     Setting the DS3231 time automatically clears the OSF using the OSF_reset() function.
 
+.. _ds3231_EXT:
+
+
 Class DS3231_EXT
 ================
 
@@ -126,9 +129,10 @@ Example Code::
 
     rtc.square_wave(freq=1) # Generate a 1 Hz square wave on the DS3231 output pin
 
+ 
 
- DS3231_EXT Constructors
- -----------------------
+DS3231_EXT Constructors
+-----------------------
 
 .. class:: ds3231.DS3231_EXT(i2c=i2c)
 
