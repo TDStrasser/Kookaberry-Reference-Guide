@@ -6,50 +6,149 @@
 
 .. _mcp23008:
 
+The mcp23008 module enables the **Kookaberry** to use the MCP23008 I2C input/output expander chip.  
+This chip allows digital inputs and outputs to be used beyond those already provided for on the **Kookaberry**.  
+It is particularly useful for providing I2C serial control of external expander boards that have digital inputs and outputs. 
 
-.. note::
+Examples are keyboards, and digital sensing and control boards.
 
-    This section is under development, incomplete and not accurate.
+The data-sheet for the MCP23008 I/O multiplexer can be found at http://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf 
 
 
 Class MCP23008
 ==============
 
-The mcp23008 module enables the Kookaberry to use the MCP23008 I2C input/output expander chip.  This chip allows digital inputs and outputs to be used beyond those already provided for on the Kookaberry.  It is particularly useful for providing I2C serial control of external expander boards that have digital inputs and outputs.  Examples are keyboards, and digital sensing and control boards.
-The contents of the module are:
- 
-To use the mcp23008 module, follow these programming examples:
-import mcp23008 # loads the mcp23008 module
-iomux = mcp23008.MCP23008() # creates an instance of the mcp23008 named iomux
-outbuf = bytearray(1) # creates a single byte buffer
-outbuf[0] = 0xF0 # initialises the buffer for controlling I/O direction
-# When a bit is set, the corresponding pin becomes an input. 
-# When a bit is clear, the corresponding pin becomes an output
-i2cmux.IODIR = outbuf # IODIR sets the input/output configuration of the I/O pins
-# The IPOL register allows the user to configure the polarity on the corresponding GPIO port bits.
-# If a bit is set, the corresponding GPIO register bit will reflect the inverted value on the pin.
-
-
-The datasheet for the MCP23008 I/O multiplexer ca be found at http://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf 
-
-
 Example Usage::
 
-    # Some code here
+    # Sets the MCP23008 pins as outputs and then (with LEDs connected to all outputs) lights them in binary number patterns
+
+    import mcp23008             # loads the mcp23008 module
+
+    iomux = mcp23008.MCP23008() # creates an instance of the mcp23008 named iomux
+    outbuf = bytearray(1)       # creates a single byte buffer
+    outbuf[0] = 0x00            # initialises the buffer for output
+    i2cmux.IODIR = outbuf       # IODIR sets the input/output configuration of the I/O pins
+
+    for i in range(0, 256): 
+        outbuf[0] = i
+        i2cmux.OLAT = outbuf    # Transfer the binary pattern for i to the outputs
+        time.sleep(0.1)         # Delay for visual observation of LEDs
+    outbuf[0] = 0               # Reset the outputs on completion
+    i2cmux.OLAT = outbuf
 
 
 
 MCP23008 Constructor
 --------------------
 
-.. class:: mcp23008.MCP23008()
+.. class:: mcp23008.MCP23008(i2c=None, address=0x20)
+
+    *i2c* is an I2C bus communications object created using the :ref:`machine.SoftI2C` class.
+
+    *address* is the I2C bus device hardware address.  
+    The MCP23008 I2C device has three hardware address pins allowing for up to 8 devices on the same I2C bus 
+    with addresses ranging from ``0x20`` (default) to ``0x27`` inclusive.
     
+
+MCP23008 Properties
+-------------------
+
+These properties provide access to the MCP23008 chip's various registers.
+
+.. property:: MCP23008.IODIR
+
+    Controls the direction of the data I/O.
+
+    When a bit is set, the corresponding pin becomes an input. 
+    
+    When a bit is clear, the corresponding pin becomes an output.
+
+    
+    Assignment requires a serial buffer as the pattern is sent over the I2C bus
+
+    Usage::
+
+        buffer = bytearray(1)
+        # Setting IODIR
+        buffer[0] = pattern_byte
+        MCP23008.IODIR = buffer
+
+        # Read back IODIR
+        buffer = MCP23008.IODIR
+        print(buffer)
+
+
+
+.. property:: MCP23008.IPOL
+
+    The IPOL register allows the user to configure the polarity on the corresponding GPIO port bits.
+
+    If a bit is set, the corresponding GPIO register bit will reflect the inverted value on the pin.
+
+    Usage is the same as IODIR using a serial buffer.
+
+
+
+.. property:: MCP23008.GPPU
+
+    The GPPU register controls the pull-up resistors for the port pins. 
+    
+    If a bit is set and the corresponding pin is configured as an input, the corresponding port pin is internally pulled up with a 100 kohm resistor.
+
+    Usage is the same as IODIR using a serial buffer.
+
+.. property:: MCP23008.GPIO
+
+    The GPIO register reflects the value on the port.
+
+    Reading from this register reads the port. 
+    
+    Writing to this register modifies the Output Latch (OLAT) register.
+
+    Usage is the same as IODIR using a serial buffer.
+
+.. property:: MCP23008.OLAT
+
+    The OLAT register provides access to the output latches. 
+    
+    A read from this register results in a read of the OLAT and not the port itself. 
+    
+    A write to this register modifies the output latches that modify the pins configured as outputs.
+
+    Usage is the same as IODIR using a serial buffer.
 
 MCP23008 Methods
 ----------------
 
+These are convenience methods to deal with individual pins.
 
 
-.. method:: MCP23008.method()
+.. method:: MCP23008.setPinDir(pin, direction)
+
+    Sets the *pin* (``0`` to ``7``) *direction* as an input (``0``) or as an output (``1``).
+
+
+.. method:: MCP23008.setPullupOn(pin)
+
+    Enables the 100 kilo ohm pull-up resistor on the designated *pin* (``0`` to ``7``).
+
+
+.. method:: MCP23008.setPullupOff(pin)
+
+    Disables the 100 kilo ohm pull-up resistor on the designated *pin* (``0`` to ``7``).
+
+
+.. method:: MCP23008.setPinLow(pin)
+
+    Sets the designated *pin* (``0`` to ``7``) to an output high (``1``) state.
+
+
+.. method:: MCP23008.setPinHigh(pin)
+
+    Sets the designated *pin* (``0`` to ``7``) to an output low (``0``) state.
+
+
+.. method:: MCP23008.readPin(pin)
+
+    Reads the designated *pin*'s (``0`` to ``7``) state, returning a ``0`` or a ``1``.
     
-
