@@ -54,13 +54,15 @@ Example usage::
 I2C Constructors
 ----------------
 
-.. class:: SoftI2C(\*, scl, sda, freq=400000)
+.. class:: SoftI2C(\*, scl, sda, freq=400000, timeout=50000)
 
    Construct and return a new I2C object using the following parameters:
 
       - *scl* should be a pin object specifying the pin to use for SCL.
       - *sda* should be a pin object specifying the pin to use for SDA.
       - *freq* should be an integer which sets the maximum frequency for SCL.
+      - *timeout* is the maximum time in microseconds to wait for clock stretching (SCL held low by another device on the bus), 
+        after which an ``OSError(ETIMEDOUT)`` exception is raised.
 
 I2C General Methods
 -------------------
