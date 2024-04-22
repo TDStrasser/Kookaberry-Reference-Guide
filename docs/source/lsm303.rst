@@ -15,19 +15,16 @@ magnetometer, with default I2C addresses of ``0x1d`` and ``0x1e`` respectively.
 
 Example usage::
 
-    import machine, lsm303
+    import lsm303
+    from machine import Pin, SoftI2C
 
-    i2c = machine.I2C('LSM') # internal I2C bus with internal LSM303C
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B')) # Create I2C bus for an external LSM303C
 
     accel = lsm303.LSM303C_Accel(i2c)
     mag = lsm303.LSM303C_Mag(i2c)
 
     print(accel.get_xyz(), mag.get_strength())
 
-Note that the i2c object can be any valid machine.I2C object.  For example, you
-can use the P1 connector via::
-
-    i2c = machine.I2C('P1')
 
 .. _lsm303.LSM303C_Accel:
 
@@ -41,8 +38,12 @@ LSM303 Constructors
 
 .. class:: LSM303C_Accel(i2c, addr=0x1d)
 
-    Creates a new instance of this class.  *i2c* should be a :class:`machine.I2C`
-    object that the LSM303C is connected to.  *addr* is the I2C address of the
+    Creates a new instance of this class.  
+    
+    *i2c* should be a :class:`machine.SoftI2C`
+    object that the LSM303C is connected to.  
+    
+    *addr* is the I2C address of the
     accelerometer, which defaults to 0x1d if not specified.
 
 LSM303 Methods
@@ -64,8 +65,12 @@ LSM303C_Mag Constructors
 
 .. class:: LSM303C_Mag(i2c, addr=0x1e)
 
-    Creates a new instance of this class.  *i2c* should be a machine.I2C object
-    that the LSM303C is connected to.  *addr* is the I2C address of the
+    Creates a new instance of this class.  
+    
+    *i2c* should be a :class:`machine.SoftI2C` object
+    that the LSM303C is connected to.  
+    
+    *addr* is the I2C address of the
     magnetometer, which defaults to 0x1e if not specified.
 
 LSM303C_Mag Methods
