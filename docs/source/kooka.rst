@@ -141,7 +141,7 @@ Servo Constructors
 .. class:: kooka.Servo(id)
 
    Create a servo object.  The parameter *id* can be a string naming the
-   connector, like ``"P2"``, or a :ref:`machine.Pin` object representing the
+   connector, like ``"P2"``, or a :class:`machine.Pin` object representing the
    pin on the connector.
 
 Servo Methods

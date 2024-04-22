@@ -31,7 +31,7 @@ Music Functions
     *notes* can be a string, such as ``"c1:4"``, or a list of notes as strings, such as ["c","d","e"]
     The duration and octave values are reset to their defaults (of 4 each) before the music is played.
 
-    *pin* is the ouput pin created by :ref:`machine.Pin`, or can be a string, one of ('P1', 'P2', 'P3A', 'P3B', 'P4', or 'P5').
+    *pin* is the ouput pin created by :class:`machine.Pin`, or can be a string, one of ('P1', 'P2', 'P3A', 'P3B', 'P4', or 'P5').
     The output pin can be used to override the default pin=None which prevents sounds from being played.
 
     If wait is set to ``True``, playing is blocking, and the music will be played to the end.

@@ -64,7 +64,7 @@ NeoPixel Constructors
 
    Creates a *neopixel* object.  
    
-   The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :ref:`machine.Pin` object representing the
+   The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :class:`machine.Pin` object representing the
    pin on the connector.
 
    The parameter *pixels_in_array* is an integer specifying how many LEDs are in the NeoPixel string.  

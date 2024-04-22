@@ -62,7 +62,7 @@ DHT Constructors
 
     Creates the DHT11/22 sensor object.
 
-    The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :ref:`machine.Pin` object representing the pin on the connector.    
+    The parameter *pin* can be a string naming the connector, like ``"P2"``, or a :class:`machine.Pin` object representing the pin on the connector.    
 
 DHT Methods
 -----------
