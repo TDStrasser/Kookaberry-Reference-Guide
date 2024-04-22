@@ -1,29 +1,39 @@
 .. currentmodule:: machine
 .. _machine.I2C:
+.. _machine.SoftI2C
 
-class I2C -- a two-wire serial protocol
-=======================================
+class SoftI2C -- a two-wire serial protocol
+===========================================
 
-.. warning::
+.. note::
 
-   This section is no longer correct and needs to be revised.
+   The I2C class which gave access to hardware I2C ports has been deprecated on the **Kookaberry**.
+
+   It is now necessary to use the SoftI2C class as described herein.
 
 
-I2C is a two-wire protocol for communicating between devices.  At the physical
-level it consists of 2 wires: SCL and SDA, the clock and data lines respectively.
+I2C is a two-wire protocol for communicating between devices.  
 
-I2C objects are created attached to a specific bus.  They can be initialised
-when created, or initialised later on.
+I2C stands for Inter-Integrated-Circuit Communications (IIC or I2C). 
+See https://en.wikipedia.org/wiki/I%C2%B2C for more detail.
+
+There are four wires in the I2C interface, being: 
+
+* Vcc power at +3.3 volts DC 
+* Gnd ground (or negative) for signal and power at 0 volts 
+* SCL being the serial clock signal for communications timing 
+* SDA being the serial data signal which conveys the digital data being communicated
+
+I2C objects are created attached to a specific bus.  
+They can be initialised when created, or initialised later on.
 
 Printing the I2C object gives you information about its configuration.
 
 Example usage::
 
-    from machine import I2C
+    from machine import SoftI2C, Pin
 
-    i2c = I2C(freq=400000)          # create I2C peripheral at frequency of 400kHz
-                                    # depending on the port, extra parameters may be required
-                                    # to select the peripheral and/or pins to use
+    i2c = SoftI2C(sda=Pin('P3A'), scl=Pin('P3B'), freq=400000) # create I2C peripheral at frequency of 400kHz using Pins P3A and P3B
 
     i2c.scan()                      # scan for slaves, returning a list of 7-bit addresses
 
@@ -38,26 +48,18 @@ Example usage::
 I2C Constructors
 ----------------
 
-.. class:: I2C(id=-1, \*, scl, sda, freq=400000)
+.. class:: SoftI2C(\*, scl, sda, freq=400000)
 
    Construct and return a new I2C object using the following parameters:
 
-      - *id* identifies a particular I2C peripheral.  The default
-        value of -1 selects a software implementation of I2C which can
-        work (in most cases) with arbitrary pins for SCL and SDA.
-        If *id* is -1 then *scl* and *sda* must be specified.  Other
-        allowed values for *id* depend on the particular port/board,
-        and specifying *scl* and *sda* may or may not be required or
-        allowed in this case.
       - *scl* should be a pin object specifying the pin to use for SCL.
       - *sda* should be a pin object specifying the pin to use for SDA.
-      - *freq* should be an integer which sets the maximum frequency
-        for SCL.
+      - *freq* should be an integer which sets the maximum frequency for SCL.
 
 I2C General Methods
 -------------------
 
-.. method:: I2C.init(scl, sda, \*, freq=400000)
+.. method:: SoftI2C.init(scl, sda, \*, freq=400000)
 
   Initialise the I2C bus with the given arguments:
 
@@ -65,13 +67,7 @@ I2C General Methods
      - *sda* is a pin object for the SDA line
      - *freq* is the SCL clock rate
 
-.. method:: I2C.deinit()
-
-   Turn off the I2C bus.
-
-   Availability: WiPy.
-
-.. method:: I2C.scan()
+.. method:: SoftI2C.scan()
 
    Scan all I2C addresses between 0x08 and 0x77 inclusive and return a list of
    those that respond.  A device responds if it pulls the SDA line low after
@@ -86,15 +82,15 @@ control over the bus, otherwise the standard methods (see below) can be used.
 
 These methods are available on software I2C only.
 
-.. method:: I2C.start()
+.. method:: SoftI2C.start()
 
    Generate a START condition on the bus (SDA transitions to low while SCL is high).
 
-.. method:: I2C.stop()
+.. method:: SoftI2C.stop()
 
    Generate a STOP condition on the bus (SDA transitions to high while SCL is high).
 
-.. method:: I2C.readinto(buf, nack=True, /)
+.. method:: SoftI2C.readinto(buf, nack=True, /)
 
    Reads bytes from the bus and stores them into *buf*.  The number of bytes
    read is the length of *buf*.  An ACK will be sent on the bus after
@@ -102,7 +98,7 @@ These methods are available on software I2C only.
    is true then a NACK will be sent, otherwise an ACK will be sent (and in this
    case the slave assumes more bytes are going to be read in a later call).
 
-.. method:: I2C.write(buf)
+.. method:: SoftI2C.write(buf)
 
    Write the bytes from *buf* to the bus.  Checks that an ACK is received
    after each byte and stops transmitting the remaining bytes if a NACK is
@@ -114,13 +110,13 @@ Standard bus operations
 The following methods implement the standard I2C master read and write
 operations that target a given slave device.
 
-.. method:: I2C.readfrom(addr, nbytes, stop=True, /)
+.. method:: SoftI2C.readfrom(addr, nbytes, stop=True, /)
 
    Read *nbytes* from the slave specified by *addr*.
    If *stop* is true then a STOP condition is generated at the end of the transfer.
    Returns a `bytes` object with the data read.
 
-.. method:: I2C.readfrom_into(addr, buf, stop=True, /)
+.. method:: SoftI2C.readfrom_into(addr, buf, stop=True, /)
 
    Read into *buf* from the slave specified by *addr*.
    The number of bytes read will be the length of *buf*.
@@ -128,7 +124,7 @@ operations that target a given slave device.
 
    The method returns ``None``.
 
-.. method:: I2C.writeto(addr, buf, stop=True, /)
+.. method:: SoftI2C.writeto(addr, buf, stop=True, /)
 
    Write the bytes from *buf* to the slave specified by *addr*.  If a
    NACK is received following the write of a byte from *buf* then the
@@ -136,7 +132,7 @@ operations that target a given slave device.
    generated at the end of the transfer, even if a NACK is received.
    The function returns the number of ACKs that were received.
 
-.. method:: I2C.writevto(addr, vector, stop=True, /)
+.. method:: SoftI2C.writevto(addr, vector, stop=True, /)
 
    Write the bytes contained in *vector* to the slave specified by *addr*.
    *vector* should be a tuple or list of objects with the buffer protocol.
@@ -158,14 +154,14 @@ from and written to.  In this case there are two addresses associated with an
 I2C transaction: the slave address and the memory address.  The following
 methods are convenience functions to communicate with such devices.
 
-.. method:: I2C.readfrom_mem(addr, memaddr, nbytes, \*, addrsize=8)
+.. method:: SoftI2C.readfrom_mem(addr, memaddr, nbytes, \*, addrsize=8)
 
    Read *nbytes* from the slave specified by *addr* starting from the memory
    address specified by *memaddr*.
    The argument *addrsize* specifies the address size in bits.
    Returns a `bytes` object with the data read.
 
-.. method:: I2C.readfrom_mem_into(addr, memaddr, buf, \*, addrsize=8)
+.. method:: SoftI2C.readfrom_mem_into(addr, memaddr, buf, \*, addrsize=8)
 
    Read into *buf* from the slave specified by *addr* starting from the
    memory address specified by *memaddr*.  The number of bytes read is the
@@ -175,7 +171,7 @@ methods are convenience functions to communicate with such devices.
 
    The method returns ``None``.
 
-.. method:: I2C.writeto_mem(addr, memaddr, buf, \*, addrsize=8)
+.. method:: SoftI2C.writeto_mem(addr, memaddr, buf, \*, addrsize=8)
 
    Write *buf* to the slave specified by *addr* starting from the
    memory address specified by *memaddr*.
