@@ -87,7 +87,7 @@ INA219 Constructor
 
     Creates an INA219 object on the pre-defined I2C bus with default address 0x40.
 
-    *i2c* is an I@C bus object created with machine.SoftI2C class.
+    *i2c* should be a :class:`machine.SoftI2C` object.
 
     *addr* is the I2C device address, one of (``0x40``, ``0x41``, ``0x44``, ``0x45``). The address is set with hardware on the I2C sensor.
 

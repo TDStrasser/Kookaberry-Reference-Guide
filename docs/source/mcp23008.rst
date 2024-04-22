@@ -47,7 +47,7 @@ MCP23008 Constructor
 
 .. class:: mcp23008.MCP23008(i2c=None, address=0x20)
 
-    *i2c* is an I2C bus communications object created using the :ref:`machine.SoftI2C` class.
+    *i2c* should be a :class:`machine.SoftI2C` object.
 
     *address* is the I2C bus device hardware address.  
     The MCP23008 I2C device has three hardware address pins allowing for up to 8 devices on the same I2C bus 

@@ -40,7 +40,7 @@ LSM303 Constructors
 
     Creates a new instance of this class.  
     
-    *i2c* should be a :class:`machine.SoftI2C`
+    *i2c* should be a :class:`machine.SoftI2C` object.
     object that the LSM303C is connected to.  
     
     *addr* is the I2C address of the
@@ -67,7 +67,7 @@ LSM303C_Mag Constructors
 
     Creates a new instance of this class.  
     
-    *i2c* should be a :class:`machine.SoftI2C` object
+    *i2c* should be a :class:`machine.SoftI2C` object.
     that the LSM303C is connected to.  
     
     *addr* is the I2C address of the

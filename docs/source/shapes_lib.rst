@@ -47,7 +47,7 @@ Example Usage::
 Shapes Library Functions
 ------------------------
 
-.. method:: shapes_lib.line(dev, x0, y0, radius, lin_angle, *args, **kwargs)
+.. function:: shapes_lib.line(dev, x0, y0, radius, lin_angle, *args, **kwargs)
 
     Draws a radial line at a given angle and radius from the origin (x0,y0) and returns the coordinates of the rotating end of the line.
 
@@ -63,7 +63,7 @@ Shapes Library Functions
 
 
 
-.. method:: shapes_lib.draw_poly(dev, x0, y0, vert_radius, sides, vert_angle, fill=False, *args, **kwargs)
+.. function:: shapes_lib.draw_poly(dev, x0, y0, vert_radius, sides, vert_angle, fill=False, *args, **kwargs)
 
     Draws or fills a regular polygon at origin(x0,y0) with vertex radius and vertex angle. 
 
@@ -83,7 +83,7 @@ Shapes Library Functions
 
 
 
-.. method:: shapes_lib.polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
+.. function:: shapes_lib.polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
 
     Draws an outline polygon at origin(x0,y0) with vertex radius and vertex angle. This is a more convenient form of shapes_lib.draw_poly().
 
@@ -100,7 +100,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.fill_polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
+.. function:: shapes_lib.fill_polygon(dev, x0, y0, vert_radius, sides, vert_angle, *args, **kwargs)
 
     Draws a filled polygon at origin(x0,y0) with vertex radius and vertex angle. This is a more convenient form of shapes_lib.draw_poly().
 
@@ -117,7 +117,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.draw_arc(dev, x0, y0, arc_radius, arcstart, arcstop, fill=False, *args, **kwargs)
+.. function:: shapes_lib.draw_arc(dev, x0, y0, arc_radius, arcstart, arcstop, fill=False, *args, **kwargs)
 
     Draws or fills pie slice around origin (x0,y0) with radius between specified degrees. 
 
@@ -134,7 +134,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
+.. function:: shapes_lib.arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
 
     Draws an outline pie slice around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -149,7 +149,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.fill_arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
+.. function:: shapes_lib.fill_arc(dev, x0, y0, arc_radius, arcstart, arcstop, *args, **kwargs)
 
     Draws a filled pie slice around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -164,7 +164,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.circle(dev, x0, y0, radius, *args, **kwargs)
+.. function:: shapes_lib.circle(dev, x0, y0, radius, *args, **kwargs)
 
     Draws an outline circle around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -177,7 +177,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.fill_circle(dev, x0, y0, radius, *args, **kwargs)
+.. function:: shapes_lib.fill_circle(dev, x0, y0, radius, *args, **kwargs)
 
     Draws a filled circle around origin (x0,y0) with radius between specified degrees. This is a more convenient form of shapes_lib.draw_arc().
 
@@ -189,7 +189,7 @@ Shapes Library Functions
 
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
-.. method:: shapes_lib.triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+.. function:: shapes_lib.triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
     Draws an outline triangle with the vertex coordinates (x0,y0), (x1,y1), (x2,y2)
 
@@ -198,7 +198,7 @@ Shapes Library Functions
     *args* and *kwargs* are other arguments passed through to the display device, for example the colour.
 
 
-.. method:: shapes_lib.fill_triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
+.. function:: shapes_lib.fill_triangle(dev, x0, y0, x1, y1, x2, y2, *args, **kwargs)
 
     Draws a filled triangle with the vertex coordinates (x0,y0), (x1,y1), (x2,y2)
 

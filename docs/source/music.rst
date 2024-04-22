@@ -1,5 +1,5 @@
 ******************************
-:mod:`music` --- Music playing
+:mod:`music` --- Playing Music
 ******************************
 .. module:: music
    :synopsis: Module for playing music

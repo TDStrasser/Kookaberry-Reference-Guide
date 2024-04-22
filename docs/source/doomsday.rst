@@ -28,11 +28,11 @@ Example Usage::
 Doomsday Functions
 ------------------
 
- .. method:: doomsday.calc_dow(day,  month,  year)
+.. function:: doomsday.calc_dow(day,  month,  year)
 
     Returns a character string representing the day of the week given a date. 
     One of (``Sunday``,``Monday``, ``Tuesday``, ``Wednesday``, ``Thursday``, ``Friday``, ``Saturday``)
-    
+
     To abbreviate the day of the week to the first 3 letters, use: day_of_week = doomsday.calc_dow(day,  month,  year)[0:3]
 
 
@@ -40,7 +40,7 @@ Doomsday Functions
     - *month* is an integer (1 to 12 inclusive) representing the calendar month
     - *year* is an integer representing the calendar year
 
-.. method:: doomsday.dow_index(day,  month,  year)
+.. function:: doomsday.dow_index(day,  month,  year)
 
     Returns an integer representing the day of the week given a date. 
     One of ``0`` to ``7`` inclusive corresponding to (Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday)

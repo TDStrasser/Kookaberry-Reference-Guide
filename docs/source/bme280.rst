@@ -54,9 +54,9 @@ BME280 Constructors
 
     Creates a *BME280* sensor object.
 
-    i2c is an I2C interface object which has been created using machine.SoftI2C().
+    *i2c* should be a :class:`machine.SoftI2C` object.
 
-    mode is the setting for oversampling of the humidity value, and has the default value shown if omitted.
+    *mode* is the setting for oversampling of the humidity value, and has the default value shown if omitted.
     The valid operating modes (see the sensor data-sheet) are: 
 
     - BME280_OSAMPLE_1 = 1
@@ -65,7 +65,7 @@ BME280 Constructors
     - BME280_OSAMPLE_8 = 4 (default)
     - BME280_OSAMPLE_16 = 5
 
-	address is the I2C address of the bme280 sensor, which is usually hexadecimal 0x77 (which is 119 decimal).
+	*address* is the I2C address of the bme280 sensor, which is usually hexadecimal 0x77 (which is 119 decimal).
 
 
 BME280 Properties
