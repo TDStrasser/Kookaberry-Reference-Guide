@@ -1,6 +1,6 @@
 .. currentmodule:: machine
 .. _machine.I2C:
-.. _machine.SoftI2C
+.. _machine.SoftI2C:
 
 class SoftI2C -- a two-wire serial protocol
 ===========================================
@@ -10,6 +10,9 @@ class SoftI2C -- a two-wire serial protocol
    The I2C class which gave access to hardware I2C ports has been deprecated on the **Kookaberry**.
 
    It is now necessary to use the SoftI2C class as described herein.
+
+   Software I2C is more flexible and less hardware dependant.  
+   It is implemented by bit-banging and can be used on any pin but is not as efficient as hardware I2C was.
 
 
 I2C is a two-wire protocol for communicating between devices.  
