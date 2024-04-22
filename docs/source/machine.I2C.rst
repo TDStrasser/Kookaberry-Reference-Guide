@@ -14,6 +14,9 @@ class SoftI2C -- a two-wire serial protocol
    Software I2C is more flexible and less hardware dependant.  
    It is implemented by bit-banging and can be used on any pin but is not as efficient as hardware I2C was.
 
+   The only difference in usage between the I2C and SoftI2C classes is in construction. 
+   Otherwise their usage and methods are identical
+
 
 I2C is a two-wire protocol for communicating between devices.  
 
