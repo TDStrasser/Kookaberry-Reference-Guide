@@ -49,8 +49,8 @@ Example Usage::
       
       # Then add code to do something with the measurements, e.g.
       print(temperature, "C", humidity, "%")
-      # Then sleep for 1 second to allow the DHT to tae the next reading
-      time.sleep(1)
+      # Then sleep for 2 seconds to allow the DHT to take the next reading
+      time.sleep(2)
 
 
 DHT Constructors

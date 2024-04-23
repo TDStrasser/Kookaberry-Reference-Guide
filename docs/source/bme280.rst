@@ -43,7 +43,7 @@ Example usage::
         # add code to do something with the readings, e.g.
         print(temperature, "C ", pressure, "hPa ", humidity, "%")
 
-        # Then sleep for 1 second to allow the DHT to tae the next reading
+        # Then sleep for 1 second to allow the BME280 to take the next reading
         time.sleep(2)
 
 
