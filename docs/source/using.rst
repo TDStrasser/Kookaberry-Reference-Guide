@@ -69,3 +69,10 @@ Click on the Run button in the **KookaSuite** tool to transfer the program to th
    Coding the Kookaberry
 
 Your script can be made to appear in the **Kookaberry**'s menu by copying the script (or saving it using Save-As) into the **Kookaberry**'s app folder.
+
+AustSTEM Learning Hub
+---------------------
+
+AustSTEM has assembled a collection of resources on its Learning Hub at https://learn.auststem.com.au. 
+
+These resources complement the material in this manual with examples, lesson plans, descriptions of equipment and of their applications.
