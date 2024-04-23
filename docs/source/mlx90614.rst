@@ -62,8 +62,10 @@ MLX90614 Constructor
 
     *i2c* should be a :class:`machine.SoftI2C` object.
 
-    - Note that the MLX90614 requires the I2C bus clock frequency to be 100kHz or less, 
-    so care must be taken to set the clock frequency when setting up the I2C bus object.
+    .. note::
+        
+        The MLX90614 requires the I2C bus clock frequency to be 100kHz or less, so care must be taken to set the clock frequency 
+        when setting up the I2C bus object.
 
     *address* defaults to ``0x5A`` which is the only supported address. 
     
