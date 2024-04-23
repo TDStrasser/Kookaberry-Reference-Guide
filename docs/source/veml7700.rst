@@ -19,9 +19,9 @@ I2C stands for Inter-Integrated-Circuit Communications (IIC or I2C). See https:/
 There are four wires in the I2C interface, being: 
 
 * Vcc power at +3.3 volts DC 
-* * Gnd ground (or negative) for signal and power at 0 volts 
-* * SCL being the serial clock signal for communications timing 
-* * SDA being the serial data signal which conveys the digital data being communicated
+* Gnd ground (or negative) for signal and power at 0 volts 
+* SCL being the serial clock signal for communications timing 
+* SDA being the serial data signal which conveys the digital data being communicated
 
 When using a VEML7700 circuit board it is important that these signals are connected to the correct Pins on the **Kookaberry**.
 
