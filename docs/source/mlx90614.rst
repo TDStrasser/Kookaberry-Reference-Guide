@@ -45,10 +45,10 @@ Example Usage::
     while True:  # Loop runs forever
         display.fill(0)      # Clear the display
         display.print("IR Thermometer")
-        display.print(read_ambient_temp(), "C ambient")
+        display.print(irt.read_ambient_temp(), "C ambient")
         display.print(irt.read_object_temp(), "C object")
         if sensor.dual_zone:
-            display.print(sensor.object2_temp, "C Obj Zone 2")
+            display.print(irt.object2_temp, "C Obj Zone 2")
         # Wait for 5 seconds
         time.sleep(5)
 
