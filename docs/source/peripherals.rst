@@ -7,7 +7,16 @@ Further modules can be added by users for peripherals and accessories of their c
 There are many Internet forums and repositories that provide module software code and help on getting accessories to work with 
 **MicroPython** micro-computers such as the **Kookaberry**. Notable among the repositories is GitHub.
 
-The Kookaberry's built-in software modules are described in the following sections.
+The Kookaberry's built-in software modules are described in the following sections. Supported peripherals include:
+
+- buttons, other digital switches, and electrically compatible digital signals 
+- analogue signals from potentiometers, and from analogue sensors for distance, light, sound, proximity, heart-rate etc.
+- RGB colour LED arrays known as NeoPixels 
+- servos and electrical motors
+- digital sensors for acceleration, magnetism, temperature, humidity, air pressure, light, infra-red, electric voltage and current
+- battery time sources and clockwise
+- digital serial communications with radio transceivers and other computers
+
 
 .. toctree:: 
     :caption: Built-in Peripheral Modules
