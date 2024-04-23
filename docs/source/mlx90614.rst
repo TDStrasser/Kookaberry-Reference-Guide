@@ -7,25 +7,104 @@
 
 .. _mlx90614:
 
+The MLX90614 is a single and dual-zone infra-red contactless thermometer.
+
+The MLX90614 is factory calibrated in wide temperature ranges: 
+
+* -40°C to 125°C for the ambient temperature and 
+* -70°C to 380°C for the object temperature.
+
+
+The measured value is the average temperature of all objects in the Field Of View of the sensor. 
+
+The MLX90614 offers a standard accuracy of ±0.5˚C around room temperatures.
+
+The data-sheet may be obtained from https://media.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf
+
+Information about infra-red thermometers in general may be found at https://en.wikipedia.org/wiki/Infrared_thermometer
+
+
 Class MLX90614
 ==============
 
+Creates a MLX90614 object given an *i2c* bus object.
 
 Example Usage::
 
-    # Some code here
+    # Take non-contact object and ambient temperature readings at intervals
 
+    import mlx90614
+    from machine import Pin, SoftI2C
+    from kooka import display
+    import time
+
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B'), freq=100000) # set up the I2C interface
+                                                               # note the clock frequency is <=100kHz
+    irt = mlx90614.MLX90614(i2c)                               # create the Infra-red thermometer object
+
+    while True:  # Loop runs forever
+        display.fill(0)      # Clear the display
+        display.print("IR Thermometer")
+        display.print(read_ambient_temp(), "C ambient")
+        display.print(irt.read_object_temp(), "C object")
+        if sensor.dual_zone:
+            display.print(sensor.object2_temp, "C Obj Zone 2")
+        # Wait for 5 seconds
+        time.sleep(5)
 
 
 MLX90614 Constructor
 --------------------
 
-.. class:: mlx90614.MLX90614()
+.. class:: mlx90614.MLX90614(i2c, address=0x5A)
+
+    Creates the MLX90614 sensor object.
+
+    *i2c* should be a :class:`machine.SoftI2C` object.
+
+    - Note that the MLX90614 requires the I2C bus clock frequency to be 100kHz or less, 
+    so care must be taken to set the clock frequency when setting up the I2C bus object.
+
+    *address* defaults to ``0x5A`` which is the only supported address. 
     
+MLX90614 Properties
+-------------------
+
+.. property:: MLX90614.dual_zone
+
+    Is ``True`` is the sensor has dual-zone infra-red temperature sensing, else it is ``False``.
+
+.. property:: MLX90614.ambient_temp
+
+    Gives the ambient temperature of the sensor in degrees Celsius.
+
+.. property:: MLX90614.object_temp
+
+    Gives the target object's temperature in degrees Celsius.
+
+.. property:: MLX90614.object2_temp
+
+    Gives the second zone object temperature in degrees Celsius if the sensor is capable of such a reading.
+
+    Otherwise a ``RuntimeError`` *"Device only has one thermopile"* is raised.
 
 MLX90614 Methods
 ----------------
 
-.. method:: MLX90614.method()
+These methods are equivalent to the properties in the foregoing section.
+
+.. method:: MLX90614.read_ambient_temperature()
+
+    Returns the ambient temperature of the sensor in degrees Celsius.
+
+.. method:: MLX90614.read_object_temp()
+
+    Returns the target object's temperature in degrees Celsius.
+
+.. method:: MLX90614.read_object2_temp()
+
+    Returns the second zone object temperature in degrees Celsius if the sensor is capable of such a reading.
+
+    Otherwise a ``RuntimeError`` *"Device only has one thermopile"* is raised.
     
 
