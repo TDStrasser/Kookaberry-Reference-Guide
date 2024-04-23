@@ -17,6 +17,13 @@ The Kookaberry's built-in software modules are described in the following sectio
 - battery time sources and clockwise
 - digital serial communications with radio transceivers and other computers
 
+.. important::
+
+    All peripherals used with the **Kookaberry** must be electrically compatible with it.
+    
+    The allowable Pin input voltage range for the **Kookaberry** is 0 volts to +3.3 volts DC. 
+    Applying voltages outside that range may irreparably damage the **Kookaberry**.
+
 
 .. toctree:: 
     :caption: Built-in Peripheral Modules
