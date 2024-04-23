@@ -1,5 +1,5 @@
 *************************************
-:mod:`veml7700` --- Digital lux meter
+:mod:`veml7700` --- Digital Lux Meter
 *************************************
 .. module:: veml7700
    :synopsis: Digital lux meter
@@ -7,25 +7,88 @@
 
 .. _veml7700:
 
+The VEML7700 is a high-accuracy ambient light sensor with an I2C serial interface to the **Kookaberry**.
+
+The ambient light readings are measured in Lux. 
+Lux is the unit of illuminance, or luminous flux per unit area, in the International System of Units (SI), and is equal to one lumen per square metre. 
+See https://en.wikipedia.org/wiki/Lux for more detail.
+
+The interface with the **Kookaberry** is the I2C serial communications bus. 
+I2C stands for Inter-Integrated-Circuit Communications (IIC or I2C). See https://en.wikipedia.org/wiki/I%C2%B2C for more detail.
+
+There are four wires in the I2C interface, being: 
+
+* Vcc power at +3.3 volts DC 
+* * Gnd ground (or negative) for signal and power at 0 volts 
+* * SCL being the serial clock signal for communications timing 
+* * SDA being the serial data signal which conveys the digital data being communicated
+
+When using a VEML7700 circuit board it is important that these signals are connected to the correct Pins on the **Kookaberry**.
+
+The VEML7700 data-sheet may be obtained from https://www.vishay.com/docs/84286/veml7700.pdf.
+
+
 Class VEML7700
 ==============
 
 
 Example Usage::
 
-    # Some code here
+    # Read the light level at 1 second intervals
+
+    import veml7700
+    from machine import Pin, SoftI2C
+    from kooka import display
+    import time
+
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B')) # set up the I2C interface
+    sensor = veml7700.VEML7700(i2c)               # create the lux meter object
+
+    while True:  # Loop runs forever
+        display.fill(0)      # Clear the display
+        display.print("Light Lux Meter")
+        display.print(sensor.read_lux(), "Lux")
+        # Wait for 1 second
+        time.sleep(1)
 
 
 
 VEML7700 Constructor
 --------------------
 
-.. class:: veml7700.VEML7700(i2c)
+.. class:: veml7700.VEML7700(i2c=None, address=0x10, it=25, gain=1/8, **kwargs)
+
+    Creates the VEML7700 sensor object and initialises it according to the arguments given.
+
+    *i2c* should be a :class:`machine.SoftI2C` object.
+
+    *address* defaults to the only address available for the VEML770 which is ``0x10``.
+
+    *it* is the integration time which defaults to 25 milliseconds (See Table 1 in the data-sheet)
+
+    *gain* is the ambient light sensor gain which defaults to 1/8 (See Table 1 in the data-sheet)
+
+    *kwargs* are any other parameters to be passed through (there are none so it can be omitted)
+
     
 
 VEML7700 Methods
 ----------------
 
-.. method:: VEML7700.method()
+.. method:: VEML7700.init()
+
+    (Re)loads the calibration data into the chip's calibration registers.
+
+.. method:: VEML7700.read_lux()
+
+    Reads the data from the sensor and returns the light reading in Lux.
+    
+    The frequency to read the sensor should be set greater than the integration time.
+    Reading at a faster frequency will not cause an error, but will result in reading the previous sensor data.
+
+    The method incorporates an inherent delay of 40 milliseconds.
+
+
+
     
 
