@@ -1,6 +1,26 @@
 .. currentmodule:: machine
 .. _machine.Pin:
 
+**Kookaberry** GPIO Pins are allocated and arranged as shown in the diagram below.
+As there are two variants of the **Kookaberry** (STM32 and RP2040 microcomputers), the native GPIO nomenclature varies.
+
+A common nomenclature has been established using the names of the on-board connectors (``P1``, ``P2``, ``P3A``, ``P3B``, ``P4``, and ``P5``),
+and also the names of the edge-connector contacts (``J1``-``J18``, and ``K1``-``K18`` inclusive). 
+
+Referencing GPIO Pins with their **Kookaberry** common names will ensure scripts will work across both **Kookaberry** models.
+
+All GPIO Pins can also be referenced by their native microcomputer names as shown in the columns under STM32 and RP2040, 
+but scripts using these names will not run without errors on the other microcomputer.
+
+.. _edge_connector:
+
+.. figure:: images/edge_connector_both.png
+   :width: 80%
+   :align: center
+
+   The Kookaberry's GPIO Pin Assignment
+
+
 class Pin -- control I/O pins
 =============================
 
