@@ -17,8 +17,9 @@ Instances
     led_red
     led_orange
     led_green
+    led_power
 
-    These objects give access to the three LEDs on the **Kookaberry**.  They are
+    These objects give access to the three LEDs on the the front of the **Kookaberry** and the green power LED on the rear.  They are
     instances of :ref:`kooka.LED`.
 
 .. data::
@@ -62,6 +63,10 @@ class LED
 
 This class allows you to turn the built-in LEDs on and off.
 
+This class exists only for the pre-defined instances (``led_red``, ``led_orange``, ``led_green``, and ``led_power``) 
+and cannot be used on GPIO pins.
+This is because the LEDs are connected to one of the **Kookaberry** co-processors and not the programmable microcomputer.
+
 LED Methods
 -----------
 
@@ -86,7 +91,7 @@ This class allows you to read the state of one of the built-in buttons and inclu
 
 This class exists only for the pre-defined instances (``button_a``, ``button_b``, ``button_c``, and ``button_d``) 
 and cannot be used on GPIO pins.
-This is because the buttons are connected to one of the Kokkaberry co-processors and not the programmable microcomputer.
+This is because the buttons are connected to one of the **Kookaberry** co-processors and not the programmable microcomputer.
 
 Button Methods
 --------------
