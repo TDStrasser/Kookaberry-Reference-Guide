@@ -14,7 +14,9 @@ Usage::
 
     import machine
 
-    adc = machine.ADC(pin)                  # create an analog object from a pin
+    pin = "P1"                          # specify the pin to use
+
+    adc = machine.ADC(pin)              # create an analog object from a pin
     val = adc.read()                    # read an analog value
 
     adc = machine.ADCAll(resolution)        # create an ADCAll object
