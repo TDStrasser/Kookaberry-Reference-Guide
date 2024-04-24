@@ -7,8 +7,8 @@
    :synopsis: control of LSM303C accelerometer/magnetometer
 
 This module provides classes to control an LSM303C combined accelerometer and
-magnetometer.  It is used internally by the Kookaberry to provide access to the
-internal LSM303C, but can also be used to control an external chip.
+magnetometer.  It is used internally by the **Kookaberry** to provide access to the
+internal LSM303C, but can also be used to control an external LSM303C or LSM303AGR chip.
 
 The LSM303C provides two independent I2C slaves for the accelerometer and
 magnetometer, with default I2C addresses of ``0x1d`` and ``0x1e`` respectively.
@@ -27,14 +27,17 @@ Example usage::
 
 
 .. _lsm303.LSM303C_Accel:
+.. _kooka.accel:
 
 Class LSM303C_Accel
 ===================
 
 This class represents a connection to the accelerometer part of the LSM303C.
 
-LSM303 Constructors
--------------------
+The **Kookaberry**'s internal accelerator has the name ``kooka.accel`` instead of ``LSM303_Accel``.
+
+LSM303_Accel Constructors
+-------------------------
 
 .. class:: LSM303C_Accel(i2c, addr=0x1d)
 
@@ -53,12 +56,29 @@ LSM303 Methods
 
     Returns the current x/y/z values of the accelerometer as a 3-tuple.
 
+.. method:: LSM303C_Accel.get_magnitude()
+
+    Returns the total (positive) magnitude of acceleration which is the vector sum of the x/y/z accelerations.
+
+.. method:: LSM303C_Accel.config(freq=50, range=2)
+
+    Configures the sampling frequency and the acceleration range of the accelerometer.
+
+    *freq* is the sampling frequency. Valid frequencies are: ``10``, ``50`` (default), ``100``, ``200``, and ``400``
+
+    *range* is the maximum acceleration able to be recorded. Valid ranges are ``2`` (default), ``4`` and ``8``
+
+
+
 .. _lsm303.LSM303C_Mag:
+.. _kooka.compass:
 
 class LSM303C_Mag
 =================
 
 This class represents a connection to the magnetometer part of the LSM303C.
+
+The **Kookaberry**'s internal magnetometer has the name ``kooka.compass`` instead of ``LSM303_Mag``.
 
 LSM303C_Mag Constructors
 ------------------------
@@ -88,5 +108,5 @@ LSM303C_Mag Methods
 
 .. method:: LSM303C_Mag.get_strength()
 
-    Returns the magnitude of the 3-vector returned by LSM303C_Mag.get_xyz(),
+    Returns the (positive) magnitude of the 3-vector returned by LSM303C_Mag.get_xyz(),
     as an integer.
