@@ -55,6 +55,8 @@ The dimensions of the display are 128 pixels wide by 64 pixels high.
 and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
 The power must be switched off and switched on again to accomplish a full hardware and software reset.
 
+.. _kooka_connectors:
+
 Connectors
 ----------
 

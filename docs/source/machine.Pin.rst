@@ -7,7 +7,10 @@ As there are two variants of the **Kookaberry** (STM32 and RP2040 microcomputers
 A common nomenclature has been established using the names of the on-board connectors (``P1``, ``P2``, ``P3A``, ``P3B``, ``P4``, and ``P5``),
 and also the names of the edge-connector contacts (``J1``-``J18``, and ``K1``-``K18`` inclusive). 
 
-Referencing GPIO Pins with their **Kookaberry** common names will ensure scripts will work across both **Kookaberry** models.
+Referencing GPIO Pins with their **Kookaberry** common names will ensure scripts will work across both **Kookaberry** models.  
+
+Please note that not as many GPIO Pins are available on the RP2040 variant (``J2``, ``J3``, ``J13``, ``J14``) 
+and these Pins should not be used if scripts are to be fully transportable between **Kookaberry** models.
 
 All GPIO Pins can also be referenced by their native microcomputer names as shown in the columns under STM32 and RP2040, 
 but scripts using these names will not run without errors on the other microcomputer.
@@ -19,6 +22,8 @@ but scripts using these names will not run without errors on the other microcomp
    :align: center
 
    The Kookaberry's GPIO Pin Assignment
+
+See :ref:`kooka_connectors` for a layout of the on-board connectors.
 
 
 class Pin -- control I/O pins
