@@ -11,7 +11,7 @@ class DAC -- digital to analog conversion
 A digital-to-analog converter (DAC) is a data converter which generates an analogue output from a digital input. 
 A DAC converts a limited number of discrete digital codes to a corresponding number of discrete analog output values.
 
-See `this on-line explanation<https://www.sciencedirect.com/topics/engineering/digital-to-analog-converter#:~:text=A%20digital%2Dto%2Danalog%20converter,of%20discrete%20analog%20output%20values>`_.
+See `this on-line explanation <https://www.sciencedirect.com/topics/engineering/digital-to-analog-converter#:~:text=A%20digital%2Dto%2Danalog%20converter,of%20discrete%20analog%20output%20values>`_.
 
 A DAC is used to output analogue signals (a specific voltage) on a given GPIO pin. 
 The voltage will be in the range 0V to 3.3V corresponding to digital value of 

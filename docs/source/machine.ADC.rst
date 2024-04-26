@@ -6,7 +6,7 @@ class ADC -- analog to digital conversion
 
 Analogue to Digital Converters (ADC) measure the magnitude of an analogue signal and represent it as a digital number for use by a computer program.
 
-See https://simple.wikipedia.org/wiki/Analog-to-digital_converter and `these online articles<https://www.sciencedirect.com/topics/engineering/analog-to-digital-converter#:~:text=An%20analog%2Dto%2Ddigital%20converter,to%20any%20type%20of%20microcontroller>`_.
+See https://simple.wikipedia.org/wiki/Analog-to-digital_converter and `these online articles <https://www.sciencedirect.com/topics/engineering/analog-to-digital-converter#:~:text=An%20analog%2Dto%2Ddigital%20converter,to%20any%20type%20of%20microcontroller>`_.
 
 Usage::
 
