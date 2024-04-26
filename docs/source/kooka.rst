@@ -351,6 +351,7 @@ These methods control the physical appearance of the **Kookaberry** display.
 
 .. toctree::
     :caption: Display-related classes
+    :maxdepth: 1
     
     sh1106.rst
     framebuf.rst

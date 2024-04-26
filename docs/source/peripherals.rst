@@ -27,6 +27,7 @@ The Kookaberry's built-in software modules are described in the following sectio
 
 .. toctree:: 
     :caption: Built-in Peripheral Modules
+    :maxdepth: 1
 
     bme280.rst
     dht.rst
