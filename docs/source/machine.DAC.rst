@@ -4,67 +4,56 @@
 class DAC -- digital to analog conversion
 =========================================
 
-.. warning::
+.. important::
 
-   This section is no longer correct and needs to be revised.
+   The DAC Class is available only on the STM32-based **Kookaberry**, and not on the RP2040.
 
+A digital-to-analog converter (DAC) is a data converter which generates an analogue output from a digital input. 
+A DAC converts a limited number of discrete digital codes to a corresponding number of discrete analog output values.
 
+See `this on-line explanation<https://www.sciencedirect.com/topics/engineering/digital-to-analog-converter#:~:text=A%20digital%2Dto%2Danalog%20converter,of%20discrete%20analog%20output%20values>`_.
 
-The DAC is used to output analog values (a specific voltage) on pin X5 or pin X6.
-The voltage will be between 0 and 3.3V.
+A DAC is used to output analogue signals (a specific voltage) on a given GPIO pin. 
+The voltage will be in the range 0V to 3.3V corresponding to digital value of 
 
-*This module will undergo changes to the API.*
+- 0 to 255 for 8-bit resolution, or 
+- 0 to 4095 if the DAC has 12-bit resolution.
+
+On the STM32 **Kookaberry** only pins ``P4`` and ``P5`` have DAC capability.  
+No DAC capability is provided on the RP2040 Kookaberry because of micrcomputer hardware limitations.
+
 
 Example usage::
 
-    from pyb import DAC
+    from machine import DAC
 
-    dac = DAC(1)            # create DAC 1 on pin X5
-    dac.write(128)          # write a value to the DAC (makes X5 1.65V)
-
-    dac = DAC(1, bits=12)   # use 12 bit resolution
-    dac.write(4095)         # output maximum value, 3.3V
-
-To output a continuous sine-wave::
-
-    import math
-    from pyb import DAC
-
-    # create a buffer containing a sine-wave
-    buf = bytearray(100)
-    for i in range(len(buf)):
-        buf[i] = 128 + int(127 * math.sin(2 * math.pi * i / len(buf)))
-
-    # output the sine-wave at 400Hz
-    dac = DAC(1)
-    dac.write_timed(buf, 400 * len(buf), mode=DAC.CIRCULAR)
+    dac = DAC('P4')         # create a 8-bit DAC on Pin P4
+    dac.write(128)          # write a value to the DAC (sets P4 to 1.65V)
 
 To output a continuous sine-wave at 12-bit resolution::
 
     import math
     from array import array
-    from pyb import DAC
+    from machine import DAC
 
     # create a buffer containing a sine-wave, using half-word samples
     buf = array('H', 2048 + int(2047 * math.sin(2 * math.pi * i / 128)) for i in range(128))
 
     # output the sine-wave at 400Hz
-    dac = DAC(1, bits=12)
+    dac = DAC('P4', bits=12)
     dac.write_timed(buf, 400 * len(buf), mode=DAC.CIRCULAR)
 
 DAC Constructors
 ----------------
 
-.. class:: pyb.DAC(port, bits=8, \*, buffering=None)
+.. class:: machine.DAC(pin, bits=8, \*, buffering=None)
 
    Construct a new DAC object.
 
-   ``port`` can be a pin object, or an integer (1 or 2).
-   DAC(1) is on pin X5 and DAC(2) is on pin X6.
+   ``pin`` can be a :class:`machine.Pin` object, or string ('P4' or 'P5').
 
-   ``bits`` is an integer specifying the resolution, and can be 8 or 12.
-   The maximum value for the write and write_timed methods will be
-   2\*\*``bits``-1.
+   ``bits`` is an integer specifying the resolution, and can be ``8`` or ``12``.
+   The maximum value for the write and write_timed methods will be 2\*\*``bits``-1.
 
    The *buffering* parameter selects the behaviour of the DAC op-amp output
    buffer, whose purpose is to reduce the output impedance.  It can be
@@ -84,8 +73,11 @@ DAC Methods
 
 .. method:: DAC.init(bits=8, \*, buffering=None)
 
-   Reinitialise the DAC.  *bits* can be 8 or 12.  *buffering* can be
-   ``None``, ``False`` or ``True``; see above constructor for the meaning
+   Reinitialise the DAC.  
+   
+   *bits* can be 8 or 12.  
+   
+   *buffering* can be ``None``, ``False`` or ``True``; see above constructor for the meaning
    of this parameter.
 
 .. method:: DAC.deinit()
