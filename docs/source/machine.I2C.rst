@@ -59,8 +59,8 @@ I2C Constructors
 
    Construct and return a new I2C object using the following parameters:
 
-      - *scl* should be a pin object specifying the pin to use for SCL.
-      - *sda* should be a pin object specifying the pin to use for SDA.
+      - *scl* should be a :class:`machine.SoftI2C` object specifying the pin to use for SCL.
+      - *sda* should be a :class:`machine.SoftI2C` object specifying the pin to use for SDA.
       - *freq* should be an integer which sets the maximum frequency for SCL.
       - *timeout* is the maximum time in microseconds to wait for clock stretching (SCL held low by another device on the bus), 
         after which an ``OSError(ETIMEDOUT)`` exception is raised.

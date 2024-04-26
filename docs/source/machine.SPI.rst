@@ -86,7 +86,7 @@ SoftSPI Methods
      - ``phase`` can be ``0`` (default) or ``1`` to sample data on the first or second clock edge respectively.
      - ``bits`` is the width in bits of each transfer. Only 8 is guaranteed to be supported by all hardware.
      - ``firstbit`` can be ``SPI.MSB`` (default) or ``SPI.LSB``.
-     - ``sck``, ``mosi``, ``miso`` are mandatory pins (:class:`machine.Pin``) objects to use for bus signals.
+     - ``sck``, ``mosi``, ``miso`` are mandatory :class:`machine.Pin` objects to use for bus signals.
 
 
 .. method:: SoftSPI.deinit()
