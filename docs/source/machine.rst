@@ -37,9 +37,9 @@ The additional functionality can be examined by using these commands in the **Ko
 
   machine.ADC.rst
   machine.DAC.rst
-  machine.I2C.rst
   machine.Pin.rst
   machine.RTC.rst
+  machine.I2C.rst
   machine.SPI.rst
   machine.Timer.rst
   machine.UART.rst
