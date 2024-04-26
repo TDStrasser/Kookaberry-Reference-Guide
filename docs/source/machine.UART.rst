@@ -8,7 +8,12 @@ class UART -- duplex serial communication bus
 
    This section is not yet finalised.
 
+A universal asynchronous receiver-transmitter (UART) is an interface for asynchronous serial communication 
+in which the data format and transmission speeds are configurable. 
+It sends data bits one by one, from the least significant to the most significant, 
+framed by start and stop bits so that precise timing is handled by the communication channel. 
 
+See also https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter
 
 UART implements the standard UART/USART duplex serial communications protocol.  At
 the physical level it consists of 2 lines: Rx and Tx.  The unit of communication
@@ -33,7 +38,7 @@ using the standard stream methods::
     uart.read()         # read all available characters
     uart.readline()     # read a line
     uart.readinto(buf)  # read and store into the given buffer
-    uart.write('abc')   # write the 3 characters
+    uart.write('abc\n')   # write the 3 characters and a newline character
 
 UART Constructors
 -----------------
