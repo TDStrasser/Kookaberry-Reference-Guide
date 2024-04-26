@@ -6,12 +6,12 @@ class UART -- duplex serial communication bus
 
 .. warning::
 
-   This section is no longer correct and needs to be revised.
+   This section is not yet finalised.
 
 
 
 UART implements the standard UART/USART duplex serial communications protocol.  At
-the physical level it consists of 2 lines: RX and TX.  The unit of communication
+the physical level it consists of 2 lines: Rx and Tx.  The unit of communication
 is a character (not to be confused with a string character) which can be 8 or 9
 bits wide.
 
@@ -19,16 +19,12 @@ UART objects can be created and initialised using::
 
     from machine import UART
 
-    uart = UART(1, 9600)                         # init with given baudrate
+    uart = UART("A", 9600)                       # init on connector P3 with given baudrate
     uart.init(9600, bits=8, parity=None, stop=1) # init with given parameters
 
-Supported parameters differ on a board:
-
-Pyboard: Bits can be 7, 8 or 9. Stop can be 1 or 2. With *parity=None*,
+On the **Kookaberry** Bits can be 7, 8 or 9. Stop can be 1 or 2. With *parity=None*,
 only 8 and 9 bits are supported.  With parity enabled, only 7 and 8 bits
 are supported.
-
-WiPy/CC3200: Bits can be 5, 6, 7, 8. Stop can be 1 or 2.
 
 A UART object acts like a `stream` object and reading and writing is done
 using the standard stream methods::
@@ -42,9 +38,15 @@ using the standard stream methods::
 UART Constructors
 -----------------
 
-.. class:: UART(id, ...)
+.. class:: UART(id, baudrate=9600, bits=8, parity=None, stop=1, \*, ...)
 
-   Construct a UART object of the given id.
+   Construct a UART object of the given *id*.
+
+   *id* is a string which can be:
+   
+   - "A" (on connector P3) with the Rx pin on P3A / PA10 / J4, and the Tx pin on P3B / PA9 / J10
+   - "B" (only on the edge connector) with the Rx pin on PC1 / K7, and the Tx pin on PC0 / K8
+
 
 UART Methods
 ------------
@@ -53,29 +55,20 @@ UART Methods
 
    Initialise the UART bus with the given parameters:
 
-     - *baudrate* is the clock rate.
-     - *bits* is the number of bits per character, 7, 8 or 9.
-     - *parity* is the parity, ``None``, 0 (even) or 1 (odd).
-     - *stop* is the number of stop bits, 1 or 2.
+     - *baudrate* is the clock rate (default is ``9600``).
+     - *bits* is the number of bits per character, ``7``, ``8`` (default) or ``9``.
+     - *parity* is the parity, ``None`` (default), ``0`` (even) or ``1`` (odd).
+     - *stop* is the number of stop bits, ``1`` (default) or ``2``.
 
    Additional keyword-only parameters that may be supported by a port are:
 
-     - *tx* specifies the TX pin to use.
-     - *rx* specifies the RX pin to use.
      - *txbuf* specifies the length in characters of the TX buffer.
      - *rxbuf* specifies the length in characters of the RX buffer.
      - *timeout* specifies the time to wait for the first character (in ms).
      - *timeout_char* specifies the time to wait between characters (in ms).
      - *invert* specifies which lines to invert.
 
-   On the WiPy only the following keyword-only parameter is supported:
-
-     - *pins* is a 4 or 2 item list indicating the TX, RX, RTS and CTS pins (in that order).
-       Any of the pins can be None if one wants the UART to operate with limited functionality.
-       If the RTS pin is given the the RX pin must be given as well. The same applies to CTS.
-       When no pins are given, then the default set of TX and RX pins is taken, and hardware
-       flow control will be disabled. If *pins* is ``None``, no pin assignment will be made.
-
+   
 .. method:: UART.deinit()
 
    Turn off the UART bus.
@@ -83,15 +76,9 @@ UART Methods
 .. method:: UART.any()
 
    Returns an integer counting the number of characters that can be read without
-   blocking.  It will return 0 if there are no characters available and a positive
-   number if there are characters.  The method may return 1 even if there is more
+   blocking.  It will return ``0`` if there are no characters available and a positive
+   number if there are characters.  The method may return ``1`` even if there is more
    than one character available for reading.
-
-   For more sophisticated querying of available characters use select.poll::
-
-    poll = select.poll()
-    poll.register(uart, select.POLLIN)
-    poll.poll(timeout)
 
 .. method:: UART.read([nbytes])
 
@@ -152,13 +139,12 @@ UART Methods
 
    Returns an irq object.
 
-   Availability: WiPy.
 
 UART Constants
 --------------
 
-.. data:: UART.RX_ANY
+.. data:: UART.RTS -- 256
 
-    IRQ trigger sources
+.. data:: UART.CTS -- 512
 
-    Availability: WiPy.
+.. data:: UART.IRQ_RXIDLE -- 16
