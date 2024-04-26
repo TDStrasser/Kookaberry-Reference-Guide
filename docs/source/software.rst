@@ -87,6 +87,7 @@ Modules for using functions that are unique to the **Kookaberry** are are descri
 
 .. toctree:: 
     :caption: Kookaberry Specific Modules
+    :maxdepth: 2
 
     kooka.rst
     machine.rst
