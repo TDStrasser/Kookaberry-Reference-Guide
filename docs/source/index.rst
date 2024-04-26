@@ -18,7 +18,7 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
 
 .. toctree::
   :caption: Contents
-  :maxdepth: 1
+  :maxdepth: 2
 
   kookaberry.rst
   safety.rst
