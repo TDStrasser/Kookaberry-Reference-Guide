@@ -48,16 +48,18 @@ Power Connection
 The **Kookaberry** may be powered by a compatible battery box supplying from 4.5V DC to 9V DC maximum, 
 which is connected to the 2-pin Power connector on the rear of the circuit board to the right of the Reset button. 
 
-Alternatively, power can be supplied from a 5V DC USB-compliant battery pack or computer connection via the USB-C connector at the top-centre of the rear of the circuit board.  Do not power the Kookaberry directly from a USB charger as erroneous operation or damage could occur.
+Alternatively, power can be supplied from a 5V DC USB-compliant battery pack or computer connection via the USB-C connector 
+at the top-centre of the rear of the circuit board.  
+Do not power the Kookaberry directly from a USB charger as erroneous operation or damage could occur.
 
 Battery
 -------
 
-The Kookaberry is normally supplied with a cylindrical 5-volt rechargeable USB battery pack and a compatible USB-A to USB-C cable.  
+The **Kookaberry** is normally supplied with a cylindrical 5-volt rechargeable USB battery pack and a compatible USB-A to USB-C cable.  
 
 The battery pack may be recharged using a USB charger (not supplied).  
 
-* Do not leave the Kookaberry connected to the battery pack when it is being recharged. 
+* Do not leave the **Kookaberry** connected to the battery pack when it is being recharged. 
 * Do not leave the battery pack on recharge for an extended period after its indicator light has stopped blinking.  
 * Do not overload the battery pack as it will overheat and possibly catch alight. 
 * Do not leave the battery pack in a hot or wet environment. 
@@ -72,22 +74,22 @@ Disposal of the replaced battery should be only through an accredited recycling 
 Conductive Materials
 --------------------
 
-Do not allow metal or any other conductive material to come into contact with the Kookaberry circuit board, 
+Do not allow metal or any other conductive material to come into contact with the **Kookaberry** circuit board, 
 with the exception of approved connections to the provided plugs and sockets.
 
 Contamination, Shocks and Scratches
 -----------------------------------
 
-Handle the Kookaberry only by the circuit board edges, avoiding contact with the gold-plated expansion connector at the bottom of the circuit board.  
+Handle the **Kookaberry** only by the circuit board edges, avoiding contact with the gold-plated expansion connector at the bottom of the circuit board.  
 
-Do not drop or allow the Kookaberry to collide with any hard or sharp objects that may shock, puncture, scratch or dislodge the Kookaberry’s components.
-The Kookaberry’s display contains fragile glass which could easily break. 
+Do not drop or allow the **Kookaberry** to collide with any hard or sharp objects that may shock, puncture, scratch or dislodge the **Kookaberry’s** components.
+The **Kookaberry’s** display contains fragile glass which could easily break. 
 If damage is apparent, cease using the Kookaberry and consult your supplier for advice.
 
 Cleaning
 --------
 
-If the Kookaberry should become soiled, remove all power and attempt to clean with a soft damp cloth.  
+If the **Kookaberry** should become soiled, remove all power and attempt to clean with a soft damp cloth.  
 
 In extreme cases, alcohol (methylated spirits) or lens cleaner may be used.  Allow to thoroughly dry before reconnecting to power.  
 
@@ -96,17 +98,26 @@ Do not use any other chemicals or solvents!
 Children
 --------
 
-The Kookaberry is intended for use by children from 8 years of age under the supervision of a responsible adult.  
+The **Kookaberry** is intended for use by children from 8 years of age under the supervision of a responsible adult.  
 
-**Do not leave the Kookaberry within reach of children under 8 years of age.**
+.. important::
+   
+   **Do not leave the Kookaberry within reach of children under 8 years of age.**
 
 Accessories
 -----------
 
-The Kookaberry is designed for use with compatible electronic accessories, connected via connectors P1 to P5 and/or the expansion connector using compatible expansion boards.  
+The **Kookaberry** is designed for use with compatible electronic accessories, connected via connectors P1 to P5 and/or 
+the expansion connector using compatible expansion boards.  
 
 Such accessories must be used in accordance with their safety information.  
 
-To be compatible with the Kookaberry, accessories must operate at a voltage not exceeding 3.3V DC and must in aggregate not draw more then 100 milli-amps from the Kookaberry.  
+To be compatible with and not damaging to the **Kookaberry**, accessories must operate at signal (GPIO Pin) voltages not exceeding 3.3V DC.
 
-The Kookaberry is protected from short-term excess current but will be damaged by voltages exceeding 3.3 volts.
+Some accessories may require a power supply voltage that is more than 3.3V DC. 
+Such accessories cannot be powered by the **Kookaberry** and will need a suitable external power adapter.
+
+Power for accessories must in aggregate not draw more then 100 milli-amps directly from the **Kookaberry**.  
+
+The **Kookaberry** is protected from short-term excess current but will be damaged by voltages exceeding 3.3 volts 
+being applied to any connector other than the external power input connector.
