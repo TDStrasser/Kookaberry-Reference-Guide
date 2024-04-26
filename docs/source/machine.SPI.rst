@@ -28,6 +28,42 @@ user code (via :class:`machine.Pin`).
 
 For a more fulsome description see https://en.wikipedia.org/wiki/Serial_Peripheral_Interface
 
+Example Usage::
+
+   from machine import SoftSPI, Pin
+
+   spi = SoftSPI(sck='P1',mosi='P3A',miso='P3B') # Creates SPI interface at default frequency of 500kHz.
+                                                 # Nomination of sck, mosi and miso pins are required
+   ss = Pin('P4', mode=Pin.OUT, value=1)         # Create slave-select on pin P4.
+
+   try:
+       ss(0)                               # Select peripheral.
+       spi.write(b"12345678")              # Write 8 bytes, and don't care about received data.
+   finally:
+       ss(1)                               # Deselect peripheral.
+
+    try:
+       ss(0)                               # Select peripheral.
+       rxdata = spi.read(8, 0x42)          # Read 8 bytes while writing 0x42 for each byte.
+    finally:
+       ss(1)                               # Deselect peripheral.
+
+    rxdata = bytearray(8)
+    try:
+       ss(0)                               # Select peripheral.
+       spi.readinto(rxdata, 0x42)          # Read 8 bytes in-place while writing 0x42 for each byte.
+    finally:
+       ss(1)                               # Deselect peripheral.
+
+    txdata = b"12345678"
+    rxdata = bytearray(len(txdata))
+    try:
+       ss(0)                               # Select peripheral.
+    spi.write_readinto(txdata, rxdata)  # Simultaneously write and read bytes.
+    finally:
+       ss(1)                               # Deselect peripheral.
+
+
 SoftSPI Constructors
 --------------------
 
@@ -45,12 +81,12 @@ SoftSPI Methods
 
    Initialise the SPI bus with the given parameters:
 
-     - ``baudrate`` is the SCK clock rate.
-     - ``polarity`` can be ``0`` or ``1``, and is the level the idle clock line sits at.
-     - ``phase`` can be ``0`` or ``1`` to sample data on the first or second clock edge respectively.
+     - ``baudrate`` is the SCK clock rate (default is ``500000``).
+     - ``polarity`` can be ``0`` (default) or ``1``, and is the level the idle clock line sits at.
+     - ``phase`` can be ``0`` (default) or ``1`` to sample data on the first or second clock edge respectively.
      - ``bits`` is the width in bits of each transfer. Only 8 is guaranteed to be supported by all hardware.
-     - ``firstbit`` can be ``SPI.MSB`` or ``SPI.LSB``.
-     - ``sck``, ``mosi``, ``miso`` are pins (:class:`machine.Pin``) objects to use for bus signals.
+     - ``firstbit`` can be ``SPI.MSB`` (default) or ``SPI.LSB``.
+     - ``sck``, ``mosi``, ``miso`` are mandatory pins (:class:`machine.Pin``) objects to use for bus signals.
 
 
 .. method:: SoftSPI.deinit()
