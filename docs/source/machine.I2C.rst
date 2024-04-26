@@ -7,15 +7,16 @@ class SoftI2C -- a two-wire serial protocol
 
 .. note::
 
-   The I2C class which gave access to hardware I2C ports has been deprecated on the **Kookaberry**.
+   The I2C class which gave access to hardware I2C ports has been deprecated for general use on the **Kookaberry**.
+   It is still available as it is used for the **Kookaberry**'s internal peripherals, specifically the LSM303C accelerometer and magnetometer.
 
-   It is now necessary to use the SoftI2C class as described herein.
+   For general programming, it is now necessary to use the SoftI2C class as described herein.
 
    Software I2C is more flexible and less hardware dependant.  
    It is implemented by bit-banging and can be used on any pin but is not as efficient as hardware I2C was.
 
    The only difference in usage between the I2C and SoftI2C classes is in construction. 
-   Otherwise their usage and methods are identical
+   Otherwise their usage and methods are identical.
 
 
 I2C is a two-wire protocol for communicating between devices.  
