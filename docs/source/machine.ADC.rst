@@ -84,7 +84,7 @@ ADC Methods
 
 .. method:: ADC.read_timed_multi((adcx, adcy, ...), (bufx, bufy, ...), timer)
 
-      .. note:: 
+   .. note:: 
 
       Temporarily unavailable
 
