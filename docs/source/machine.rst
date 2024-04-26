@@ -32,7 +32,8 @@ The additional functionality can be examined by using these commands in the **Ko
 
 
 .. toctree::
-  :caption: Kookaberry MicroComputer Facilities
+  :caption: Kookaberry machine Classes
+  :maxdepth: 1
 
   machine.ADC.rst
   machine.DAC.rst
@@ -42,5 +43,6 @@ The additional functionality can be examined by using these commands in the **Ko
   machine.SPI.rst
   machine.Timer.rst
   machine.UART.rst
+  machine.other.rst
   
 
