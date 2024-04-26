@@ -8,7 +8,7 @@ The Kookaberry Reference Guide
 
 This document provides a guide to the **Kookaberry** microcomputer, including its hardware, its software, its software tools, and their usage.
 
-
+This guide is for **Kookaberry** firmware v1.10.0.
 
 .. note::
 
@@ -27,6 +27,7 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
   helpers.rst
   peripherals.rst
   glossary.rst
+  genindex.rst
 
    
 
@@ -35,5 +36,5 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
 
    Kookaberry and Kooka are trademarks of Kookaberry Pty Ltd, Australia.
 
-   The Kooka Firmware release v1.9.0 and KookaSuite were created by Damien George (George Electronics Pty Ltd – MicroPython) 
+   The Kooka Firmware release v1.10.0 and KookaSuite were created by Damien George (George Electronics Pty Ltd – MicroPython) 
    in collaboration with Kookaberry Pty Ltd and the AustSTEM Foundation Ltd.
