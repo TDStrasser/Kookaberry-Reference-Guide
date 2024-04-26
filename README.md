@@ -1,2 +1,2 @@
-# AustSTEM Documents Template
- Template repository for AustSTEM Read the Docs documents.
+# AustSTEM - Kookaberry Reference Guide
+ A guide to using and programming the **Kookaberry** STEM microcomputer
