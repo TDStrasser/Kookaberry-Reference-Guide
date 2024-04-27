@@ -23,6 +23,7 @@ This guide is for **Kookaberry** firmware v1.10.0.
   kookaberry.rst
   safety.rst
   using.rst
+  pico.rst
   software.rst
   helpers.rst
   peripherals.rst
@@ -36,5 +37,5 @@ This guide is for **Kookaberry** firmware v1.10.0.
 
    Kookaberry and Kooka are trademarks of Kookaberry Pty Ltd, Australia.
 
-   The Kooka Firmware release v1.10.0 and KookaSuite were created by Damien George (George Electronics Pty Ltd – MicroPython) 
+   The Kookaberry Firmware release v1.10.0 and KookaSuite were created by Damien George (George Electronics Pty Ltd – MicroPython) 
    in collaboration with Kookaberry Pty Ltd and the AustSTEM Foundation Ltd.
