@@ -67,6 +67,18 @@ This class exists only for the pre-defined instances (``led_red``, ``led_orange`
 and cannot be used on GPIO pins.
 This is because the LEDs are connected to one of the **Kookaberry** co-processors and not the programmable microcomputer.
 
+Example Usage::
+
+    import kooka
+
+    kooka.led_red.on() # Turn the red LED on
+
+    kooka.led_orange.toggle()  # Change the state of the orange LED
+
+    kooka.led_green.off()  # Turn the green LED off
+
+
+
 LED Methods
 -----------
 
@@ -92,6 +104,23 @@ This class allows you to read the state of one of the built-in buttons and inclu
 This class exists only for the pre-defined instances (``button_a``, ``button_b``, ``button_c``, and ``button_d``) 
 and cannot be used on GPIO pins.
 This is because the buttons are connected to one of the **Kookaberry** co-processors and not the programmable microcomputer.
+
+Example Usage::
+
+    # Blinks the orange LED and controls the green LED
+    import kooka, time
+
+    while not kooka.buttan_a.was_pressed(): # Loop until button A was pressed
+        kooka.led_orange.toggle() # Change the state of the orange LED
+
+        if kooka.button_b.is_pressed(): # If button B is being pressed
+            kooka.led_green.on()  # Turn on the green LED
+        else:
+            kooka.led_green.off() # Otherwise turn the green LED off
+
+        time.sleep(1) # Delay fo 1 second to slow
+
+
 
 Button Methods
 --------------
