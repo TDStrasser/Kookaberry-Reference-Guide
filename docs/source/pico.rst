@@ -60,7 +60,7 @@ to facilitate wiring to peripherals and power.
 The **Pico** boards may also be used in conjunction with purpose-built **Quokka** [#f1]_ **Pico** Break Out Modules which expose the available GPIO pins 
 plus give access to the Kookaberry V2 assigned connectors P1 through P5 as JST-PH connectors. 
 
-See :ref:`machine.Pin`_ for diagrams of available GPIO Pins and how to use them.
+See :ref:`edge_connector` for diagrams of available GPIO Pins and how to use them.
 
 .. [#f1] *Quokka* is a trademark of Dinsdale and Associates.
 
