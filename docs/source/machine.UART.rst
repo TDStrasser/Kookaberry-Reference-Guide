@@ -4,10 +4,6 @@
 class UART -- duplex serial communication bus
 =============================================
 
-.. warning::
-
-   This section is not yet finalised.
-
 A universal asynchronous receiver-transmitter (UART) is an interface for asynchronous serial communication 
 in which the data format and transmission speeds are configurable. 
 It sends data bits one by one, from the least significant to the most significant, 
@@ -50,7 +46,7 @@ UART Constructors
    *id* is a string which can be:
    
    - "A" (on connector P3) with the Rx pin on P3A / PA10 / J4, and the Tx pin on P3B / PA9 / J10
-   - "B" (only on the edge connector) with the Rx pin on PC1 / K7, and the Tx pin on PC0 / K8
+   - "B" (only on the edge connector) with the Rx pin on J7, and the Tx pin on J8
 
 .. _uart_pins:
 
