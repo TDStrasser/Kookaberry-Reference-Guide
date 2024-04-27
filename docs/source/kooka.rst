@@ -118,7 +118,7 @@ Example Usage::
         else:
             kooka.led_green.off() # Otherwise turn the green LED off
 
-        time.sleep(1) # Delay fo 1 second to slow
+        time.sleep(1) # Delay for 1 second to slow blinking
 
 
 
@@ -304,7 +304,7 @@ Drawing Text on the Display
 
 .. method:: display.text(s, x, y[, c])
 
-    Write text to the FrameBuffer using the the coordinates as the upper-left
+    Write text to the FrameBuffer using the the coordinates as the lower-left
     corner of the text. The color of the text can be defined by the optional
     argument but is otherwise a default value of 1. All characters have
     default dimensions of 8x8 pixels.
