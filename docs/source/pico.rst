@@ -26,9 +26,9 @@ To install the firmware on the Pico:
 2.	Unzip the downloaded file and go to the rp2040 folder to reveal two files: kooka_rp2040.bin and kooka_rp2040_mboot.uf2.
 3.	Hold down the BOOTSEL button on the Pico while connecting it to the USB port on the PC that contains the downloaded file.
 4.  Load the bootloader (kooka_rp2040_mboot.uf2) onto the Pico by dragging/dropping the file onto the Pico's USB drive.  
-2.  The Pico should then mount as a USB drive named "KOOKABERRY."  If not, unplug the Pico and reconnect to the USB port.
-5.	Open the KOOKABERRY drive, drag/drop the kooka_rp2040.bin file to the root directory, and unlpug then reconnect the Pico.
-6.	The green LED on the Pico will flash during the loading process, and two folders ("app" and "lib") will appear in the 
+5.  The Pico should then mount as a USB drive named "KOOKABERRY."  If not, unplug the Pico and reconnect to the USB port.
+6.  Open the KOOKABERRY drive, drag/drop the kooka_rp2040.bin file to the root directory, and unlpug then reconnect the Pico.
+7.  The green LED on the Pico will flash during the loading process, and two folders ("app" and "lib") will appear in the 
 KOOKABERRY drive after loading is complete.
 
 Raspberry Pico GPIO Pin Limitations
