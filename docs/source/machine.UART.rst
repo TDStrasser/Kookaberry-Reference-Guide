@@ -52,6 +52,15 @@ UART Constructors
    - "A" (on connector P3) with the Rx pin on P3A / PA10 / J4, and the Tx pin on P3B / PA9 / J10
    - "B" (only on the edge connector) with the Rx pin on PC1 / K7, and the Tx pin on PC0 / K8
 
+.. _uart_pins:
+
+.. figure:: images/uart_pins.png
+   :width: 80%
+   :align: center
+
+   UART GPIO Pin Assignments
+
+
 
 UART Methods
 ------------

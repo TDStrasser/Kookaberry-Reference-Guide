@@ -18,7 +18,7 @@ but scripts using these names will not run without errors on the other microcomp
 .. _edge_connector:
 
 .. figure:: images/edge_connector_both.png
-   :width: 80%
+   :width: 100%
    :align: center
 
    The Kookaberry's GPIO Pin Assignment

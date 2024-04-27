@@ -89,18 +89,28 @@ The function of each connector is controlled by Kookaberry scripts.
 4.	Edge Connector – located at the bottom of the Kookaberry board, it plugs into a mating connector on an expansion board 
 and makes all of the Kookaberry’s connections available depending on the capabilities of the expansion board.
 
+.. _kberry_connectors:
+
+.. figure:: images/kooka_connectors.png
+   :width: 80%
+   :align: center
+
+   Electrical Pin Arrangements of Kookaberry Connectors
+
+The Kookaberry's plug connectors are of type JST-PH which are described 
+in more detail `here <https://www.mattmillman.com/info/crimpconnectors/common-jst-connector-types/>`_.
 
 On-board Facilities
 -------------------
 
 The Kookaberry has the following on-board facilities:
 
-1.	Microcomputer, either ARM-based (Advanced Reduced Instruction Set Computer Machine) or a Raspberry Pi RP2040
+1.	Microcomputer, either STM32 or a Raspberry Pi RP2040
 2.	4 MBytes serial memory (USB accessible)
 3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
-4.	22 GPIO (General Purpose Input-Output) pins
+4.	22 (STM32) / 18 (RP2040) GPIO (General Purpose Input-Output) pins
 5.	Up to 11 ADC (Analogue to Digital Converters) depending on microcomputer type
-6.	2 DAC (Digital to Analogue Converters) on ARM-based microcomputers only (and not on the RP2040 Kookaberry)
+6.	2 DAC (Digital to Analogue Converters) on STM32 microcomputers only (and not on the RP2040 Kookaberry)
 7.	Timers and Real Time Clock
 8.	Magnetic Compass and Accelerometer
 9.	2.4GHz Digital Packet Radio
