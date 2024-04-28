@@ -16,10 +16,8 @@ The BME280 and BMP280 sensors provide a range of atmospheric measurements, being
 * relative humidity (not the BMP280)
 
 
-The data-sheets for the sensor and breakout board can be found here:
-
-* https://wiki.dfrobot.com/Gravity__I2C_BME280_Environmental_Sensor__Temperature,_Humidity,_Barometer__SKU__SEN0236 
-* https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf 
+The data-sheet for the sensor can be found `here <https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf>`_. 
+Various vendors offer BME280 break-out boards for use with microcomputers such as the **Kookaberry**.
 
 
 Class BME280
