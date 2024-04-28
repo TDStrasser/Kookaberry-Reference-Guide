@@ -1,16 +1,16 @@
-***************************************************************
-:mod:`lsm303` --- control of LSM303C accelerometer/magnetometer
-***************************************************************
+*******************************************************************
+:mod:`lsm303` --- control of LSM303C/AGR accelerometer/magnetometer
+*******************************************************************
 .. _lsm303:
 
 .. module:: lsm303
-   :synopsis: control of LSM303C accelerometer/magnetometer
+   :synopsis: control of LSM303C/AGR accelerometer/magnetometer
 
-This module provides classes to control an LSM303C combined accelerometer and
+This module provides classes to control an LSM303C/AGR combined accelerometer and
 magnetometer.  It is used internally by the **Kookaberry** to provide access to the
-internal LSM303C, but can also be used to control an external LSM303C or LSM303AGR chip.
+internal LSM303C/AGR, but can also be used to control an external LSM303C or LSM303AGR chip.
 
-The LSM303C provides two independent I2C slaves for the accelerometer and
+The LSM303C/AGR provides two independent I2C slaves for the accelerometer and
 magnetometer, with default I2C addresses of ``0x1d`` and ``0x1e`` respectively.
 
 Example usage::
@@ -18,7 +18,7 @@ Example usage::
     import lsm303
     from machine import Pin, SoftI2C
 
-    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B')) # Create I2C bus for an external LSM303C
+    i2c = SoftI2C(scl=Pin('P3A'), sda=Pin('P3B')) # Create I2C bus for an external LSM303C/AGR
 
     accel = lsm303.LSM303C_Accel(i2c)
     mag = lsm303.LSM303C_Mag(i2c)
@@ -32,7 +32,7 @@ Example usage::
 Class LSM303C_Accel
 ===================
 
-This class represents a connection to the accelerometer part of the LSM303C.
+This class represents a connection to the accelerometer part of the LSM303C/AGR.
 
 The **Kookaberry**'s internal accelerator has the name ``kooka.accel`` instead of ``LSM303_Accel``.
 
@@ -44,7 +44,7 @@ LSM303_Accel Constructors
     Creates a new instance of this class.  
     
     *i2c* should be a :class:`machine.SoftI2C` object.
-    object that the LSM303C is connected to.  
+    object that the LSM303C/AGR is connected to.  
     
     *addr* is the I2C address of the
     accelerometer, which defaults to 0x1d if not specified.
@@ -76,7 +76,7 @@ LSM303 Methods
 class LSM303C_Mag
 =================
 
-This class represents a connection to the magnetometer part of the LSM303C.
+This class represents a connection to the magnetometer part of the LSM303C/AGR.
 
 The **Kookaberry**'s internal magnetometer has the name ``kooka.compass`` instead of ``LSM303_Mag``.
 
@@ -88,7 +88,7 @@ LSM303C_Mag Constructors
     Creates a new instance of this class.  
     
     *i2c* should be a :class:`machine.SoftI2C` object.
-    that the LSM303C is connected to.  
+    that the LSM303C/AGR is connected to.  
     
     *addr* is the I2C address of the
     magnetometer, which defaults to 0x1e if not specified.

@@ -8,7 +8,7 @@ class SoftI2C -- a two-wire serial protocol
 .. note::
 
    The I2C class which gave access to hardware I2C ports has been deprecated for general use on the **Kookaberry**.
-   It is still available as it is used for the **Kookaberry**'s internal peripherals, specifically the LSM303C accelerometer and magnetometer.
+   It is still available as it is used for the **Kookaberry**'s internal peripherals, specifically the LSM303C/AGR accelerometer and magnetometer.
 
    For general programming, it is now necessary to use the SoftI2C class as described herein.
 
