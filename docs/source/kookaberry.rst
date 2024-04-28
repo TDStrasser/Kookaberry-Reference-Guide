@@ -68,7 +68,7 @@ It is also possible to connect a 9 Volt battery with an appropriate connecting l
     The total battery supply voltage should not exceed 9.00 Volts into the Battery Connector or damage to the Kookaberry may result.
 
 
-2.	Micro USB Connector – this plug accepts USB leads that plug into a computer.  
+2.	USB Connector – this plug accepts USB leads that plug into a computer.  
 The USB connector provides access by the computer to the Kookaberry’s program memory, and it appears to the computer as a USB memory stick.  
 The Kookaberry will also accept power from this connector. 
 
