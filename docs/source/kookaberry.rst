@@ -46,11 +46,8 @@ The following features provide information and control for the user of the Kooka
 
 1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  
 The dimensions of the display are 128 pixels wide by 64 pixels high.
-
 2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
-
 3.	Three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
-
 4.	Reset Button located on the rear-top of the Kookaberry.  It is used to reset the Kookaberry back to its initial start-up conditions, 
 and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
 The power must be switched off and switched on again to accomplish a full hardware and software reset.
@@ -68,7 +65,7 @@ As an alternative a USB power pack can be used with the appropriate USB to JST c
 It is also possible to connect a 9 Volt battery with an appropriate connecting lead.
 
 .. important:: 
-    The total battery supply voltage should not exceed 12.00 Volts into the Battery Connector or damage to the Kookaberry may result.
+    The total battery supply voltage should not exceed 9.00 Volts into the Battery Connector or damage to the Kookaberry may result.
 
 
 2.	Micro USB Connector – this plug accepts USB leads that plug into a computer.  
@@ -76,11 +73,11 @@ The USB connector provides access by the computer to the Kookaberry’s program 
 The Kookaberry will also accept power from this connector. 
 
 .. important:: 
-    Always dismount the Kookaberry from the computer’s drives or else corruption of the Kookaberry’s program storage memory could result 
-    necessitating a reformat and loss of any data on in the Kookaberry’s serial memory.
+    Always dismount the Kookaberry from the computer’s drives before unplugging the USB connector or else corruption of the Kookaberry’s 
+    program storage memory could result necessitating a reformat and loss of any data on in the Kookaberry’s file storage system.
 
-    Total USB supply voltage should be between 4.7 to 5.1 volts.  Damage may result to the Kookaberry if the USB supplied voltage exceeds 5.1 volts.  
-    Also, operation of the Kookaberry may be adversely affected if the USB supplied voltage is less than 4.7 volts.
+    Total USB supply voltage should be between 4.75 to 5.25 volts.  Damage may result to the Kookaberry if the USB supplied voltage exceeds 5.25 volts.  
+    Also, operation of the Kookaberry may be adversely affected if the USB-supplied voltage is less than 4.75 volts.
 
 
 3.	Five connectors P1 to P5 – these connectors are used for accessories such as sensors and for outputs. 
@@ -105,14 +102,14 @@ On-board Facilities
 
 The Kookaberry has the following on-board facilities:
 
-1.	Microcomputer, either STM32 or a Raspberry Pi RP2040
+1.	Microcomputer, either STM32F091 or a Raspberry Pi RP2040
 2.	4 MBytes serial memory (USB accessible)
 3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
 4.	22 (STM32) / 18 (RP2040) GPIO (General Purpose Input-Output) pins
-5.	Up to 11 ADC (Analogue to Digital Converters) depending on microcomputer type
-6.	2 DAC (Digital to Analogue Converters) on STM32 microcomputers only (and not on the RP2040 Kookaberry)
+5.	Up to 8 ADC (Analogue to Digital Converters) on the ST32F091 and up to 4 ADCs on the RP2040
+6.	2 DAC (Digital to Analogue Converters) on STM32F091 and no DACs on the RP2040
 7.	Timers and Real Time Clock
 8.	Magnetic Compass and Accelerometer
-9.	2.4GHz Digital Packet Radio
+9.	2.4GHz Nordic NRF51 Digital Packet Radio
 
 
