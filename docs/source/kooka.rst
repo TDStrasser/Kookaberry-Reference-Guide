@@ -52,7 +52,7 @@ Instances
 .. data::
     radio
 
-    This handles the interface to the 2.4GHz digital packet radio (nRF51822), an instance of
+    This handles the interface to the 2.4GHz digital packet radio, an instance of
     :ref:`nrf51.Radio`.
 
 

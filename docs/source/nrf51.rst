@@ -1,12 +1,12 @@
-*******************************************************
-:mod:`nrf51` --- interface to the nRF51 BLE coprocessor
-*******************************************************
+***************************************************
+:mod:`nrf51` --- interface to the nRF51 coprocessor
+***************************************************
 .. _nrf51:
 
 .. module:: nrf51
-   :synopsis: interface to the nRF51 BLE coprocessor
+   :synopsis: interface to the nRF51 radio coprocessor
 
-This module provides a ``Radio`` class to interface with the nRF51 BLE coprocessor.
+This module provides a ``Radio`` class to interface with the nRF51 radio coprocessor.
 Note that an instance of this class is created at start-up and available in the
 :mod:`kooka` module as ``kooka.radio``.
 

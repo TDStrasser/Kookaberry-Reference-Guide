@@ -3,7 +3,7 @@
 ***************************************************
 
 .. module:: onewire
-   :synopsis: interface to the nRF51 BLE coprocessor
+   :synopsis: interface to 1-wire bus serial interface
 
 .. currentmodule:: onewire
 .. _onewire:
