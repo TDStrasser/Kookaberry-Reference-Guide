@@ -8,7 +8,7 @@
 .. _dht:
 
 
-The digital humidity and temperature (dht) module provides the interfaces to use the DHT11 (white) and the DHT22 (blue) temperature and humidity sensors. 
+The digital humidity and temperature (dht) module provides the interfaces to use the DHT11 (blue) and the DHT22 (white) temperature and humidity sensors. 
 
 DHT sensors are low-cost digital sensors with capacitive humidity sensors and thermistors to measure the surrounding air. 
 They feature a chip that handles analogue to digital conversion and communicates using a 1-wire interface.  
