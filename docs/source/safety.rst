@@ -38,38 +38,25 @@ Recommended Operating Environment
 Storage
 -------
 
-When not being used, keep the **Kookaberry** in the plastic pouch in which it was supplied.  
+When stored, the **Kookaberry** should be in an environment within a temperature range of -10
+to 50 degrees centigrade, and be protected against moisture, static electricity and also from
+physical knocks and scratches.
 
+When not being used, keep the **Kookaberry** in the plastic pouch in which it was supplied. 
 This protects against damage from static electricity, and also from physical knocks and scratches.
 
 Power Connection
 ----------------
 
-The **Kookaberry** may be powered by a compatible battery box supplying from 4.5V DC to 9V DC maximum, 
-which is connected to the 2-pin Power connector on the rear of the circuit board to the right of the Reset button. 
+The **Kookaberry** may be powered by a compatible battery, supplying from 4.5V DC to 9V DC maximum, 
+which is connected to the JST-PH 2-pin Power connector on the rear of the circuit board to the right of the Reset button. 
 
-Alternatively, power can be supplied from a 5V DC USB-compliant battery pack or computer connection via the USB-C connector 
-at the top-centre of the rear of the circuit board.  
-Do not power the Kookaberry directly from a USB charger as erroneous operation or damage could occur.
+Alternatively, power can be supplied from a 5V DC USB-compliant battery pack or computer connection via the USB connector 
+at the top-centre of the rear of the circuit board. 
 
-Battery
--------
+Do not power the **Kookaberry** directly from a USB charger, nor from a battery being simultaneously charge, 
+as damage or erroneous operation or damage could occur.
 
-The **Kookaberry** is normally supplied with a cylindrical 5-volt rechargeable USB battery pack and a compatible USB-A to USB-C cable.  
-
-The battery pack may be recharged using a USB charger (not supplied).  
-
-* Do not leave the **Kookaberry** connected to the battery pack when it is being recharged. 
-* Do not leave the battery pack on recharge for an extended period after its indicator light has stopped blinking.  
-* Do not overload the battery pack as it will overheat and possibly catch alight. 
-* Do not leave the battery pack in a hot or wet environment. 
-* Cease using the battery pack if it is physically deformed or damaged.  
-* Do not puncture the battery pack as the battery within it may catch on fire. 
-
-The battery pack comprises a regulating circuit and a single 18650 3.7V Lithium-Ion battery which is replaceable.  
-Dismantling of the battery unit and replacement of the 18650 battery should be performed only by an experienced adult.  
-
-Disposal of the replaced battery should be only through an accredited recycling agent, following their safety procedures.  Lithium-Ion batteries can be dangerous if mis-handled.
 
 Conductive Materials
 --------------------
@@ -107,7 +94,7 @@ The **Kookaberry** is intended for use by children from 8 years of age under the
 Accessories
 -----------
 
-The **Kookaberry** is designed for use with compatible electronic accessories, connected via connectors P1 to P5 and/or 
+The **Kookaberry** is designed for use with a range of compatible electronic accessories, connected via connectors P1 to P5 and/or 
 the expansion connector using compatible expansion boards.  
 
 Such accessories must be used in accordance with their safety information.  
@@ -117,7 +104,7 @@ To be compatible with and not damaging to the **Kookaberry**, accessories must o
 Some accessories may require a power supply voltage that is more than 3.3V DC. 
 Such accessories cannot be powered by the **Kookaberry** and will need a suitable external power adapter.
 
-Power for accessories must in aggregate not draw more then 100 milli-amps directly from the **Kookaberry**.  
+Power for accessories must in aggregate not draw more then 150 milli-amps directly from the **Kookaberry**.  
 
-The **Kookaberry** is protected from short-term excess current but will be damaged by voltages exceeding 3.3 volts 
-being applied to any connector other than the external power input connector.
+The **Kookaberry** is protected from short-term excess current but will be damaged by voltages from external accessories exceeding 3.3 volts 
+being applied to any connector, other than the external power input connector.
