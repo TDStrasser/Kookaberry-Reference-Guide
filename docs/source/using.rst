@@ -6,25 +6,29 @@ Using the **Kookaberry** is relatively simple and as described below.
 Power-up
 --------
 
-The simplest way to power-up the **Kookaberry** is to connect its USB connector to a charged USB battery.
+The simplest way to power-up the **Kookaberry** is to connect it:
+
+- to a computer via the Kookaberry’s USB port using a compatible USB cable
+- to a USB battery via the Kookaberry’s USB port using a compatible USB cable or
+- to a battery, having a voltage between 4.5 to 9.0 volts, via the Kookaberry's 2 pin JST-PH battery connector
 
 .. _powerup:
 
-.. figure:: images/power-connect-usb.png
+.. figure:: images/power-connect.png
    :width: 80%
    :align: center
 
-   Connecting a USB battery
+   Powering the Kookaberry
 
-Alternatively, connect a compatible battery pack to the **Kookaberry's** 2-pin power connector and switch the pack on.
+When power is applied, a green LED on the back of the Kookaberry should illuminate.  
 
-A green LED on the back of the Kookaberry should illuminate.  If you see a slowly pulsing blue LED then the battery voltage is too low.  
+If you see a slowly pulsing blue LED then the battery voltage is too low.  
 Charge or replace the battery and try again.
 
 If no LED lights then the battery is not connected, or not switched on, or is completely flat. 
 Check that 
 
-* the battery cable is completely plugged in
+* the USB / battery cable is completely plugged in
 * the cabling and plugs are not damaged
 * any battery pack switch is on
 * that the battery packs are charged
@@ -67,6 +71,7 @@ Click on the Run button in the **KookaSuite** tool to transfer the program to th
    :align: center
 
    Coding the Kookaberry
+
 
 Your script can be made to appear in the **Kookaberry**'s menu by copying the script (or saving it using Save-As) into the **Kookaberry**'s app folder.
 

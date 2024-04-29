@@ -55,6 +55,12 @@ It comprises the following tools:
 **KookaIDE**, **KookaBlockly** and **KookaTW** are all packaged as **KookaSuite** for Windows, Apple Macintosh, and Raspberry Pi Personal Computers. 
 **KookaSuite** is available for download here: https://github.com/kookaberry/kooka-releases/tree/master/KookaSuite 
 
+.. figure:: images/kberry_coding-tools.png
+   :width: 80%
+   :align: center
+
+   Kookaberry Coding Tools
+
 .. note::
   
   The **KookaBlockly Reference Guide** is available at this link: https://kookablockly-reference-guide.readthedocs.io/en/latest/
