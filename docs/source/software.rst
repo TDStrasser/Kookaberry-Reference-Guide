@@ -72,7 +72,7 @@ The Kookaberry contains low-level software that is stored in on-board non-volati
 Firmware performs basic low-level tasks to control and monitor the **Kookaberry**'s hardware, 
 and to make it accessible to high-level software, such as MicroPython. 
 
-Firmware updates may sometimes be issued that extend the functionality of the Kookaberry, or to remedy bugs or security weaknesses in the firmware. 
+Firmware updates may sometimes be issued that extend the functionality of the Kookaberry, or to remedy bugs in the firmware. 
 The **Kookaberry’s** firmware is updated from time to time and the latest version may be downloaded from https://github.com/kookaberry/kooka-releases.
 
 Instructions for firmware updates are provided on the GutHub page.  In general, follow this procedure:
@@ -80,7 +80,7 @@ Instructions for firmware updates are provided on the GutHub page.  In general, 
 1. Navigate into the Github firmware folder (https://github.com/kookaberry/kooka-releases/tree/master/firmware)
 2. Then navigate into, depending on your model of Kookaberry, either the ``stm32`` folder (Kookaberry rev1-05 and rev1-06), 
    or the ``rp2040`` folder (Kookaberry v2 and later).
-3. With the target Kookaberry connected via USB to your PC, download the various .bin files to the root folder of the **Kookaberry**'s filestore.  
+3. With the target Kookaberry connected via USB to your PC, download the various .bin files to the root folder of the **Kookaberry**'s file storage system.  
    The **Kookaberry**'s blue LED will flash during this process.  Wait until the blue LED is fully extinguished.  
 4. Dismount the **Kookaberry** from your PC and disconnect it.
 5. Reconnect the **Kookaberry** to your PC.  The blue LED will flash while the firmware is being updated.
