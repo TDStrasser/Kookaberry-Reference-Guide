@@ -7,13 +7,13 @@ This section covers some characteristics of the MicroPython Interactive
 Interpreter Mode. A commonly used term for this is **REPL** (read-evaluate-print-loop)
 which will be used to refer to this interactive prompt.
 
-The REPL interface window is provided in the left-hand pane of the **KookaIDE** programming tool, 
+The **REPL** interface window is provided in the left-hand pane of the **KookaIDE** programming tool, 
 which is part of **KookaSuite**.
 
 The help() Function
 -------------------
 
-REPL provides a very basic level of help by typing the command ``help()``::
+**REPL** provides a very basic level of help by typing the command ``help()``::
 
     >>> help()
     Welcome to MicroPython!
