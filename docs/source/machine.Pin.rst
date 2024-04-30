@@ -13,8 +13,8 @@ and also the names of the edge-connector contacts (``J1``-``J18``, and ``K1``-``
 
 Referencing GPIO Pins with their **Kookaberry** common names will ensure scripts will work across both **Kookaberry** models.  
 
-Please note that not as many GPIO Pins are available on the RP2040 variant (``J2``, ``J3``, ``J13``, ``J14``) 
-and these Pins should not be used if scripts are to be fully transportable between **Kookaberry** models.
+Please note that not as many GPIO Pins are available on the RP2040 variant, and these Pins 
+(``J2``, ``J3``, ``J13``, ``J14``) should not be used if scripts are to be fully transportable between **Kookaberry** models.
 
 All GPIO Pins can also be referenced by their native microcomputer names as shown in the columns under STM32 and RP2040, 
 but scripts using these names will not run without errors on the other microcomputer.
@@ -28,6 +28,15 @@ but scripts using these names will not run without errors on the other microcomp
    The Kookaberry's GPIO Pin Assignment
 
 See :ref:`kooka_connectors` for a layout of the on-board connectors.
+
+The GPIO Pins available may also be discovered using the REPL console interface in **KookaIDE** as follows::
+
+  from machine import Pin
+
+  help(Pin.cpu) # Will list all the GPIO Pins and their aliases for the CPU in use
+
+  help(Pin.board) # Lists all known GPIO Pins at the board level (i.e. the Kookaberry)
+                  # Some of these Pins are not accessible by user programs as they may be reserved for internal use
 
 
 class Pin -- control I/O pins
