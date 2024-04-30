@@ -255,6 +255,7 @@ Example Usage::
     display.invert(True)            # invert all pixels
 
     display.fill(0)                 # clear the display
+    display.clear()                 # also clears the display
     display.line(4, 5, 60, 40, 1)   # draw a line
     display.show()                  # show the frame buffer to the display
 
@@ -275,7 +276,12 @@ by combining the following methods in easy to use ways.
 
 .. method:: display.fill(c)
 
-    Fill the entire FrameBuffer with the specified color, being: `0`` pixels are off; and ``1`` pixels are on.
+    Fills the entire FrameBuffer with the specified color, being: ``0`` pixels are off; and ``1`` pixels are on.
+
+.. method:: display.clear()
+
+    Clears the display FrameBuffer by filling it with ``0``.  This is equivalent to *display.fill(0)*.
+
 
 .. method:: display.pixel(x, y[, c])
 
