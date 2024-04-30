@@ -7,12 +7,10 @@ This language is an implementation of the Python 3 language that has been adapte
 MicroPython
 -----------
 
-More information on **MicroPython** can be found at docs.micropython.org and in particular the **MicroPython** standard library at 
-https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
+More information on **MicroPython** can be found at http://docs.micropython.org.
 
-
-**Micropython** source code is loaded as Python text files (``name.py``) onto the **Kookaberry’s** serial memory by a simple drag and drop operation 
-when the **Kookaberry** is mounted as a USB drive on a computer.  
+**Micropython** source code is loaded as Python text files (``name.py``) onto the **Kookaberry’s** serial memory 
+by a simple drag and drop operation when the **Kookaberry** is mounted as a USB drive on a computer.  
 
 - **Kookaberry** scripts should be in the "/app" folder on the **Kookaberry** drive. 
 - Libraries should be in the   "/lib" folder on the **Kookaberry** drive.  
@@ -27,7 +25,44 @@ when the **Kookaberry** is mounted as a USB drive on a computer.
 The source code is converted to machine-readable bytecode by the **Kookaberry’s** on-board **MicroPython** compiler and will perform whatever instructions 
 are contained in the source code.  This occurs when the program is run. 
 
-Distinctively, the **Kookaberry** can also contain many **MicroPython** scripts (source code files) which can be selected and run by its on-board Menu.
+Distinctively, the **Kookaberry** can also contain many **MicroPython** scripts (source code files) 
+which can be selected and run by its on-board Menu.
+
+MicroPython Standard Library
+----------------------------
+
+The **MicroPython** standard library is described at 
+https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
+
+The standard library encompasses the following.  The level of support by the **Kookaberry** is noted against each item:
+
+  - ``array`` - arrays of numeric data
+  - ``asyncio`` - asynchronous I/O scheduler (RP2040 only)
+  - ``binascii`` - binary/ASCII conversions
+  - ``builtins`` - builtin functions and exceptions
+  - ``cmath`` - mathematical functions for complex numbers (RP2040 only)
+  - ``collections`` - collection and container types
+  - ``errno`` - system error codes
+  - ``gc`` - control the garbage collector
+  - ``gzip`` - gzip compression & decompression (not supported by the **Kookaberry**)
+  - ``hashlib`` - hashing algorithms (not supported by the **Kookaberry**)
+  - ``heapq`` - heap queue algorithm (not supported by the **Kookaberry**)
+  - ``io`` - input/output streams
+  - ``json`` - JSON encoding and decoding
+  - ``math`` - mathematical functions
+  - ``os`` - basic “operating system” services
+  - ``platform`` - access to underlying platform’s identifying data
+  - ``random`` - generate random numbers
+  - ``re`` - simple regular expressions
+  - ``select`` - wait for events on a set of streams
+  - ``socket`` - socket module (not supported by the **Kookaberry**)
+  - ``ssl`` - SSL/TLS module (not supported by the **Kookaberry**)
+  - ``struct`` - pack and unpack primitive data types
+  - ``sys`` - system specific functions
+  - ``time`` - time related functions
+  - ``zlib`` - zlib compression & decompression (not supported by the **Kookaberry**)
+  - ``_thread`` - multithreading support (not supported by the **Kookaberry**)
+
 
 Scripting Tools
 ---------------
