@@ -10,12 +10,6 @@ This document provides a guide to the **Kookaberry** microcomputer, including it
 
 This guide is for **Kookaberry** firmware v1.10.0.
 
-.. note::
-
-   This document is under active development
-
-
-
 .. toctree::
   :caption: Contents
   :maxdepth: 2
