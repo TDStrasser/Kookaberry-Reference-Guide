@@ -1,6 +1,9 @@
 .. currentmodule:: machine
-  
+
 .. _machine.Pin:
+
+Kookaberry GPIO Pins
+====================
 
 **Kookaberry** GPIO Pins are allocated and arranged as shown in the diagram below.
 As there are two variants of the **Kookaberry** (STM32 and RP2040 microcomputers), the native GPIO nomenclature varies.
