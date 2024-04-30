@@ -383,6 +383,34 @@ These methods control the physical appearance of the **Kookaberry** display.
     using the currently selected font (defaults to 8x8 font).  The display is scrolled up
     when text is drawn to the last line of the display.
    
+Timed ADC readings
+==================
+
+.. function:: kooka.read_timed(adc, buffer, sample_frequency)
+
+This function is provided to enable regular sampling of periodic analogue signals, such as sound waves.
+
+- *adc* is an ADC object created with :class:`machine.ADC`
+- *buffer* is an array of unsigned 16-bit integers into which the ADC samples will be pre-allocated
+- *sample_frequency* is the number of samples / second to be taken
+
+The read_timed() function returns the number of samples that were taken on time.  This can be used to verify what the maximum sampling frequency is.
+
+The resulting buffer of analogue samples can then be passed for further processing such as spectral analysis to discover what frequencies are present.
+
+Example Usage::
+
+    from array import array
+    buf = array('H', 0 for _ in range(1000)) # Set up a buffer of 1000 unsigned 16-bit integers
+    
+    from machine import ADC, Pin
+    adc = ADC(Pin('P4')) # Create an ADC object attached to GPIO Pin P4
+    
+    samples_on_time = kooka.read_timed(adc, buf, 6600) # Fill the buffer with samples taken at 6.6kHz (suitable for telephone audio)
+    
+    if samples_on_time < 1000: #If not all samples taken on time
+        print('Sampling rate too high')
+
 
 .. toctree::
     :caption: Display-related classes
