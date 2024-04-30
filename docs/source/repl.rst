@@ -13,7 +13,7 @@ which is part of **KookaSuite**.
 The help() Function
 -------------------
 
-REPL provides a very basic level of help by typing the command *help()*::
+REPL provides a very basic level of help by typing the command ``help()``::
 
     >>> help()
     Welcome to MicroPython!
@@ -33,12 +33,12 @@ REPL provides a very basic level of help by typing the command *help()*::
     For a list of available modules, type help('modules')
     >>> 
 
-See also the dir() function immediately following.
+See also the ``dir()`` function immediately following.
 
 The dir() Function
 ------------------
 
-The dir(object) function returns all properties and methods of the specified *object*.
+The ``dir(object)`` function returns all properties and methods of the specified ``object``.
 
 Example usage for obtaining the properties of the machine object::
 
@@ -47,7 +47,7 @@ Example usage for obtaining the properties of the machine object::
     ['__class__', '__name__', '__dict__', '__file__', 'ADC', 'I2C', 'I2S', 'PWM', 'PWRON_RESET', 'Pin', 'RTC', 'SPI', 'Signal', 'SoftI2C', 'SoftSPI', 'Timer', 'UART', 'WDT', 'WDT_RESET', 'bitstream', 'bootloader', 'deepsleep', 'dht_readinto', 'disable_irq', 'enable_irq', 'freq', 'idle', 'lightsleep', 'mem16', 'mem32', 'mem8', 'reset', 'reset_cause', 'soft_reset', 'time_pulse_us', 'unique_id']
     >>> 
 
-To investigate a deeper level, specify the object as *object.property*::
+To investigate a deeper level, specify the object as ``object.property``::
 
     >>> dir(machine.Pin)
     ['__class__', '__name__', 'value', '__bases__', '__dict__', 'ALT', 'ALT_GPCK', 'ALT_I2C', 'ALT_PIO0', 'ALT_PIO1', 'ALT_PWM', 'ALT_SIO', 'ALT_SPI', 'ALT_UART', 'ALT_USB', 'IN', 'IRQ_FALLING', 'IRQ_RISING', 'OPEN_DRAIN', 'OUT', 'PULL_DOWN', 'PULL_UP', 'board', 'cpu', 'high', 'init', 'irq', 'low', 'off', 'on', 'toggle']

@@ -121,8 +121,8 @@ to define the hierarchical order of *module.item.subitem* etc.
 
    REPL dialogue for help(kooka.LED)
 
-For a more in-depth description of REPL see :ref:`repl
-`
+For a more in-depth description of REPL see :ref:`repl`
+
 Each of the modules frozen into the **Kookaberry’s** flash memory are described in the following sections.
 
 Kookaberry Specific Module Library
