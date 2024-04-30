@@ -33,6 +33,12 @@ Example usage::
             print('eCO2: %d ppm, TVOC: %d ppb' % (sensor.eCO2, sensor.tVOC)) # print CO2 and tVOC readings
     main() # run the function
 
+The data-sheet and a typical breakout board for the CCS811 sensor can be found here: 
+
+  - https://download.mikroe.com/documents/datasheets/CCS811.pdf
+  - https://dfimg.dfrobot.com/nobody/wiki/7334c560756596ba0cf3f1d2102d19dd.pdf 
+  - https://wiki.dfrobot.com/Gravity:%20CCS811%20Air%20Quality%20Sensor%20SKU:%20SEN0318 
+
 
 CCS811 Constructors
 -------------------
@@ -43,6 +49,9 @@ CCS811 Constructors
 
   - *i2c* is an I2C bus interface object created by :class:`machine.SoftI2C`
   - *addr* is one of the valid I2C device addresses supported by the CCS811 sensor chip - (``0x5A`` (default) or ``0x5B``)
+
+CCS811 Methods
+-------------------
 
 .. method:: CCS811.data_ready()
 
@@ -63,10 +72,4 @@ CCS811 Constructors
   dht to provide the compensating data.  Humidity is relative humidity in %, and temperature is in degrees Centigrade.
 
 
-
-The data-sheet and a typical breakout board for the CCS811 sensor can be found here: 
-
-  - https://download.mikroe.com/documents/datasheets/CCS811.pdf
-  - https://dfimg.dfrobot.com/nobody/wiki/7334c560756596ba0cf3f1d2102d19dd.pdf 
-  - https://wiki.dfrobot.com/Gravity:%20CCS811%20Air%20Quality%20Sensor%20SKU:%20SEN0318 
 
