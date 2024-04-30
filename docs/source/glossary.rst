@@ -23,6 +23,11 @@ and is intended to demystify the vocabulary often used in association with compu
       visual code editors usually retain a connection to the actual code, using visual elements to enhance the coding experience. 
       See also https://en.wikipedia.org/wiki/Visual_programming_language
 
+    REPL 
+      Provided in **KookaIDE**, the REPL interface (Read-Evaluate-Print-Loop) is a console Command Line Interface (CLI)
+      with the **Kookaberry**. Commands typed using this interface include live script coding and de-bugging,
+      and limited help information.
+
     OLED
       Organic Light Emitting Diode - the lighting technology that is used in the **Kookaberry**'s display - see https://en.wikipedia.org/wiki/OLED
 

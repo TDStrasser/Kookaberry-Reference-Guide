@@ -38,7 +38,7 @@ Scripting Tools
 It comprises the following tools:
 
 * For users who are more advanced and skilled in writing **MicroPython** scripts, the **KookaIDE** Interactive Development Environment (IDE) is included. 
-  **KookaIDE** provides an interactive interface with the **Kookaberry** via the REPL interface (Read-Evaluate-Print-Loop), 
+  **KookaIDE** provides an interactive interface with the **Kookaberry** via the **REPL** interface (Read-Evaluate-Print-Loop), 
   which enables a live script coding and de-bugging interface for users.
 
 * A second development environment is included which is intended for school students and coding novices called **KookaBlockly**.
@@ -121,6 +121,8 @@ to define the hierarchical order of *module.item.subitem* etc.
 
    REPL dialogue for help(kooka.LED)
 
+For a more in-depth description of REPL see :ref:`repl
+`
 Each of the modules frozen into the **Kookaberry’s** flash memory are described in the following sections.
 
 Kookaberry Specific Module Library

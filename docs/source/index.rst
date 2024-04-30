@@ -20,6 +20,7 @@ This guide is for **Kookaberry** firmware v1.10.0.
   pico.rst
   software.rst
   helpers.rst
+  repl.rst
   peripherals.rst
   glossary.rst
   genindex.rst

@@ -13,7 +13,7 @@ The focus in this guide is on the core **Kookaberry** functionality to ensure th
 There are two variants of the **Kookaberry** using STM32 and RP2040 microcomputers.  
 These each have features and functions particular to their microcomputers that are beyond those covered in this guide.
 
-The additional functionality can be examined by using these commands in the **KookaIDE** REPL::
+The additional functionality can be examined by using these commands in the **KookaIDE** **REPL**::
 
    import machine
    # Loads the machine module

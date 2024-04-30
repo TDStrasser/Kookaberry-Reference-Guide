@@ -29,14 +29,14 @@ but scripts using these names will not run without errors on the other microcomp
 
 See :ref:`kooka_connectors` for a layout of the on-board connectors.
 
-The GPIO Pins available may also be discovered using the REPL console interface in **KookaIDE** as follows::
+The GPIO Pins available may also be discovered using the **REPL** console interface in **KookaIDE** as follows::
 
-  from machine import Pin
+  >>>from machine import Pin
 
-  help(Pin.cpu) # Will list all the GPIO Pins and their aliases for the CPU in use
+  >>> help(Pin.cpu) # Will list all the GPIO Pins and their aliases for the CPU in use
 
-  help(Pin.board) # Lists all known GPIO Pins at the board level (i.e. the Kookaberry)
-                  # Some of these Pins are not accessible by user programs as they may be reserved for internal use
+  >>> help(Pin.board) # Lists all known GPIO Pins at the board level (i.e. the Kookaberry)
+                      # Some of these Pins are not accessible by user programs as they may be reserved for internal use
 
 
 class Pin -- control I/O pins

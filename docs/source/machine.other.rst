@@ -68,7 +68,7 @@ Reset related functions
 
    Performs a soft reset of the interpreter, deleting all Python objects and
    resetting the Python heap.  It tries to retain the method by which the user
-   is connected to the MicroPython REPL (i.e. serial, USB).
+   is connected to the MicroPython **REPL** (i.e. serial, USB).
 
 .. function:: reset_cause()
 
