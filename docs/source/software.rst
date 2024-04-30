@@ -107,7 +107,7 @@ To discover what is contained in any of the modules, import the module and invok
 For example, *import kooka* and *help(kooka)* as shown below:
 
 .. figure:: images/REPL_help_kooka.png
-   :width: 80%
+   :width: 50%
    :align: center
 
    REPL dialogue for help(kooka)
@@ -129,7 +129,6 @@ Kookaberry Specific Module Library
 Modules for using functions that are unique to the **Kookaberry** are are described below:
 
 .. toctree:: 
-    :caption: Kookaberry Specific Modules
     :maxdepth: 2
 
     kooka.rst
