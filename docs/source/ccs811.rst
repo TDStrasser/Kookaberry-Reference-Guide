@@ -1,4 +1,11 @@
-.. currentmodule:: ccs811
+***************************************************
+:mod:`CCS811` --- Atmospheric Carbon Dioxide Sensor
+***************************************************
+.. module:: CCS811
+   :synopsis: Digital atmospheric carbon dioxide and volatile organic compounds sensor
+
+
+.. currentmodule:: CCS811
 .. _ccs811:
 
 
