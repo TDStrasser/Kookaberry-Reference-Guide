@@ -2,7 +2,10 @@ Peripherals Module Library
 --------------------------
 
 The **Kookaberry** provides an ever-growing module library to enable on-board devices and a range of external accessories to be used by the software.  
-Further modules can be added by users for peripherals and accessories of their choosing.  
+
+Further modules can be added by users for peripherals and accessories of their choosing. 
+Such further modules should be added into the /lib folder, either as MicroPython source files, or preferably and more efficiently
+as pre-compiled mpy files.  See :ref:`mpy_files` for more detail.
 
 There are many Internet forums and repositories that provide module software code and help on getting accessories to work with 
 **MicroPython** micro-computers such as the **Kookaberry**. Notable among the repositories is GitHub.
@@ -13,7 +16,7 @@ The **Kookaberry**'s built-in software modules are described in the following se
 - analogue signals from potentiometers, and from analogue sensors for distance, light, sound, proximity, heart-rate etc.
 - RGB colour LED arrays known as NeoPixels 
 - servos and electrical motors
-- digital sensors for acceleration, magnetism, temperature, humidity, air pressure, light, infra-red, electric voltage and current
+- digital sensors for acceleration, magnetism, temperature, humidity, air pressure, light, infra-red, electric voltage and current, and varbon dioxide
 - battery time sources and clockwise
 - digital serial communications with radio transceivers and other computers
 
