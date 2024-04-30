@@ -30,6 +30,7 @@ The Kookaberry's built-in software modules are described in the following sectio
     :maxdepth: 1
 
     bme280.rst
+    ccs811.rst
     dht.rst
     ds18x20.rst
     ds3231.rst

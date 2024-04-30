@@ -33,17 +33,36 @@ Example usage::
 CCS811 Constructors
 -------------------
 
-.. class:: CCS811.CCS811(i2c)
+.. class:: CCS811.CCS811(i2c, addr=0x5A)
 
+  Creates a CCS811 object as a device on the nominated I2C bus:
+
+  - *i2c* is an I2C bus interface object created by :class:`machine.SoftI2C`
+  - *addr* is one of the valid I2C device addresses supported by the CCS811 sensor chip - (``0x5A`` (default) or ``0x5B``)
+
+.. method:: CCS811.data_ready()
+
+  Returns true if new sensor data is available. 
   
-The accuracy of the readings are affected by temperature and humidity, and can be improved by using the 
-put_envdata(humidity, temperature) function in conjunction with another sensor such as the bme280 or dht to provide the compensating data.  
-Humidity is relative humidity in %, and temperature is in degrees Centigrade.
+  The sensor readings accessible in the parameters *CCS811.eCO2* and *CCS811.tVOV*
 
-The put_baseline() and get_baseline() functions are used for external calibration of the sensor’s heating element, 
-which is normally automatically internally maintained.  Therefore there is not normally a need to use these functions.
+.. method:: CCS811.get_baseline()
+.. method:: CCS811.put_baseline(HB, LB)
 
-The datasheet for the CCS811 sensor and breakout board can be found here:  
+  The put_baseline() and get_baseline() functions are used for external calibration of the sensor’s heating element, 
+  which is normally automatically internally maintained.  Therefore there is not normally a need to use these functions.
+
+.. method:: CCS811.put_envdata(humidity, temp)
+
+  The accuracy of the readings are affected by temperature and humidity, and can be improved by using the 
+  *put_envdata(humidity, temperature)* function in conjunction with another sensor such as the bme280 or 
+  dht to provide the compensating data.  Humidity is relative humidity in %, and temperature is in degrees Centigrade.
+
+
+
+The data-sheet and a typical breakout board for the CCS811 sensor can be found here: 
+
+  - https://download.mikroe.com/documents/datasheets/CCS811.pdf
   - https://dfimg.dfrobot.com/nobody/wiki/7334c560756596ba0cf3f1d2102d19dd.pdf 
   - https://wiki.dfrobot.com/Gravity:%20CCS811%20Air%20Quality%20Sensor%20SKU:%20SEN0318 
 
