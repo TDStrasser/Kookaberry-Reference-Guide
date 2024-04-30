@@ -86,6 +86,43 @@ Instructions for firmware updates are provided on the GutHub page.  In general, 
 5. Reconnect the **Kookaberry** to your PC.  The blue LED will flash while the firmware is being updated.
 6. The **Kookaberry** will then mount as a USB device with the new firmware operative.
 
+Investigating Firmware Using REPL
+---------------------------------
+
+To see which modules are contained in the **Kookaberry**'s flash memory, use the **REPL** console window in **KookaIDE**.
+
+Invoke the command: *help(‘modules’)* as is shown below:
+
+.. figure:: images/REPL_help_modules.png
+   :width: 80%
+   :align: center
+
+   REPL dialogue for help('modules')
+
+
+The response from the Kookaberry should be a list of modules as is shown.  
+The module names run in alphabetic order in columns.  
+
+To discover what is contained in any of the modules, import the module and invoke the command *help(module_name)* without quotes.
+For example, *import kooka* and *help(kooka)* as shown below:
+
+.. figure:: images/REPL_help_kooka.png
+   :width: 80%
+   :align: center
+
+   REPL dialogue for help(kooka)
+
+To investigate the object at a deeper level, say the class LED, invoke *help(kooka.LED)* using a dot (``.``) 
+to define the hierarchical order of *module.item.subitem* etc.
+
+.. figure:: images/REPL_help_kooka_LED.png
+   :width: 40%
+   :align: center
+
+   REPL dialogue for help(kooka.LED)
+
+Each of the modules frozen into the Kookaberry’s flash memory are described in the following sections.
+
 Kookaberry Specific Module Library
 ----------------------------------
 

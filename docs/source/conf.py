@@ -10,9 +10,9 @@ today = f"{now.year}-{now.month:02}-{now.day:02}"
 rights_holders = 'the AustSTEM Foundation and contributors'
 copyright = f"2019-{now.year} {rights_holders}. Last updated: {today}"
 
-author = 'Julian Dinsdale and Tony Strasser'
+author = 'Tony Strasser'
 
-release = '0.1'
+release = '1.10.0'
 version = '1.10.0'
 
 numfig = True # Automatically number figures, code blocks and tables
