@@ -15,23 +15,26 @@ and total volatile organic compounds (tVOC) in parts per billion (ppb).
 The sensor is a digital metal oxide gas sensor which detects a wide range of volatile organic compounds. 
 The module starts the sensor in constant power mode, giving a new measurement every second.
 
-The module contains a class CCS811.CCS811 which provides four functions as shown.  
-The principal function is data_ready() which returns a value of True when the sensor data are ready in the variable eCO2 and tVOC. 
-Usage of the module is best achieved by following this example:
+The module contains a class CCS811.CCS811 which provides the methods shown below.  
 
-Example usage::
+Usage of the module is best achieved by following this example::
 
   from CCS811 import CCS811
-  def main(): # define the function main()
-    from machine import SoftI2C # import the I2C class from machine
-    import time # import the time module
-    i2c = SoftI2C('P3') # set up an I2C serial interface object using connector ‘P3’
-    sensor = CCS811(i2c) # create a CCS811 object assigned to the variable ‘sensor’ using the I2C interface
-    time.sleep(1) # give the sensor time to initialise
-    while True: # run in this loop forever
-        if sensor.data_ready(): # when new data is ready
-            print('eCO2: %d ppm, TVOC: %d ppb' % (sensor.eCO2, sensor.tVOC)) # print CO2 and tVOC readings
-    main() # run the function
+  from machine import SoftI2C, Pin
+  import time
+  from kooka import display # Set up the display object
+
+  i2c = SoftI2C(scl=) # set up an I2C serial interface object using connector ‘P3’
+  sensor = CCS811(i2c) # create a CCS811 object assigned to the variable ‘sensor’ using the I2C interface
+  time.sleep(1) # give the sensor time to initialise
+
+  while True: # run in this loop forever
+    display.clear()
+    display.print('CCS811 Sensor')
+    if sensor.data_ready(): # when new data is ready
+      display.print('eCO2: %d ppm' % sensor.eCO2) # print latest CO2 reading
+      display.print('TVoC: %d ppb' % sensor.tVOC) # print latest tVOC reading
+  
 
 The data-sheet and a typical breakout board for the CCS811 sensor can be found here: 
 
@@ -57,7 +60,7 @@ CCS811 Methods
 
   Returns true if new sensor data is available. 
   
-  The sensor readings accessible in the parameters *CCS811.eCO2* and *CCS811.tVOV*
+  The sensor readings accessible in the parameters *CCS811.eCO2* and *CCS811.tVOC*
 
 .. method:: CCS811.get_baseline()
 .. method:: CCS811.put_baseline(HB, LB)
