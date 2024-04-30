@@ -1,7 +1,7 @@
 The Kookaberry
 ==============
 
-The Kookaberry is an easy-to-use micro-computer which was designed in Australia to engage both students and teachers at the basic level of our digital world.
+The **Kookaberry** is an easy-to-use micro-computer which was designed in Australia to engage both students and teachers at the basic level of our digital world.
 
 .. image:: images/kberry-front-photo.png
    :width: 50%
@@ -11,11 +11,11 @@ Its primary purpose is to enrich lessons across many Key Learning Areas of the p
 Personal Health, Mathematics, Science & Technology; and it can be used in practical learning projects as diverse as weather stations, art installations, 
 mathematical games, physical fitness, and musical experimentation.
 
-The Kookaberry is slightly larger than a credit card, and it stands alone in its ability to introduce children to the digital world through measuring, 
+The **Kookaberry** is slightly larger than a credit card, and it stands alone in its ability to introduce children to the digital world through measuring, 
 monitoring, communicating and displaying data; storing the results for later graphing and analysis; 
 and transforming data through algorithms (i.e. coding) to control processes and external devices.
 
-In that context, the Kookaberry uses pre-coded applications with plug-and-play sensors to measure and log data such as temperature, 
+In that context, the **Kookaberry** uses pre-coded applications with plug-and-play sensors to measure and log data such as temperature, 
 humidity, and soil moisture over time; as well as control external elements such as speakers, lights, relays, servos, fans, or water pumps. 
 On-board sensors and buttons allow the development of simple educational games and fun activities that work straight out of the box.
 
@@ -23,7 +23,7 @@ On-board sensors and buttons allow the development of simple educational games a
 Physical Arrangement
 --------------------
 
-The physical arrangement of the Kookaberry is shown below.
+The physical arrangement of the **Kookaberry** is shown below.
 
 .. _kberrylayout:
 
@@ -36,19 +36,19 @@ The physical arrangement of the Kookaberry is shown below.
 The principal features are:
 
 1. The User Interface comprising a display, buttons and LEDs
-2. Electrical Connectors for supplying power to the Kookaberry, for communications with the Kookaberry, and for the connection of peripherals
+2. Electrical Connectors for supplying power to the **Kookaberry**, for communications with the **Kookaberry**, and for the connection of peripherals
 
 
 User Interface
 --------------
 
-The following features provide information and control for the user of the Kookaberry:
+The following features provide information and control for the user of the **Kookaberry**:
 
 1.	Display, located on the front, is monochrome with cyan (light-blue) pixels. It is capable of displaying text and simple line and dot graphics.  
 The dimensions of the display are 128 pixels wide by 64 pixels high.
-2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the Kookaberry and their functions are configured by those scripts.
-3.	Three LEDs (green, orange, and red) which can be controlled by the Kookaberry scripts.  
-4.	Reset Button located on the rear-top of the Kookaberry.  It is used to reset the Kookaberry back to its initial start-up conditions, 
+2.	Pushbuttons labelled A, B, C and D.  These are able to be read by scripts on the **Kookaberry** and their functions are configured by those scripts.
+3.	Three LEDs (green, orange, and red) which can be controlled by the **Kookaberry** scripts.  
+4.	Reset Button located on the rear-top of the **Kookaberry**.  It is used to reset the **Kookaberry** back to its initial start-up conditions, 
 and also to launch the on-board app menu (see later instructions).  It does not reset the hardware to its power-up state. 
 The power must be switched off and switched on again to accomplish a full hardware and software reset.
 
@@ -57,7 +57,7 @@ The power must be switched off and switched on again to accomplish a full hardwa
 Connectors
 ----------
 
-The Kookaberry has a range of connectors:
+The **Kookaberry** has a range of connectors:
 
 1.	Battery Connector – the battery box plugs in here.  
 Battery boxes usually have a power switch and take three or four 1.5-volt AAA or AA batteries. 
@@ -69,22 +69,22 @@ It is also possible to connect a 9 Volt battery with an appropriate connecting l
 
 
 2.	USB Connector – this plug accepts USB leads that plug into a computer.  
-The USB connector provides access by the computer to the Kookaberry’s program memory, and it appears to the computer as a USB memory stick.  
-The Kookaberry will also accept power from this connector. 
+The USB connector provides access by the computer to the **Kookaberry’s** program memory, and it appears to the computer as a USB memory stick.  
+The **Kookaberry** will also accept power from this connector. 
 
 .. important:: 
-    Always dismount the Kookaberry from the computer’s drives before unplugging the USB connector or else corruption of the Kookaberry’s 
-    program storage memory could result necessitating a reformat and loss of any data on in the Kookaberry’s file storage system.
+    Always dismount the **Kookaberry** from the computer’s drives before unplugging the USB connector or else corruption of the **Kookaberry’s** 
+    program storage memory could result necessitating a reformat and loss of any data on in the **Kookaberry’s** file storage system.
 
-    Total USB supply voltage should be between 4.75 to 5.25 volts.  Damage may result to the Kookaberry if the USB supplied voltage exceeds 5.25 volts.  
-    Also, operation of the Kookaberry may be adversely affected if the USB-supplied voltage is less than 4.75 volts.
+    Total USB supply voltage should be between 4.75 to 5.25 volts.  Damage may result to the **Kookaberry** if the USB supplied voltage exceeds 5.25 volts.  
+    Also, operation of the **Kookaberry** may be adversely affected if the USB-supplied voltage is less than 4.75 volts.
 
 
 3.	Five connectors P1 to P5 – these connectors are used for accessories such as sensors and for outputs. 
-The function of each connector is controlled by Kookaberry scripts.
+The function of each connector is controlled by **Kookaberry** scripts.
 
-4.	Edge Connector – located at the bottom of the Kookaberry board, it plugs into a mating connector on an expansion board 
-and makes all of the Kookaberry’s connections available depending on the capabilities of the expansion board.
+4.	Edge Connector – located at the bottom of the **Kookaberry** board, it plugs into a mating connector on an expansion board 
+and makes all of the **Kookaberry’s** connections available depending on the capabilities of the expansion board.
 
 .. _kberry_connectors:
 
@@ -94,18 +94,18 @@ and makes all of the Kookaberry’s connections available depending on the capab
 
    Electrical Pin Arrangements of Kookaberry Connectors
 
-The Kookaberry's plug connectors are of type JST-PH which are described 
+The **Kookaberry**'s plug connectors are of type JST-PH which are described 
 in more detail `here <https://www.mattmillman.com/info/crimpconnectors/common-jst-connector-types/>`_.
 
 On-board Facilities
 -------------------
 
-The Kookaberry has the following on-board facilities:
+The **Kookaberry** has the following on-board facilities:
 
 1.	Microcomputer, either STM32F091 or a Raspberry Pi RP2040
 2.	4 MBytes serial memory (USB accessible)
 3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
-4.	22 (STM32) / 18 (RP2040) GPIO (General Purpose Input-Output) pins
+4.	22 (STM32F091) / 18 (RP2040) GPIO (General Purpose Input-Output) pins
 5.	Up to 8 ADC (Analogue to Digital Converters) on the ST32F091 and up to 4 ADCs on the RP2040
 6.	2 DAC (Digital to Analogue Converters) on STM32F091 and no DACs on the RP2040
 7.	Timers and Real Time Clock

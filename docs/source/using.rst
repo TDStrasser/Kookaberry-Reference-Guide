@@ -8,9 +8,9 @@ Power-up
 
 The simplest way to power-up the **Kookaberry** is to connect it:
 
-- to a computer via the Kookaberry’s USB port using a compatible USB cable
-- to a USB battery via the Kookaberry’s USB port using a compatible USB cable or
-- to a battery, having a voltage between 4.5 to 9.0 volts, via the Kookaberry's 2 pin JST-PH battery connector
+- to a computer via the **Kookaberry’s** USB port using a compatible USB cable
+- to a USB battery via the **Kookaberry’s** USB port using a compatible USB cable or
+- to a battery, having a voltage between 4.5 to 9.0 volts, via the **Kookaberry**'s 2 pin JST-PH battery connector
 
 .. _powerup:
 
@@ -20,7 +20,7 @@ The simplest way to power-up the **Kookaberry** is to connect it:
 
    Powering the Kookaberry
 
-When power is applied, a green LED on the back of the Kookaberry should illuminate.  
+When power is applied, a green LED on the back of the **Kookaberry** should illuminate.  
 
 If you see a slowly pulsing blue LED then the battery voltage is too low.  
 Charge or replace the battery and try again.
@@ -56,9 +56,9 @@ Programming
 
 To code **MicroPython** scripts, use one of the **KookaSuite** programming tools.
 
-First connect the Kookaberry to a USB port on a personal computer which has **KookaSuite** installed.
+First connect the **Kookaberry** to a USB port on a personal computer which has **KookaSuite** installed.
 
-The Kookaberry should be recognised as a USB drive.
+The **Kookaberry** should be recognised as a USB drive.
 
 Launch **KookaBlockly** or **KookaIDE** and write your script, or load a script already written from your Kookaberry Scripts folder.
 

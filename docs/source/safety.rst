@@ -33,7 +33,8 @@ Recommended Operating Environment
 * Humidity: 10% to 90% relative humidity.  
 * Do not allow the circuit board or any electrically connected item to become wet or to be immersed in any liquid. 
 * Do not handle the **Kookaberry** nor any electrical attachments with wet hands. 
-* Conversely on days with low humidity, keep away from synthetic fabrics, clothes and carpets as these can store high static electricity charges which will damage the Kookaberry. 
+* Conversely on days with low humidity, keep away from synthetic fabrics, clothes and carpets 
+  as these can store high static electricity charges which will damage the **Kookaberry**. 
 
 Storage
 -------
@@ -71,7 +72,7 @@ Handle the **Kookaberry** only by the circuit board edges, avoiding contact with
 
 Do not drop or allow the **Kookaberry** to collide with any hard or sharp objects that may shock, puncture, scratch or dislodge the **Kookaberry’s** components.
 The **Kookaberry’s** display contains fragile glass which could easily break. 
-If damage is apparent, cease using the Kookaberry and consult your supplier for advice.
+If damage is apparent, cease using the **Kookaberry** and consult your supplier for advice.
 
 Cleaning
 --------

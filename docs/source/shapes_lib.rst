@@ -7,7 +7,7 @@
 .. _shapes_lib:
 
 
-The Shapes Library (shapes_lib) Module provides some extended graphics for the Kookaberry display 
+The Shapes Library (shapes_lib) Module provides some extended graphics for the **Kookaberry** display 
 and for any display device using the :ref:`framebuf` functionality.
 
 The display device *dev* is passed as the first argument, and display specific arguments are appended, eg. the colour.

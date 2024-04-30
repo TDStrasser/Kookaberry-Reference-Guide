@@ -48,7 +48,7 @@ OneWire Constructor
 
 .. class:: onewire.OneWire(pin)
 
-    *pin* is a Pin object using one of the Kookaberry's input pins (e.g. ``P1``, ``P2``, ``P3A``, ``P3B``, ``P4``, ``P5``)
+    *pin* is a Pin object using one of the **Kookaberry**'s input pins (e.g. ``P1``, ``P2``, ``P3A``, ``P3B``, ``P4``, ``P5``)
     
 
 OneWire Methods

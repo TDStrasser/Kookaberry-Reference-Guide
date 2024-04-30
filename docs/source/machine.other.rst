@@ -42,7 +42,7 @@ Use subscript notation ``[...]`` to index these objects with the address of
 interest. Note that the address is the byte address, regardless of the size of
 memory being accessed.
 
-Example use (registers are specific to an stm32 microcontroller)::
+Example use (registers are specific to an STM32 microcomputer)::
 
     import machine
     from micropython import const

@@ -25,7 +25,7 @@ The ds3231 data-sheet describes the chip in detail and is at this link: https://
 Class DS3231
 ============
 
-The DS3231 class allows the Kookaberry to use this RTC as a stable time source.
+The DS3231 class allows the **Kookaberry** to use this RTC as a stable time source.
  
 The ds3231.DS3231 class, above, provides basic functionality for setting and retrieving the RTC date and time.
 To use the ds3231 module, follow these programming examples:
@@ -44,7 +44,7 @@ Example Code::
 
 Example Code::
 
-    # Transfer the time to/from the DS3231 to the Kookaberry’s RTC
+    # Transfer the time to/from the DS3231 to the **Kookaberry’s** RTC
     from ds3231 import DS3231
     from machine import SoftI2C, RTC
 
@@ -73,7 +73,7 @@ DS2321 Methods
 
 .. method:: DS3231.datetime(datetime_tuple)
 
-    Both the DS3231 and the Kookaberry’s internal RTC share the same datetime() tuple format, making setting of one by the other very simple.
+    Both the DS3231 and the **Kookaberry’s** internal RTC share the same datetime() tuple format, making setting of one by the other very simple.
 
     In the default module configuration, the function datetime() returns or can be set as an integer time tuple 
     of the format [YYYY,MM,DD,WD,HH,MM,SS,SUBS] where:

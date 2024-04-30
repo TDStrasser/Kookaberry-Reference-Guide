@@ -20,7 +20,7 @@ The voltage will be in the range 0V to 3.3V corresponding to digital value of
 - 0 to 4095 if the DAC has 12-bit resolution.
 
 On the STM32 **Kookaberry** only pins ``P4`` and ``P5`` have DAC capability.  
-No DAC capability is provided on the RP2040 Kookaberry because of micrcomputer hardware limitations.
+No DAC capability is provided on the RP2040 **Kookaberry** because of microcomputer hardware limitations.
 
 
 Example usage::

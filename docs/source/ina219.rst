@@ -27,7 +27,7 @@ See also:
 The INA219 sensor is commonly mounted on a breakout board equipped with terminals to attach the load and a power supply, 
 and a shunt resistor used to measure current flowing through the load.
 
-The interface with the Kookaberry is the I2C serial communications bus. 
+The interface with the **Kookaberry** is the I2C serial communications bus. 
 I2C stands for Inter-Integrated-Circuit Communications (IIC or I2C). 
 See https://en.wikipedia.org/wiki/I%C2%B2C for more detail.
 
@@ -38,7 +38,7 @@ There are four wires in the I2C interface, being:
 * SCL being the serial clock signal for communications timing 
 * SDA being the serial data signal which conveys the digital data being communicated
 
-When using a INA219 circuit board it is important that these signals are connected to the correct Pins on the Kookaberry.
+When using a INA219 circuit board it is important that these signals are connected to the correct Pins on the **Kookaberry**.
 
 The data-sheet for the INA219 may be obtained from this website: https://www.ti.com/product/INA219
 
