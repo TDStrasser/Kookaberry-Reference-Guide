@@ -230,6 +230,55 @@ Servo Methods
      - *pulse_speed_100* is the pulse width corresponding to a speed of 100.
 
 
+Timed ADC readings
+==================
+
+.. function:: kooka.read_timed(adc, buffer, sample_frequency)
+
+This function is provided to enable regular sampling of periodic analogue signals, such as sound waves.
+
+- *adc* is an ADC object created with :class:`machine.ADC`
+- *buffer* is an array of unsigned 16-bit integers into which the ADC samples will be pre-allocated
+- *sample_frequency* is the number of samples / second to be taken
+
+The read_timed() function returns the number of samples that were taken on time.  This can be used to verify what the maximum sampling frequency is.
+
+The resulting buffer of analogue samples can then be passed for further processing such as spectral analysis to discover what frequencies are present.
+
+Example Usage::
+
+    from array import array
+    buf = array('H', 0 for _ in range(1000)) # Set up a buffer of 1000 unsigned 16-bit integers
+    
+    from machine import ADC, Pin
+    adc = ADC(Pin('P4')) # Create an ADC object attached to GPIO Pin P4
+    
+    samples_on_time = kooka.read_timed(adc, buf, 6600) # Fill the buffer with samples taken at 6.6kHz (suitable for telephone audio)
+    
+    if samples_on_time < 1000: #If not all samples taken on time
+        print('Sampling rate too high')
+
+Scale Function
+==============
+
+.. function:: kooka.scale(value, from_=(min, max), to=(scale_min, scale_max))
+
+    Returns a scaled output derived from the input *value* in the range *from_(min, max)* to an output range *to(scale_min, scale_max).
+
+    - *value* is the input floating point number
+    - *from_* specifies the range of the expected input values
+    - *to* specifies the desired range of the returned value
+
+    This function conveniently performs the offset and scaling arithmetic involved in many sensor scaling calculations.
+
+    This example uses kooka.scale() to convert temperature from degrees Celsius to Fahrenheit::
+
+        import machine, kooka
+        degC = 20
+        kooka.display.print('deg C ', degC, ' = deg F', kooka.scale(degC, from_=(0, 100), to=(32, 212)), show=0)
+        kooka.display.show()
+
+
 .. _kooka.display:
 
 class Display - access to the Kookaberry's OLED display and underlying framebuffer
@@ -383,33 +432,6 @@ These methods control the physical appearance of the **Kookaberry** display.
     using the currently selected font (defaults to 8x8 font).  The display is scrolled up
     when text is drawn to the last line of the display.
    
-Timed ADC readings
-==================
-
-.. function:: kooka.read_timed(adc, buffer, sample_frequency)
-
-This function is provided to enable regular sampling of periodic analogue signals, such as sound waves.
-
-- *adc* is an ADC object created with :class:`machine.ADC`
-- *buffer* is an array of unsigned 16-bit integers into which the ADC samples will be pre-allocated
-- *sample_frequency* is the number of samples / second to be taken
-
-The read_timed() function returns the number of samples that were taken on time.  This can be used to verify what the maximum sampling frequency is.
-
-The resulting buffer of analogue samples can then be passed for further processing such as spectral analysis to discover what frequencies are present.
-
-Example Usage::
-
-    from array import array
-    buf = array('H', 0 for _ in range(1000)) # Set up a buffer of 1000 unsigned 16-bit integers
-    
-    from machine import ADC, Pin
-    adc = ADC(Pin('P4')) # Create an ADC object attached to GPIO Pin P4
-    
-    samples_on_time = kooka.read_timed(adc, buf, 6600) # Fill the buffer with samples taken at 6.6kHz (suitable for telephone audio)
-    
-    if samples_on_time < 1000: #If not all samples taken on time
-        print('Sampling rate too high')
 
 
 .. toctree::
