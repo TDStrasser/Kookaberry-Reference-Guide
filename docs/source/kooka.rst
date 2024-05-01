@@ -263,7 +263,7 @@ Scale Function
 
 .. function:: kooka.scale(value, from_=(min, max), to=(scale_min, scale_max))
 
-    Returns a scaled output derived from the input *value* in the range *from_(min, max)* to an output range *to(scale_min, scale_max).
+    Returns a scaled output derived from the input *value* in the range *from_(min, max)* to an output range *to(scale_min, scale_max)*.
 
     - *value* is the input floating point number
     - *from_* specifies the range of the expected input values
