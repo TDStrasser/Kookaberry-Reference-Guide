@@ -11,7 +11,7 @@ This means there is a small risk that the parts can be damaged by inappropriate 
 
 .. _kberryfront:
 .. figure:: images/kberry-front-line_dwg.png
-   :width: 80%
+   :width: 50%
    :align: center
 
    The Kookaberry's front layout
@@ -20,7 +20,7 @@ This means there is a small risk that the parts can be damaged by inappropriate 
 
 .. _kberryback:
 .. figure:: images/kberry-back-line_dwg.png
-   :width: 80%
+   :width: 50%
    :align: center
 
    The Kookaberry's back layout
