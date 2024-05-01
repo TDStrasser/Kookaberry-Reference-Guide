@@ -3,7 +3,7 @@
 MicroPython .mpy files
 ======================
 
-MicroPython defines the concept of an .mpy file which is a binary container
+**MicroPython** defines the concept of an .mpy file which is a binary container
 file format that holds precompiled code, and which can be imported like a
 normal .py module.  
 
@@ -17,7 +17,7 @@ is not found then ``foo.mpy`` is looked for, then the search continues in the
 next directory if neither is found.  As such, ``foo.py`` will take precedence
 over ``foo.mpy``.
 
-These .mpy files can contain bytecode which is usually generated from MicroPython
+These .mpy files can contain bytecode which is usually generated from **MicroPython**
 source files (.py files) via the ``mpy-cross`` program.  For some architectures
 an .mpy file can also contain native machine code, which can be generated in
 a variety of ways, most notably from C source code.
@@ -25,7 +25,7 @@ a variety of ways, most notably from C source code.
 Versioning and compatibility of .mpy files
 ------------------------------------------
 
-A given .mpy file may or may not be compatible with a given MicroPython system.
+A given .mpy file may or may not be compatible with a given **MicroPython** system.
 Compatibility is based on the following:
 
 * Version of the .mpy file: the version of the file must match the version
@@ -44,7 +44,7 @@ Compatibility is based on the following:
   it will specify the architecture of that machine code and the system
   loading it must support execution of that architecture's code.
 
-If a MicroPython system supports importing .mpy files then the
+If a **MicroPython** system supports importing .mpy files then the
 ``sys.implementation._mpy`` field will exist and return an integer which
 encodes the version (lower 8 bits), features and native architecture.
 
@@ -55,7 +55,7 @@ code) will raise ``ValueError('incompatible .mpy arch')``.
 
 If importing an .mpy file fails then try the following:
 
-* Determine the .mpy version and flags supported by your MicroPython system
+* Determine the .mpy version and flags supported by your **MicroPython** system
   by executing::
 
     import sys
@@ -84,7 +84,7 @@ If importing an .mpy file fails then try the following:
   above, or by inspecting the ``MPY_CROSS_FLAGS`` Makefile variable for the
   port that you are using.
 
-The following table shows the correspondence between MicroPython release
+The following table shows the correspondence between **MicroPython** release
 and .mpy version.
 
 =================== ============ ==========
@@ -105,7 +105,7 @@ v1.5.1 - v1.8.7     0
 Binary encoding of .mpy files
 -----------------------------
 
-MicroPython .mpy files are a binary container format with code objects (bytecode
+**MicroPython** .mpy files are a binary container format with code objects (bytecode
 and native machine code) stored internally in a nested hierarchy.  The code for
 the outer module is stored first, and then its children follow.  Each child may
 have further children, for example in the case of a class having methods, or a
@@ -126,7 +126,7 @@ The top-level of an .mpy file consists of three parts:
   This outer scope is executed when the .mpy file is imported.
 
 You can inspect the contents of a .mpy file by using ``mpy-tool.py``, for
-example (run from the root of the main MicroPython repository)::
+example (run from the root of the main **MicroPython** repository)::
 
     $ ./tools/mpy-tool.py -xd myfile.mpy
 

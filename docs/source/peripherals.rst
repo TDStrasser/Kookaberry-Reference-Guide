@@ -4,7 +4,7 @@ Peripherals Module Library
 The **Kookaberry** provides an ever-growing module library to enable on-board devices and a range of external accessories to be used by the software.  
 
 Further modules can be added by users for peripherals and accessories of their choosing. 
-Such further modules should be added into the /lib folder, either as MicroPython source files, or preferably and more efficiently
+Such further modules should be added into the /lib folder, either as **MicroPython** source files, or preferably and more efficiently
 as pre-compiled mpy files.  See :ref:`mpy_files` for more detail.
 
 There are many Internet forums and repositories that provide module software code and help on getting accessories to work with 

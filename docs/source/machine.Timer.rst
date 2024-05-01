@@ -10,7 +10,7 @@ the simplest case of calling a function periodically is available for programmin
 The Timer consists of a counter that counts up at a certain rate.  The rate
 at which it counts is in milliseconds.  When the counter reaches the timer period it triggers an
 event, and the counter resets back to zero.  By using the callback method,
-the timer event can call a MicroPython function.
+the timer event can call a **MicroPython** function.
 
 Example usage to toggle a LED at a fixed frequency::
 

@@ -3,7 +3,7 @@
 The MicroPython Interactive Interpreter Mode (aka REPL)
 =======================================================
 
-This section covers some characteristics of the MicroPython Interactive
+This section covers some characteristics of the **MicroPython** Interactive
 Interpreter Mode. A commonly used term for this is **REPL** (read-evaluate-print-loop)
 which will be used to refer to this interactive prompt.
 
@@ -57,7 +57,7 @@ To investigate a deeper level, specify the object as ``object.property``::
 Auto-indent
 -----------
 
-When typing MicroPython statements which end in a colon (for example if, for, while)
+When typing **MicroPython** statements which end in a colon (for example if, for, while)
 then the prompt will change to three dots (...) and the cursor will be indented
 by 4 spaces. When you press return, the next line will continue at the same
 level of indentation for regular statements or an additional level of indentation
@@ -168,7 +168,7 @@ Paste mode
 ----------
 
 If you want to paste some code into your terminal window, the auto-indent feature
-will mess things up. For example, if you had the following MicroPython code: ::
+will mess things up. For example, if you had the following **MicroPython** code: ::
 
    def foo():
        print('This is a test to show paste mode')
@@ -207,10 +207,10 @@ it were a file. Pressing Ctrl-D exits paste mode and initiates the compilation.
 Soft reset
 ----------
 
-A soft reset will reset the MicroPython interpreter, but tries not to reset the
+A soft reset will reset the **MicroPython** interpreter, but tries not to reset the
 method by which you're connected to the **Kookaberry** (USB-serial).
 
-You can perform a soft reset from the **REPL** by pressing Ctrl-D, or from your MicroPython
+You can perform a soft reset from the **REPL** by pressing Ctrl-D, or from your **MicroPython**
 code by executing: ::
 
     machine.soft_reset()
@@ -244,7 +244,7 @@ The special variable _ (underscore)
 -----------------------------------
 
 When you use the **REPL**, you may perform computations and see the results.
-MicroPython stores the results of the previous statement in the variable _ (underscore).
+**MicroPython** stores the results of the previous statement in the variable _ (underscore).
 So you can use the underscore to save the result in a variable. For example:
 
     >>> 1 + 2 + 3 + 4 + 5
@@ -261,8 +261,8 @@ Raw mode (also called raw **REPL**) is not something that a person would normall
 It is intended for programmatic use and essentially behaves like paste mode with
 echo turned off, and with optional flow control.
 
-Raw mode is entered using Ctrl-A. You then send your MicroPython code, followed by
-a Ctrl-D. The Ctrl-D will be acknowledged by 'OK' and then the MicroPython code will
+Raw mode is entered using Ctrl-A. You then send your **MicroPython** code, followed by
+a Ctrl-D. The Ctrl-D will be acknowledged by 'OK' and then the **MicroPython** code will
 be compiled and executed. Any output (or errors) will be sent back. Entering
 Ctrl-B will leave raw mode and return the the regular (aka friendly) **REPL**.
 

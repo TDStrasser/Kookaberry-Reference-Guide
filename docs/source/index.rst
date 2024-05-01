@@ -32,14 +32,14 @@ Acknowledgements
 
 This guide is not so much an original work, but a compilation of relevant documentation 
 produced over the many years of the **Kookaberry**'s development, and the foundation of
-the development and documentation of MicroPython.
+the development and documentation of **MicroPython**.
 
 Particular acknowledgement is given to:
 
-- Damien George and his collaborators in developing MicroPython and the **Kookaberry**'s firmware
+- Damien George and his collaborators in developing **MicroPython** and the **Kookaberry**'s firmware
 - Julian Dinsdale and his collaborators in envisaging, designing and developing the **Kookaberry**'s electronics
 - The Directors of the AustSTEM Foundation for their review of this guide
-- The users of the Kookaberry thus far from whom many valuable improvement lessons have been learned
+- The users of the **Kookaberry** thus far from whom many valuable improvement lessons have been learned
 
 :Copyright:
 

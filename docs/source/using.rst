@@ -49,7 +49,7 @@ Follow the procedure in the infographic below.
 
    Starting the Kookaberry's inbuilt menu
 
-Any MicroPython scripts that are stored in the **Kookaberry**'s app folder will be listed and available to be run.
+Any **MicroPython** scripts that are stored in the **Kookaberry**'s app folder will be listed and available to be run.
 
 Programming
 -----------

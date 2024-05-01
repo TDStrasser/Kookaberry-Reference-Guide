@@ -105,7 +105,7 @@ Kookaberry Firmware
 
 The **Kookaberry** contains low-level software that is stored in on-board non-volatile memory. 
 Firmware performs basic low-level tasks to control and monitor the **Kookaberry**'s hardware, 
-and to make it accessible to high-level software, such as MicroPython. 
+and to make it accessible to high-level software, such as **MicroPython**. 
 
 Firmware updates may sometimes be issued that extend the functionality of the **Kookaberry**, or to remedy bugs in the firmware. 
 The **Kookaberry’s** firmware is updated from time to time and the latest version may be downloaded from https://github.com/kookaberry/kooka-releases.
