@@ -34,7 +34,7 @@ MicroPython Standard Library
 The **MicroPython** standard library is described at 
 https://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries 
 
-The standard library encompasses the following.  The level of support by the **Kookaberry** is noted against each item:
+The standard library encompasses the following.  Exceptions in support by the **Kookaberry** is noted against each item:
 
   - ``array`` - arrays of numeric data
   - ``asyncio`` - asynchronous I/O scheduler (RP2040 only)
@@ -160,7 +160,7 @@ For a more in-depth description of REPL see :ref:`repl`
 
 Each of the modules frozen into the **Kookaberry’s** flash memory are described in the following sections.
 
-Kookaberry Specific Module Library
+Kookaberry-Specific Module Library
 ----------------------------------
 
 Modules for using functions that are unique to the **Kookaberry** are are described below:
