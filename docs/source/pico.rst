@@ -45,8 +45,8 @@ Key internal pin assignments on **Raspberry Pi Pico** include:
 
 The **Kookaberry** firmware also reserves some pins for internal functions, and these will not be available for general programming use:
 
-•	GPIO 0, 1, 2, 3: Nordic nRF52 packet radio SPI Bus.
-•	GPIO 21, 22: Nordic nRF52 packet radio SWCLK and SWDIO.
+•	GPIO 0, 1, 2, 3: Nordic NRF52 packet radio SPI Bus.
+•	GPIO 21, 22: Nordic NRF52 packet radio SWCLK and SWDIO.
 •	GPIO 18, 19: LSM303 Accelerometer/Magnetometer I2C SCL/SDA.
 •	GPIO 2, 3, 7, 20: Blue OLED 128x64 Display (sh1106 controller) - SPI Bus.
 •	GPIO 6: Software RESET.

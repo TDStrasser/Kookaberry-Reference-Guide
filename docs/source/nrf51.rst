@@ -1,12 +1,12 @@
-***************************************************
-:mod:`nrf51` --- interface to the nRF51 coprocessor
-***************************************************
+*********************************************************
+:mod:`nrf51` --- interface to the NRF51/NRF52 coprocessor
+*********************************************************
 .. _nrf51:
 
 .. module:: nrf51
-   :synopsis: interface to the nRF51 radio coprocessor
+   :synopsis: interface to the NRF51/NRF52 radio coprocessor
 
-This module provides a ``Radio`` class to interface with the nRF51 radio coprocessor.
+This module provides a ``Radio`` class to interface with the NRF51/NRF52 radio coprocessor.
 Note that an instance of this class is created at start-up and available in the
 :mod:`kooka` module as ``kooka.radio``.
 
@@ -26,7 +26,7 @@ Example usage::
 class Radio
 ===========
 
-This class represents a connection to the nRF51 coprocessor.
+This class represents a connection to the NRF51/NRF52 coprocessor.
 
 Radio Methods
 -------------

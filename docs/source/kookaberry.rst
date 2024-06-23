@@ -110,6 +110,6 @@ The **Kookaberry** has the following on-board facilities:
 6.	2 DAC (Digital to Analogue Converters) on STM32F091 and no DACs on the RP2040
 7.	Timers and Real Time Clock
 8.	Magnetic Compass and Accelerometer
-9.	2.4GHz Nordic NRF51 Digital Packet Radio
+9.	2.4GHz Nordic NRF51 (with the STM32F091) or NRF52 (with the RP2040) Digital Packet Radio
 
 
