@@ -53,7 +53,7 @@ Instances
     radio
 
     This handles the interface to the 2.4GHz digital packet radio, an instance of
-    :ref:`nrf51.Radio`.
+    :ref:`nrf5.Radio`.
 
 
 .. _kooka.LED:

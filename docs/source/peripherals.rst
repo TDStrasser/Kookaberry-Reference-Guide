@@ -42,7 +42,7 @@ The **Kookaberry**'s built-in software modules are described in the following se
     mcp23008.rst
     mlx90614.rst
     neopixel.rst
-    nrf51.rst
+    nrf5.rst
     onewire.rst
     veml7700.rst
 

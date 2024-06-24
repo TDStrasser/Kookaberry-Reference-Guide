@@ -1,9 +1,9 @@
 *********************************************************
-:mod:`nrf51` --- interface to the NRF51/NRF52 coprocessor
+:mod:`nrf5` --- interface to the NRF51/NRF52 coprocessor
 *********************************************************
-.. _nrf51:
+.. _nrf5:
 
-.. module:: nrf51
+.. module:: nrf5
    :synopsis: interface to the NRF51/NRF52 radio coprocessor
 
 This module provides a ``Radio`` class to interface with the NRF51/NRF52 radio coprocessor.
@@ -21,7 +21,7 @@ Example usage::
     print(radio.receive())
     radio.disable()
 
-.. _nrf51.Radio:
+.. _nrf5.Radio:
 
 class Radio
 ===========
