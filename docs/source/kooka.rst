@@ -110,7 +110,7 @@ Example Usage::
     # Blinks the orange LED and controls the green LED
     import kooka, time
 
-    while not kooka.buttan_a.was_pressed(): # Loop until button A was pressed
+    while not kooka.button_a.was_pressed(): # Loop until button A was pressed
         kooka.led_orange.toggle() # Change the state of the orange LED
 
         if kooka.button_b.is_pressed(): # If button B is being pressed
