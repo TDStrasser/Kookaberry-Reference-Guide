@@ -67,8 +67,9 @@ and is intended to demystify the vocabulary often used in association with compu
       See also https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics
    
     Raspberry Pi Pico
-      A microcomputer developed by the **Raspberry Pi Foundation** based on their **RP2040** microprocessor chip.  
+      A microcomputer developed by the **Raspberry Pi Foundation** based on their **RP2040** and **RP2350** microprocessor chips.  
       The **RP2040** microprocessor chip is used in later hardware versions of the **Kookaberry**.
+      **Kookaberry** firmware from V11.0 onwards also supports the **RP2350** microprocessor.
       See also https://en.wikipedia.org/wiki/Raspberry_Pi
 
     STM

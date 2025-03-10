@@ -37,10 +37,10 @@ https://docs.micropython.org/en/latest/library/index.html#python-standard-librar
 The standard library encompasses the following.  Exceptions in support by the **Kookaberry** is noted against each item:
 
   - ``array`` - arrays of numeric data
-  - ``asyncio`` - asynchronous I/O scheduler (RP2040 only)
+  - ``asyncio`` - asynchronous I/O scheduler (RP2040 / RP2350 only)
   - ``binascii`` - binary/ASCII conversions
   - ``builtins`` - builtin functions and exceptions
-  - ``cmath`` - mathematical functions for complex numbers (RP2040 only)
+  - ``cmath`` - mathematical functions for complex numbers (RP2040 / RP2350 only)
   - ``collections`` - collection and container types
   - ``errno`` - system error codes
   - ``gc`` - control the garbage collector
@@ -114,7 +114,7 @@ Instructions for firmware updates are provided on the GutHub page.  In general, 
 
 1. Navigate into the Github firmware folder (https://github.com/kookaberry/kooka-releases/tree/master/firmware)
 2. Then navigate into, depending on your model of **Kookaberry**, either the ``stm32`` folder (Kookaberry rev1-05 and rev1-06), 
-   or the ``rp2040`` folder (Kookaberry v2 and later).
+   or the ``rp2040`` / ``rp2350`` folder (Kookaberry v2 and later).
 3. With the target **Kookaberry** connected via USB to your PC, download the various .bin files to the root folder of the **Kookaberry**'s file storage system.  
    The **Kookaberry**'s blue LED will flash during this process.  Wait until the blue LED is fully extinguished.  
 4. Dismount the **Kookaberry** from your PC and disconnect it.

@@ -4,6 +4,7 @@ Kookaberry Firmware on a Raspberry Pi Pico
 The standard `Raspberry Pi Pico <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>`_ 
 microcomputer may be used with **Kookaberry** firmware V1.10.0 onwards
 to provide the software functionality that is available on a standard **Kookaberry** RP2040 microcomputer.
+**Kookaberry** firmware V1.11.0 onwards also supports the Pico2 RP2350 microcomputer.
 
 The **Pico**, however, does not have the physical OLED display, LEDs, buttons, JST-PH GPIO connectors, accelerometer / magnetometer, and digital packet radio
 that the **Kookaberry** is equipped with.  
@@ -23,18 +24,18 @@ Firmware Installation on the Pico
 To install the firmware on the **Pico**:
 
 1.	Download it from the GitHub repository: https://github.com/kookaberry/kooka-releases/releases
-2.	Unzip the downloaded file and go to the ``rp2040 folder`` to reveal two files: ``kooka_rp2040.bin`` and ``kooka_rp2040_mboot.uf2``.
+2.	Unzip the downloaded file and go to the ``rp2040 folder`` or the ``rp2350 folder``, as appropriate, to reveal two files: ``kooka_rp2040.bin`` and ``kooka_rp2040_mboot.uf2``.
 3.	Hold down the **BOOTSEL** button on the **Pico** while connecting it to the USB port on the PC that contains the downloaded file.
-4.  Load the bootloader (``kooka_rp2040_mboot.uf2``) onto the **Pico** by dragging/dropping the file onto the **Pico**'s USB drive.  
+4.  Load the bootloader (``kooka_rp2040_mboot.uf2`` or ``kooka_rp2350_mboot.uf2``) onto the **Pico** by dragging/dropping the file onto the **Pico**'s USB drive.  
 5.  The **Pico** should then mount as a USB drive named "**KOOKABERRY**."  If not, unplug the **Pico** and reconnect to the USB port.
-6.  Open the "**KOOKABERRY**" drive, drag/drop the ``kooka_rp2040.bin`` file to the root directory, and unplug then reconnect the **Pico**.
+6.  Open the "**KOOKABERRY**" drive, drag/drop the ``kooka_rp2040.bin`` / ``kooka_rp2350.bin`` file to the root directory, and unplug then reconnect the **Pico**.
 7.  The green LED on the **Pico** will flash during the loading process, and two folders ("``app``" and "``lib``") will appear in the 
 "**KOOKABERRY**" drive after loading is complete.
 
 Raspberry Pico GPIO Pin Limitations
 -----------------------------------
 
-The **Raspberry Pi Pico** board has reserved four of the RP2040 GPIO pins for internal functions, with 26 pins exposed on the **Pico** board out of 30 possibilities.
+The **Raspberry Pi Pico** board has reserved four of the RP2040 / RP2350 GPIO pins for internal functions, with 26 pins exposed on the **Pico** board out of 30 possibilities.
 
 Key internal pin assignments on **Raspberry Pi Pico** include:
 

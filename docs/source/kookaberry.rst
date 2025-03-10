@@ -102,14 +102,14 @@ On-board Facilities
 
 The **Kookaberry** has the following on-board facilities:
 
-1.	Microcomputer, either STM32F091 or a Raspberry Pi RP2040
+1.	Microcomputer, either STM32F091 or a Raspberry Pi RP2040 or RP2350
 2.	4 MBytes serial memory (USB accessible)
 3.	Monochrome OLED Display 128 x 64 pixels (Organic Light Emitting Diode)
-4.	22 (STM32F091) / 18 (RP2040) GPIO (General Purpose Input-Output) pins
-5.	Up to 8 ADC (Analogue to Digital Converters) on the ST32F091 and up to 4 ADCs on the RP2040
-6.	2 DAC (Digital to Analogue Converters) on STM32F091 and no DACs on the RP2040
+4.	22 (STM32F091) / 18 (RP2040 / RP2350) GPIO (General Purpose Input-Output) pins
+5.	Up to 8 ADC (Analogue to Digital Converters) on the ST32F091 and up to 4 ADCs on the RP2040 / RP2350
+6.	2 DAC (Digital to Analogue Converters) on STM32F091 and no DACs on the RP2040 / RP2350
 7.	Timers and Real Time Clock
 8.	Magnetic Compass and Accelerometer
-9.	2.4GHz Nordic NRF51 (with the STM32F091) or NRF52 (with the RP2040) Digital Packet Radio
+9.	2.4GHz Nordic NRF51 (with the STM32F091) or NRF52 (with the RP2040 / RP2350) Digital Packet Radio
 
 

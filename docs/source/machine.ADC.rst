@@ -39,7 +39,7 @@ ADC Methods
 
    .. note::
 
-      This method is not available on the RP2040 **Kookaberry**
+      This method is not available on the RP2040 or RP2350 **Kookaberry**
 
 .. method:: ADC.read_u16()
 

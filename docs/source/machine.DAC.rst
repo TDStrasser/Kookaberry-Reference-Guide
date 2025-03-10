@@ -6,7 +6,7 @@ class DAC -- digital to analog conversion
 
 .. important::
 
-   The DAC Class is available only on the STM32-based **Kookaberry**, and not on the RP2040.
+   The DAC Class is available only on the STM32-based **Kookaberry**, and not on the RP2040 / RP2350.
 
 A digital-to-analog converter (DAC) is a data converter which generates an analogue output from a digital input. 
 A DAC converts a limited number of discrete digital codes to a corresponding number of discrete analog output values.
@@ -20,7 +20,7 @@ The voltage will be in the range 0V to 3.3V corresponding to digital value of
 - 0 to 4095 if the DAC has 12-bit resolution.
 
 On the STM32 **Kookaberry** only pins ``P4`` and ``P5`` have DAC capability.  
-No DAC capability is provided on the RP2040 **Kookaberry** because of microcomputer hardware limitations.
+No DAC capability is provided on the RP2040 / RP2350 **Kookaberry** because of microcomputer hardware limitations.
 
 
 Example usage::

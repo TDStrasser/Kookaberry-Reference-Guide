@@ -10,7 +10,7 @@ This module provides access to the **Kookaberry** microcomputer facilities like 
 A/D and D/A Converters, serial interfaces, Real Time Clock, and timers.
 
 The focus in this guide is on the core **Kookaberry** functionality to ensure that scripts are portable between **Kookaberry** models.
-There are two variants of the **Kookaberry** using STM32 and RP2040 microcomputers.  
+There are two variants of the **Kookaberry** using STM32 and RP2040 / RP2350 microcomputers.  
 These each have features and functions particular to their microcomputers that are beyond those covered in this guide.
 
 The additional functionality can be examined by using these commands in the **KookaIDE** **REPL**::
