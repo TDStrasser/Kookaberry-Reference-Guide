@@ -234,7 +234,7 @@ Now if you enter Ctrl-D, and repeat the dir() command, you'll see that your
 variables no longer exist::
 
     MPY: soft reboot
-    MicroPython v1.21.0-54-gbc815fff6 on 2024-01-16; Kookaberry with RP2040
+    MicroPython v1.24.1-67.g0a0315683 on 2025-02-26; Kookaberry with RP2040
     Type "help()" for more information.
     >>> dir()
     ['const', '__name__', 'kooka', 'menu', 'main']
