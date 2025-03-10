@@ -12,8 +12,8 @@ copyright = f"2019-{now.year} {rights_holders}. Last updated: {today}"
 
 author = 'Tony Strasser'
 
-release = '1.10.0'
-version = '1.10.0'
+release = '1.11.0'
+version = '1.11.0'
 
 numfig = True # Automatically number figures, code blocks and tables
 
